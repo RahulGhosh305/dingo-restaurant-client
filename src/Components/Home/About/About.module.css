@@ -4,7 +4,8 @@
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
-    height : 100vh;
+    height : 105vh;
+    /* overflow : hidden; */
 }
 .aboutCentralize{
     display: flex;
@@ -15,7 +16,7 @@
     text-align: center;
     padding-top: 20px;
 }
-.textContainer h1{
+.textContainer h2{
     padding-bottom: 20px;
 }
 .aboutTitleParagraph {

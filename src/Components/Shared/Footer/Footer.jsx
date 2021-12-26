@@ -18,7 +18,7 @@ const Footer = () => {
             <div className="container">
                 <div className={styles.top}>
                     <p>Shot Info</p>
-                    <h1>Get In Touch</h1>
+                    <h2>Get In Touch</h2>
                     <img src={headingDark} alt="" className="img-fluid" />
                 </div>
                 <div className="row">

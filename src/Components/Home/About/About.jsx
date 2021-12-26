@@ -14,7 +14,7 @@ const About = () => {
                     <div className={`col-sm-12 ${styles.aboutCentralize}`}>
                         <div className={styles.textContainer}>
                             <p className={styles.aboutTitleParagraph}>Your pleasure of teasing</p>
-                            <h1>Let’s Eat Together!</h1>
+                            <h2>Let’s Eat Together!</h2>
                             <img src={headingDark} alt="" />
                             <p className={styles.aboutDescription}> <sup><FontAwesomeIcon icon={faQuoteLeft} /></sup> Dear guests, you are welcomed to dine with us at <strong>Bingo Good Food restaurant</strong>. We will serve you with the mouth watering dishes. Have a pleasant dining experience. <sub><FontAwesomeIcon icon={faQuoteRight} /></sub> </p>
                             
