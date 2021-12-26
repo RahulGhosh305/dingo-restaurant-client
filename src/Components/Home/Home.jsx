@@ -1,5 +1,5 @@
 import React from 'react';
-// import Chefs from './ChefsCarousal/Chefs';
+import Footer from '../Shared/Footer/Footer';
 import Navbar from './Navbar/Navbar';
 import Header from './Header/Header';
 import Info from './Info/Info';
@@ -13,6 +13,7 @@ const Home = () => {
             <Header />
             <Info />
             <About />
+            <Footer />
         </>
     );
 };
