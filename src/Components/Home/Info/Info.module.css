@@ -1,24 +1,13 @@
-.iconBoxText {
-    display : flex;
-}
-.infoIcon {
-    margin-right: 15px;
-    padding: 10px 0px;
-    border-right: 2px solid lightgray;
-    padding-right: 10px;
-}
-.infoIcon img {
-    width: 50px;
-    height : 50px;
-}
-.infoText{
-    padding-top: 8px;
-}
+/* .infoWrapper {
+   display : none;
+} */
 
 /** Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
     .infoWrapper {
-        padding-top: 150px;
+        display : block;
+        padding-top: 100px;
+        padding-bottom: 50px;
     }
 }
 
@@ -28,12 +17,16 @@
 /** Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
     .infoWrapper {
-        padding-top: 250px;
+        padding-top: 100px;
     }
 }
 
 /** X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+    .infoWrapper {
+        padding-top: 200px;
+    }
+}
 
 /** XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {}

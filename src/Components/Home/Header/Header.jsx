@@ -10,12 +10,10 @@ const Header = () => {
                     <div className="col-lg-6">                      
                         <div className={styles.bannerInnerText}>
                             <h5>Expensive But The Best</h5>
-                            <h1>We believe good food {window.innerWidth === 434 ? <br /> : ""} offer great {window.innerWidth === 350 ? <br /> : ""} smile</h1>
-                            <p>Together creeping heaven upon third dominion be upon won't darkness rule land
-                                behold it created good saw after she'd Our set living. Signs midst dominion
-                                creepers morning</p>
-                        </div>               
-                        <Video />
+                            <h1>We believe good food {window.innerWidth > 780 ? <br /> : ""} offer great smile</h1>
+                            <p>Together  heaven upon third dominion be upon wont darkness rule land behold it created good saw after she Our set living. Signs midst dominion creepers morning</p>
+                        </div>      
+                        <Video />         
                     </div>
                 </div> 
             </div>

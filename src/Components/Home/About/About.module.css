@@ -1,10 +1,10 @@
 .aboutWrapper {
     background-image: url("../../../utility/bg-3.jpg");
-    height : 100vh;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
+    height : 100vh;
 }
 .aboutCentralize{
     display: flex;
@@ -13,8 +13,10 @@
 .textContainer{
     width : 75%;
     text-align: center;
-    padding-top: 80px;
-    /* background-color: aqua; */
+    padding-top: 20px;
+}
+.aboutTitleParagraph {
+    margin: 0;
 }
 .aboutDescription{
     padding-top: 20px;

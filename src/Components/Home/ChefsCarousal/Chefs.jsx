@@ -52,25 +52,25 @@ const Chefs = () => {
             photo : chef1,
             name : "ALAN MARION",
             design : "Co-founder",
-            message : "Lorem Ipsum is simply dummy text of the printing and industry lorem has been graco."
+            message : "We Provide Good Food For Your Family!"
         },
         {
             photo : chef4,
             name : "JESSICA SARTOR",
             design : "Founder & Chef",
-            message : "Lorem Ipsum is simply dummy text of the printing and industry lorem has been graco."
+            message : "People who love to eat are always the best people."
         },
         {
             photo : chef3,
             name : "ALTARS PREST",
             design : "Chef",
-            message : "Lorem Ipsum is simply dummy text of the printing and industry lorem has been graco."
+            message : "A recipe has no soul. You as the cook must bring soul to the recipe."
         },
         {
             photo : chef2,
             name : "SARAH PERKIER",
             design : "Chef",
-            message : "Lorem Ipsum is simply dummy text of the printing and industry lorem has been graco."
+            message : "The ambition of every good cook must be to make something very good."
         },
     ]
     return (
