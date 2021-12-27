@@ -12,7 +12,7 @@ const ChefCard = (props) => {
 
             <div className={styles.chefOverlay}>
                 <div className={styles.overlayText}>
-                    <h5>{name}</h5>
+                    <h5 className="pt-1">{name}</h5>
                     <h6>{design}</h6>
                     <div className={styles.socialIcons}>
                         <FontAwesomeIcon className={styles.faSocial} icon={faFacebookF} />

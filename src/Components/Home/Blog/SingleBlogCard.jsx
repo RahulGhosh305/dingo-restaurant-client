@@ -7,14 +7,14 @@ const SingleBlogCard = (props) => {
     const { photo, name, chefImg, date, message } = props.singleData;
     return (
         <div className={styles.cardWrapper}>
-            <div class="card border-0">
-                <img src={photo} class="card-img-top img-fluid" alt="..." />
-                <div class="card-body">
+            <div className="card border-0">
+                <img src={photo} className="card-img-top img-fluid" alt="..." />
+                <div className="card-body">
                     <div>
                         <img src={chefImg} alt="" className={`img-fluid ${styles.imgBlogChef}`} />
                     </div>
-                    <h3 class="card-title mt-3">{name}</h3>
-                    <p class={`card-text ${styles.messageText}`}>{message}</p>
+                    <h3 className="card-title mt-3">{name}</h3>
+                    <p className={`card-text ${styles.messageText}`}>{message}</p>
                     <div className={`d-flex justify-content-between ${styles.cardFooter}`}>
                         <div className="d-flex">
                             <i> <FontAwesomeIcon icon={faClock} /> </i>

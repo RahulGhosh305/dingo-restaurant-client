@@ -12,7 +12,7 @@ const BlogCard = () => {
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 1,
-        // autoplay: true,
+        autoplay: true,
         initialSlide: 0,
         responsive: [
             {
@@ -41,11 +41,11 @@ const BlogCard = () => {
             }
         ]
     };
-    
+
     return (
         <Slider {...settings}>
             {
-                blogCardData.map( singleData => <SingleBlogCard singleData={singleData}/>)
+                blogCardData.map( singleData => <SingleBlogCard singleData={singleData} key={Math.random()} />)
             }
         </Slider>
     );

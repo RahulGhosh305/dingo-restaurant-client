@@ -11,7 +11,7 @@ const Header = () => {
                         <div className={styles.bannerInnerText}>
                             <h5>Expensive But The Best</h5>
                             <h1>We believe good food {window.innerWidth > 780 ? <br /> : ""} offer great smile</h1>
-                            <p>Together  heaven upon third dominion be upon wont darkness rule land behold it created good saw after she Our set living. Signs midst dominion creepers morning</p>
+                            <p>Eating is not merely a material pleasure. Eating well gives a spectacular joy to life and contributes immensely to goodwill and happy companionship.</p>
                         </div>      
                         <Video />         
                     </div>

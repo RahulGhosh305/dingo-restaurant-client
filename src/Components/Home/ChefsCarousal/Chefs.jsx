@@ -48,7 +48,7 @@ const Chefs = () => {
     return (
         <Slider {...settings}>
             {
-                chefData.map( singleChef => <ChefCard singleChef={singleChef}/>)
+                chefData.map( singleChef => <ChefCard singleChef={singleChef} key={Math.random()}/>)
             }
         </Slider>
     );

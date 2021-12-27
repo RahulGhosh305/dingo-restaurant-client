@@ -35,7 +35,7 @@ const Info = () => {
             <div className="container">
                 <div className="row">
                     {
-                        infoData.map(singleInfo => <InfoCard singleInfo={singleInfo}/>)
+                        infoData.map(singleInfo => <InfoCard singleInfo={singleInfo} key={Math.random()}/>)
                     }
                 </div>
             </div>

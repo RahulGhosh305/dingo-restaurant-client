@@ -50,7 +50,7 @@ const Food = () => {
                             </div>
                             <div>
                                 {
-                                    homePageMenuData.map( singleMenuItem => <FoodCard singleMenuItem={singleMenuItem}/> )
+                                    homePageMenuData.map( singleMenuItem => <FoodCard singleMenuItem={singleMenuItem} key={Math.random()}/> )
                                 }
                             </div>
                         </div>
