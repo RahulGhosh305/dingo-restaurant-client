@@ -1,4 +1,5 @@
 import React from 'react';
+import Blog from './Blog/Blog';
 import Food from './Food/Food';
 import Footer from '../Shared/Footer/Footer';
 import Navbar from './Navbar/Navbar';
@@ -15,8 +16,8 @@ const Home = () => {
             <Info />
             <About />
             <Food />
+            <Blog />
             <Footer />
-
         </>
     );
 };

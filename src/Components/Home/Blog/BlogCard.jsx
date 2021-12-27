@@ -2,20 +2,17 @@ import React from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import ChefCard from './ChefCard';
+import SingleBlogCard from './SingleBlogCard';
+import blogCardData from './BlogData'
 
-import chefData from './ChefsData';
-
-
-
-const Chefs = () => {
+const BlogCard = () => {
     const settings = {
         dots: true,
         infinite: true,
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 1,
-        autoplay: true,
+        // autoplay: true,
         initialSlide: 0,
         responsive: [
             {
@@ -28,7 +25,7 @@ const Chefs = () => {
                 }
             },
             {
-                breakpoint: 600,
+                breakpoint: 1199,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
@@ -36,7 +33,7 @@ const Chefs = () => {
                 }
             },
             {
-                breakpoint: 500,
+                breakpoint: 770,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1
@@ -44,14 +41,14 @@ const Chefs = () => {
             }
         ]
     };
-
+    
     return (
         <Slider {...settings}>
             {
-                chefData.map( singleChef => <ChefCard singleChef={singleChef}/>)
+                blogCardData.map( singleData => <SingleBlogCard singleData={singleData}/>)
             }
         </Slider>
     );
 };
 
-export default Chefs;
+export default BlogCard;

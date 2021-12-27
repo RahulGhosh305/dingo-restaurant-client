@@ -1,7 +1,7 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faGoogle, faTwitter, faLinkedinIn, faInstagram  } from '@fortawesome/free-brands-svg-icons';
-import { faPhoneAlt, faHome, faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons'
+import { faPhoneAlt, faHome, faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons';
 import styles from './Footer.module.css'
 import headingDark from '../../../utility/heading-dark.png';
 import img1 from '../../../utility/instagram-img1.jpg'
