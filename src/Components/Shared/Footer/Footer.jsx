@@ -13,6 +13,7 @@ import img6 from '../../../utility/instagram-img6.jpg'
 
 
 const Footer = () => {
+    const date = new Date()
     return (
         <footer className={styles.footerWrapper}>
             <div className="container">
@@ -32,11 +33,11 @@ const Footer = () => {
                             </div>
                             <div className="d-flex">
                                 <i className="me-2"> <FontAwesomeIcon icon={faEnvelopeOpen} /> </i>
-                                <p>info@bingo.com</p>
+                                <p>info@dingo.com</p>
                             </div>
                             <div className="d-flex">
                                 <i className="me-2"> <FontAwesomeIcon icon={faHome} /> </i>
-                                <p>Central City, 36/A Road</p>
+                                <p>Comilla City, 36/A KandirPar Road</p>
                             </div>
                         </div>
                     </div>
@@ -109,8 +110,8 @@ const Footer = () => {
 
                 <div className={styles.aboutWrapper}>
                     <div className={styles.aboutData}>
-                        <h3>About Bingo</h3>
-                        <p> <strong>Bingo</strong> is located on the “Roof top” level of the City Place Convention Centre adjacent to the Pan Pacific Hotel. We have a bright, contemporary space where diners are surrounded by floor to ceiling windows. Enjoy the breathtaking views of City Park, Coal Harbour Shore, the National Gate Bridge and our World Class Ski Hills. </p>
+                        <h3>About Dingo</h3>
+                        <p> <strong>Dingo</strong> is located on the “Roof top” level of the City Place Convention Centre adjacent to the Pan Pacific Hotel. We have a bright, contemporary space where diners are surrounded by floor to ceiling windows. Enjoy the breathtaking views of City Park, Coal Harbour Shore, the National Gate Bridge and our World Class Ski Hills. </p>
                     </div>
                 </div>
 
@@ -128,16 +129,16 @@ const Footer = () => {
 
                     <div className={`col-12 col-sm-6 ${styles.followData}`}>
                         <h3>NewsLetter</h3>
-                        <form class="d-flex">
-                            <input class="form-control me-2" type="email" placeholder="Email"/>
-                            <input type="submit" value="Submit"/>
+                        <form className="d-flex">
+                            <input className="form-control me-2" type="email" placeholder="Email"/>
+                            <input type="submit" className="btn btn-warning" value="Submit"/>
                         </form>
                     </div>
                 </div>
             </div>
 
             <div className="text-center">
-                <p>Copyright © 2021 Bingo Restaurant. All rights reserved by Bingo.</p>
+                <p>Copyright © {date.getFullYear()} Bingo Restaurant. All rights reserved by <i style={{fontSize : 20}}>&hearts;</i> Dingo.</p>
             </div>
 
         </footer>

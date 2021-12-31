@@ -1,4 +1,6 @@
 import React from 'react';
+import PopularDish from './PopularDish/PopularDish';
+import BookTable from './BookTable/BookTable';
 import Blog from './Blog/Blog';
 import Food from './Food/Food';
 import Footer from '../Shared/Footer/Footer';
@@ -16,6 +18,8 @@ const Home = () => {
             <Info />
             <About />
             <Food />
+            <PopularDish />
+            <BookTable />
             <Blog />
             <Footer />
         </>

@@ -4,7 +4,8 @@
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
-    height : 105vh;
+    padding-top: 50px;
+    /* height : 105vh; */
     /* overflow : hidden; */
 }
 .aboutCentralize{

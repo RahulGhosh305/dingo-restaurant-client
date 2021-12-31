@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCommentDots, faClock } from '@fortawesome/free-solid-svg-icons';
-import styles from './Blog.module.css';
+import styles from './SingleBlog.module.css';
 
 const SingleBlogCard = (props) => {
     const { photo, name, chefImg, date, message } = props.singleData;

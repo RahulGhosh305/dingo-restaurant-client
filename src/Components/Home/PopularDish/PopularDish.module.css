@@ -1,40 +1,27 @@
-.foodWrapper {
-    padding-top : 50px;
+.popularDishTexts {
+    padding-top: 50px;
 }
-.foodTexts {
-    padding-top: 20px;
+.popularDishTexts {
     text-align: center;
 }
-.foodTexts p {
+.popularDishTexts p {
     margin: 0;
     font-size: 22px;
 }
-.foodTexts img{
-    padding: 15px 0px;
+.popularDishTexts img {
+    padding : 15px 0px;
 }
-.menuCartImage{
-    padding-top: 20px;
+.topDishWrapper {
+    padding: 15px 0px;
 }
 
 /** Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
-    .foodTexts {
-        text-align: left;
-    }
-    .foodWrapper {
-        padding : 50px 0px;
-    }
-    .menuCartImage{
-        padding-top: 30px;
-    }
+    
 }
 
 /** Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-    .menuCartImage{
-        padding-top: 0px;
-    }
-}
+@media (min-width: 768px) {}
 
 /** Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {}

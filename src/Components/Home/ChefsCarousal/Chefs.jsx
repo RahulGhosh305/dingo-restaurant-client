@@ -28,7 +28,7 @@ const Chefs = () => {
                 }
             },
             {
-                breakpoint: 600,
+                breakpoint: 900,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
@@ -36,7 +36,7 @@ const Chefs = () => {
                 }
             },
             {
-                breakpoint: 500,
+                breakpoint: 600,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1
