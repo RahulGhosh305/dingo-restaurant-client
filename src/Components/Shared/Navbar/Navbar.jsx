@@ -20,7 +20,7 @@ const NavBar = () => {
                                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                                         <ul className={`navbar-nav mx-auto mb-2 mb-lg-0 ${styles.navbarUl}`}>
                                             <li className={`nav-item ${styles.navbarList}`}>
-                                                <Link className={`nav-link ${styles.listLink}`} to="/home">Home</Link>
+                                                <Link className={`nav-link ${styles.listLink}`} to="/">Home</Link>
                                             </li>
                                             <li className={`nav-item ${styles.navbarList}`}>
                                                 <Link className={`nav-link ${styles.listLink}`} to="/about">About</Link>

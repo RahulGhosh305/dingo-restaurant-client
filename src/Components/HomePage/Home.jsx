@@ -1,13 +1,13 @@
 import React from 'react';
-import PopularDish from './PopularDish/PopularDish';
-import BookTable from './BookTable/BookTable';
-import Blog from './Blog/Blog';
-import Food from './Food/Food';
-import Footer from '../Shared/Footer/Footer';
-import Navbar from './Navbar/Navbar';
+import Navbar from '../Shared/Navbar/Navbar';
 import Header from './Header/Header';
 import Info from './Info/Info';
 import About from './About/About';
+import Food from './Food/Food';
+import PopularDish from './PopularDish/PopularDish';
+import BookTable from './BookTable/BookTable';
+import Blog from './Blog/Blog';
+import Footer from '../Shared/Footer/Footer';
 
 //* Home Page
 const Home = () => {
