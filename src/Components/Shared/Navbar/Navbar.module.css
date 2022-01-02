@@ -4,6 +4,8 @@
   left: 0;
   width: 100%;
   z-index: 1;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .navbarInner {
   padding: 14px 0px;
@@ -19,20 +21,19 @@
 }
 .navbarList {
   text-align: center;
-  background-color: #fff;
-  font-weight: 600;
+  font-weight: 500;
   padding: 0px 16px;
-  color: #212529;
 }
 .listLink {
+  color: #000 !important;
   font-size: 18px;
 }
 .reservation .navLink {
   font-size: 18px;
   display: none;
-  font-weight: 600;
-  background-color: #fff;
-  color: #ff6426;
+  font-weight: 500;
+  background-color: #000;
+  color: #fff;
   border-radius: 50px;
   -webkit-border-radius: 50px;
   -moz-border-radius: 50px;
@@ -42,9 +43,13 @@
 
 /** Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
+  .navbarWrapper {
+    padding-left : 0px;
+    padding-right: 0px;
+  }
 }
 
-/* Medium devices (tablets, 768px and up) */
+/** Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
 }
 
