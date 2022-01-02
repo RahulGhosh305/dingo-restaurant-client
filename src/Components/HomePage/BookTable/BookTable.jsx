@@ -62,7 +62,7 @@ const BookTable = () => {
                         </div>
                     </form>
                 </div>
-                <h3 className="mt-5 text-center">You can also call: +1 224 6787 004 to make a reservation.</h3>
+                <h3 className="mt-5 text-center">You can also call: +880 172 222 5555 to make a reservation.</h3>
             </div>
         </section>
     );

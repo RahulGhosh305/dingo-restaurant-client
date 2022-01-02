@@ -11,7 +11,7 @@ const SingleDishCard = (props) => {
                     <div className={`text-center ${styles.cardTexts}`}>
                         <h4 className="card-text">{name}</h4>
                         <h6>Bread/Potato/Cheese</h6>
-                        <p>{price}$</p>
+                        <p>{price} Tk.</p>
                     </div>
                 </div>
             </div>

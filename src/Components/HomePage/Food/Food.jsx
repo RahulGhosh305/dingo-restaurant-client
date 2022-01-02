@@ -8,7 +8,7 @@ const Food = () => {
     const homePageMenuData = [
         {
             name : "Chicken Curry",
-            describe : "This Chicken Curry tastes just as good as what you’d get at an Bingo restaurant",
+            describe : "This Chicken Curry Is Weeknight Dinner Goals.",
             price : "35",
         },
         {
@@ -18,22 +18,22 @@ const Food = () => {
         },
         {
             name : "Mexican Pasta",
-            describe : "This Mexican Pasta recipe is absolutely bursting with your favorite Mexican flavors",
+            describe : "This Mexican Pasta recipe is absolutely bursting with your favorites.",
             price : "15",
         },
         {
             name : "Chill & Hot Burger",
-            describe : "Yummy, testy hot burger to italian flavors ",
+            describe : "Yummy, testy hot burger to italian flavors.",
             price : "11",
         },
         {
             name : "Chicken And Rice",
-            describe : "This Chicken and Rice recipe has captured the hearts of people all around the world! ",
+            describe : "This Chicken and Rice recipe has captured the hearts of people.",
             price : "21",
         },
         {
             name : "Mutton Curry",
-            describe : "Delicious, soft tender chunks of lamb meat in Indian style spiced onion tomato gravy.",
+            describe : "Delicious, soft chunks of Indian style spiced onion tomato gravy.",
             price : "25",
         },
     ]

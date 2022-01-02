@@ -9,7 +9,7 @@ const FoodCard = (props) => {
                 <h5>{name}</h5>
                 <p>{describe}</p>
             </div>
-            <h5>{price}$</h5>
+            <h5>{price} Tk.</h5>
         </div>
     );
 };

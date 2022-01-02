@@ -29,7 +29,7 @@ const Footer = () => {
                             <p>“Need food and a good place to eat? Welcome to our humble place where you can eat good food peacefully.”</p>
                             <div className="d-flex">
                                 <i className="me-2"> <FontAwesomeIcon icon={faPhoneAlt} /> </i>
-                                <p>+096 777 787 999</p>
+                                <p>+880 172 222 5555</p>
                             </div>
                             <div className="d-flex">
                                 <i className="me-2"> <FontAwesomeIcon icon={faEnvelopeOpen} /> </i>
