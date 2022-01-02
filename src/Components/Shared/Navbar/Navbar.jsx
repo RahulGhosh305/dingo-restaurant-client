@@ -4,7 +4,7 @@ import styles from './Navbar.module.css';
 import Logo from '../../../utility/logo.png'
 
 //* NAVBAR COMPONENT
-const NavBar = () => {
+const Navbar = () => {
     return (
         <header className={styles.navbarWrapper}>
             <div className="container">
@@ -49,4 +49,4 @@ const NavBar = () => {
     );
 };
 
-export default NavBar;
+export default Navbar;

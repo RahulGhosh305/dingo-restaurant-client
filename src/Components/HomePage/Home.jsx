@@ -13,7 +13,7 @@ import Footer from '../Shared/Footer/Footer';
 const Home = () => {
     return (
         <>
-            <Navbar />
+            <Navbar/>
             <Header />
             <Info />
             <About />
