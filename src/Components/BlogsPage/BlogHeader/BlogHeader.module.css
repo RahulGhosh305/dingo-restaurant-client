@@ -1,0 +1,41 @@
+.blogHeaderWrapper {
+    background-image: url("../../../utility//blogBg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height : 550px;
+    position: relative;
+}
+
+.blogBannerTexts {
+    text-align: center;
+    position: absolute;
+    top: 35%;
+}
+.blogTitle {
+    margin: 0;
+    font-size: 64px;
+}
+.blogDesc {
+    margin: 0;
+    font-size: 42px;
+}
+
+/** Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {}
+
+/** Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .blogHeaderWrapper {
+        background-image: url("../../../utility//blogBanner.jpg");
+    }
+}
+
+/** Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {}
+
+/** X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}
+
+/** XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {}
