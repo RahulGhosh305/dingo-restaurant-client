@@ -1,21 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Navbar from '../../Shared/Navbar/Navbar';
-import styles from './Header.module.css'
-const Header = () => {
+import styles from './ContactHeader.module.css';
+import { Link } from 'react-router-dom';
+
+
+const ContactHeader = () => {
     return (
         <>
-            <div className={styles.headerWrapper}>
-                <Navbar />
-                <div className={styles.headerTexts}>
-                    <div>
-                        <h2>About Us</h2>
-                        <p>Information about our restaurant and our philosophy</p>
+            <Navbar />
+            <div className={styles.contactHeaderWrapper}>
+                <div className={styles.contactTexts}>
+                    <div className={styles.contactTitles}>
+                        <h2>Contact Us</h2>
+                        <p>Make sure we contact you fast.</p>
                         <div className="d-flex justify-content-center">
                             <nav aria-label="breadcrumb">
                                 <ol className="breadcrumb">
                                     <li className="breadcrumb-item"><Link to="/">Home</Link></li>
-                                    <li className={`breadcrumb-item ${styles.colorWhite}`} aria-current="page">About Us</li>
+                                    <li className="breadcrumb-item" aria-current="page">Contact Us</li>
                                 </ol>
                             </nav>
                         </div>
@@ -26,4 +28,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default ContactHeader;

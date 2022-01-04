@@ -6,15 +6,23 @@
     background-attachment: fixed;
     box-shadow: 0 2px 2px rgb(0 0 0 / 20%);
     padding: 100px 0;
+    height : 550px;
     position: relative;
     z-index: 9;
+    display: flex;
+    justify-content: center;
+}
+.headerTexts {
     text-align: center;
+    position: absolute;
+    top: 40%;
 }
 .headerWrapper h2 {
+    font-size: 34px;
     color: #fff;
 }
 .headerWrapper p {
-    font-size: 18px;
+    font-size: 22px;
     color : #fff;
 }
 .headerWrapper li {
@@ -25,10 +33,24 @@
 }
 
 /** Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {}
+@media (min-width: 576px) {
+    .headerWrapper h2 {
+        font-size: 44px;
+    }
+    .contactTexts p {
+        font-size: 32px;
+    }
+}
 
 /** Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+    .headerWrapper h2 {
+        font-size: 54px;
+    }
+    .contactTexts p {
+        font-size: 38px;
+    }
+}
 
 /** Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
@@ -38,11 +60,14 @@
         padding: 100px 0;
         position: relative;
         z-index: 9;
+        height : 550px;
     }
     .headerWrapper h2 {
+        font-size: 64px;
         color: #000;
     }
     .headerWrapper p {
+        font-size: 42px;
         color : #000;
     }
     .colorWhite {
