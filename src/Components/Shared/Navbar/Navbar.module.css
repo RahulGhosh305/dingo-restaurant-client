@@ -30,8 +30,9 @@
   font-size: 18px;
 }
 .reservation .navLink {
+  text-align: center;
   font-size: 18px;
-  display: none;
+  /* display: none; */
   font-weight: 500;
   background-color: #000;
   color: #fff;
@@ -59,9 +60,9 @@
   .navbarList {
     background-color: transparent;
   }
-  .reservation .navLink {
+  /* .reservation .navLink {
     display: block;
-  }
+  } */
 }
 
 /** Extra large devices (large desktops, 1200px and up) */

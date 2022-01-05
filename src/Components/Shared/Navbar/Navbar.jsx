@@ -53,11 +53,14 @@ const Navbar = () => {
                                         <Link onClick={() => handleCollapse()} className={`nav-link ${styles.listLink}`} to="/blogs">Blogs</Link>
                                     </li>
                                     <li className={`nav-item ${styles.navbarList}`}>
+                                        <Link onClick={() => handleCollapse()} className={`nav-link ${styles.listLink}`} to="/reservation">Reservation</Link>
+                                    </li>
+                                    <li className={`nav-item ${styles.navbarList}`}>
                                         <Link onClick={() => handleCollapse()} className={`nav-link ${styles.listLink}`} to="/contact">Contact</Link>
                                     </li>
                                 </ul>
                                 <div className={styles.reservation}>
-                                    <Link className={`nav-link ${styles.navLink}`} to="/reservation">Reservation</Link>
+                                    <Link className={`nav-link ${styles.navLink}`} to="/login">LogIn</Link>
                                 </div>
                             </div>
                         </div>

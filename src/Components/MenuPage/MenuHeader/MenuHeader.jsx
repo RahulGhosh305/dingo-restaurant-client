@@ -8,13 +8,13 @@ const MenuHeader = () => {
             <div className={styles.menuBgWrapper}>
                 <div className="d-flex justify-content-center">
                     <div className={styles.menuBannerTexts}>
-                        <p className={styles.menuBannerTitle}>Menu</p>
+                        <h2 className={styles.menuBannerTitle}>Menu</h2>
                         <p className={styles.menuBannerDesc}>All Your Favorite Foods</p>
                         <div className="d-flex justify-content-center">
                             <nav aria-label="breadcrumb">
                                 <ol className="breadcrumb">
                                     <li className="breadcrumb-item"><Link to="/">Home</Link></li>
-                                    <li className={`breadcrumb-item ${styles.colorWhite}`} aria-current="page">Menu</li>
+                                    <li className="breadcrumb-item" aria-current="page">Menu</li>
                                 </ol>
                             </nav>
                         </div>
