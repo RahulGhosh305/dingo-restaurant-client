@@ -5,7 +5,7 @@ import Info from './Info/Info';
 import About from './About/About';
 import Food from './Food/Food';
 import PopularDish from './PopularDish/PopularDish';
-import BookTable from './BookTable/BookTable';
+import BookTable from '../Shared/BookTable/BookTable';
 import Blog from './Blog/Blog';
 import Footer from '../Shared/Footer/Footer';
 

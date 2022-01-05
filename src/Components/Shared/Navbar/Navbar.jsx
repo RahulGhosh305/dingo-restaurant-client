@@ -57,7 +57,7 @@ const Navbar = () => {
                                     </li>
                                 </ul>
                                 <div className={styles.reservation}>
-                                    <Link className={`nav-link ${styles.navLink}`} to="/">Reservation</Link>
+                                    <Link className={`nav-link ${styles.navLink}`} to="/reservation">Reservation</Link>
                                 </div>
                             </div>
                         </div>

@@ -5,6 +5,7 @@ import About from '../AboutPage/About.jsx';
 import Menu from '../MenuPage/Menu.jsx';
 import Blogs from '../BlogsPage/Blogs.jsx';
 import Contact from '../ContactPage/Contact.jsx';
+import Reservation from '../ReservationPage/Reservation.jsx';
 
 const Routers = () => {
     return (
@@ -14,6 +15,7 @@ const Routers = () => {
             <Route path="/menus" element={<Menu />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/reservation" element={<Reservation />} />
         </Routes>
     );
 };
