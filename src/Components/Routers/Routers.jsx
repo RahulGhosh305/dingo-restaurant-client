@@ -6,6 +6,7 @@ import Menu from '../MenuPage/Menu.jsx';
 import Blogs from '../BlogsPage/Blogs.jsx';
 import Contact from '../ContactPage/Contact.jsx';
 import Reservation from '../ReservationPage/Reservation.jsx';
+import NotFound from '../404Page/NotFound.jsx';
 
 const Routers = () => {
     return (
@@ -16,6 +17,7 @@ const Routers = () => {
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/reservation" element={<Reservation />} />
+            <Route path='*' element={<NotFound />} />
         </Routes>
     );
 };
