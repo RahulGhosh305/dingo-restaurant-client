@@ -8,7 +8,7 @@ const NotFoundHeader = () => {
             <div className="d-flex justify-content-center text-center">
                 <div className={styles.titleTexts}>
                     <h2>404</h2>
-                    <h3>Page Not Found</h3>
+                    <h3>Looks Like Something Going Wrong</h3>
                 </div>
             </div>
         </div>

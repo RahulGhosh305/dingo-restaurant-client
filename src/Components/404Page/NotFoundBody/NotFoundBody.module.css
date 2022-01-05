@@ -1,5 +1,5 @@
 .foundBodyTexts {
-    padding-top: 50px;
+    padding: 50px 0px;
 }
 .foundBodyTexts h2{
     text-align: center;
@@ -15,6 +15,6 @@
     font-weight: 400;
     letter-spacing: 1px;
     line-height: 1.5em;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
  }
 
