@@ -1,10 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './Card.module.css'
 const Card = (props) => {
     const { title, desc, price } = props.food
-
+    const navigate = useNavigate()
     const handleGoSinglePage = (title, price) => {
         console.log("Clicked", title, price);
+        navigate('/menuSingle')
     }
 
     return (

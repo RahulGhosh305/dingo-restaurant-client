@@ -1,8 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './BlogCard.module.css';
+
 
 const BlogCard = (props) => {
     const { date, img, name, desc, time } = props.blogData;
+    const navigate = useNavigate()
+    const handleNavigate = () => {
+        navigate("/blogSingle")
+    }
     return (
         <div className={styles.cardWrapper}>
             <div className="container">
@@ -19,7 +25,7 @@ const BlogCard = (props) => {
                     <div className="card-body">
                         <p className="card-text mt-2">{desc}</p>
                         <p className="card-text text-muted">{time}</p>
-                        <div className="btn p-0">See more...</div>
+                        <button onClick={()=> handleNavigate()} className="btn p-0">See More...</button>
                     </div>
                 </div>
             </div>
