@@ -5,9 +5,9 @@ const CareerForm = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => console.log(data);
     return (
-        <div className="container py-5">
+        <div className="container pt-5">
             <div className="row">
-                <div className="col-md-6">
+                <div className="col-md-6 mb-3">
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <input className="form-control mb-2" type='text' placeholder="Full Name" {...register("fullName", { required: true })} />
                         {errors.fullName && <span className="text-danger">* This field is required</span>}
@@ -24,10 +24,10 @@ const CareerForm = () => {
                         <input className="form-control mb-2" type='text' placeholder="About you" {...register("about", { required: true })} />
                         {errors.about && <span className="text-danger">* This field is required</span>}
 
-                        <input className="btn btn-success mt-3" type="submit" />
+                        <input className="btn btn-success my-3" type="submit" value="Message" />
                     </form>
                 </div>
-                <div className="col-md-6 my-auto">
+                <div className="col-md-6">
                     <p>Your proposal can sent by this page.</p>
                     <h4>SEND YOUR DETAILS</h4>
 
