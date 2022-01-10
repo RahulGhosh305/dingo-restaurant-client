@@ -58,6 +58,9 @@ const Navbar = () => {
                                     <li className={`nav-item ${styles.navbarList}`}>
                                         <Link onClick={() => handleCollapse()} className={`nav-link ${styles.listLink}`} to="/contact">Contact</Link>
                                     </li>
+                                    <li className={`nav-item ${styles.navbarList}`}>
+                                        <Link onClick={() => handleCollapse()} className={`nav-link ${styles.listLink}`} to="/career">Career</Link>
+                                    </li>
                                 </ul>
                                 <div className={styles.reservation}>
                                     <Link className={`nav-link ${styles.navLink}`} to="/login">LogIn</Link>

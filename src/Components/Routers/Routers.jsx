@@ -6,8 +6,9 @@ import Menu from '../MenuPage/Menu.jsx';
 import MenuSingle from '../MenuSinglePage/MenuSingle.jsx';
 import Blogs from '../BlogsPage/Blogs.jsx';
 import BlogSingle from '../BlogSinglePage/BlogSingle.jsx';
-import Contact from '../ContactPage/Contact.jsx';
 import Reservation from '../ReservationPage/Reservation.jsx';
+import Contact from '../ContactPage/Contact.jsx';
+import Career from '../CareerPage/Career.jsx';
 import NotFound from '../404Page/NotFound.jsx';
 import UserLogin from '../LoginSignupPage/UserLogin.jsx';
 import UserSignUp from '../LoginSignupPage/UserSignUp.jsx';
@@ -27,6 +28,7 @@ const Routers = () => {
             <Route path="/blogSingle" element={<BlogSingle />} />
             <Route path="/reservation" element={<Reservation />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/career" element={<Career />} />
             <Route path='/login' element={<UserLogin />} />
             <Route path='/signUp' element={<UserSignUp />} />
             <Route path='*' element={<NotFound />} />
