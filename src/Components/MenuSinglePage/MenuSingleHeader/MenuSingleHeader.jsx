@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import singleBlogImg from '../../../utility/singleBlogImg.webp';
-import styles from './MenuSingleHeader.module.css';
+// import styles from './MenuSingleHeader.module.css';
 
 const MenuSingleHeader = () => {
     const navigate = useNavigate()

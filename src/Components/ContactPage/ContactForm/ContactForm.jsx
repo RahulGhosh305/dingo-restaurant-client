@@ -9,7 +9,7 @@ export default function App() {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
-            <h3 className="pb-3">Message Us</h3>
+            <h4 className="pb-3">Message Us</h4>
             <input className="form-control" placeholder="Name" {...register("Name", { required: true })} />
             {errors.Name && <span className="text-danger">* Name field is required</span>}
             <br />

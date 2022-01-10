@@ -12,6 +12,7 @@ import NotFound from '../404Page/NotFound.jsx';
 import UserLogin from '../LoginSignupPage/UserLogin.jsx';
 import UserSignUp from '../LoginSignupPage/UserSignUp.jsx';
 import AddCart from '../AddCart/AddCart.jsx';
+import UserForm from '../CheckOut/UserForm.jsx';
 
 const Routers = () => {
     return (
@@ -21,6 +22,7 @@ const Routers = () => {
             <Route path="/menus" element={<Menu />} />
             <Route path="/menuSingle" element={<MenuSingle />} />
             <Route path='/addCart' element={<AddCart />} />
+            <Route path='/checkout' element={<UserForm />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/blogSingle" element={<BlogSingle />} />
             <Route path="/reservation" element={<Reservation />} />

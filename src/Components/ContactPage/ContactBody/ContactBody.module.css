@@ -1,10 +1,11 @@
+.contactBodyWrapper {
+    padding-bottom: 30px;
+    padding-top: 50px;
+}
 .contactBodyTexts {
     display: flex;
     justify-content: center;
     text-align: center;
-}
-.contactTitleTexts {
-    padding-top: 50px;
 }
 .contactBodyTexts p {
     margin: 0;
@@ -16,6 +17,6 @@
 .AddressWrapper {
     padding-top: 50px;
 }
-.addressPad {
-    padding-bottom: 15px;
+.addressMar {
+    padding-bottom: 10px;
 }
