@@ -24,7 +24,7 @@
 /** X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
     .infoWrapper {
-        padding-top: 200px;
+        padding-top: 120px;
     }
 }
 

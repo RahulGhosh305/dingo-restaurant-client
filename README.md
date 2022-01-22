@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Dingo A Restaurant Site 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project based on booking table through online & with ordering foods. [Demo](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 

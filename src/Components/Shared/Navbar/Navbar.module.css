@@ -13,6 +13,9 @@
 .customContainer {
   padding: 0px 0px;
 }
+.Logo {
+  cursor: pointer;
+}
 .navbarBtn {
   background-color: #fff;
 }
@@ -32,9 +35,8 @@
 .reservation .navLink {
   text-align: center;
   font-size: 18px;
-  /* display: none; */
   font-weight: 500;
-  background-color: #000;
+  background-color: #ff6426;;
   color: #fff;
   border-radius: 50px;
   -webkit-border-radius: 50px;
@@ -60,9 +62,6 @@
   .navbarList {
     background-color: transparent;
   }
-  /* .reservation .navLink {
-    display: block;
-  } */
 }
 
 /** Extra large devices (large desktops, 1200px and up) */

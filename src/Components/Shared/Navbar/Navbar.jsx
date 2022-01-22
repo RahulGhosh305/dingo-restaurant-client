@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from './Navbar.module.css';
 import Logo from '../../../utility/logo.png'
 
 
 //* NAVBAR COMPONENT
 const Navbar = () => {
-
+    const navigate = useNavigate()
     //* Navbar Background Change
     const [navbarColor, setNavbarColor] = useState(false)
     const changeBackground = () => {
@@ -34,7 +34,7 @@ const Navbar = () => {
                 <div className={styles.navbarInner}>
                     <nav className={navbarColor ? "navbar navbar-expand-lg fixed-top navbar-light bg-light" : "navbar navbar-expand-lg navbar-light"}>
                         <div className={`container ${styles.customContainer}`}>
-                            <img src={Logo} alt="Icon" className="img-fluid" />
+                            <img src={Logo} alt="Icon" className={`img-fluid ${styles.Logo}`} onClick={()=> navigate('/')} />
                             <button className={`navbar-toggler ${styles.navbarBtn}`} type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                 <span className="navbar-toggler-icon"></span>
                             </button>

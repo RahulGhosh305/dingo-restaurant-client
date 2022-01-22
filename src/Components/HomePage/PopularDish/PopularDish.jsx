@@ -27,13 +27,15 @@ const PopularDish = () => {
     return (
         <section className="container">
             <div className={styles.popularDishTexts}>
-                <p>Our Top Rated Dishes</p>
-                <h2>Try Something New!</h2>
-                <img src={headingDark} alt="" className="img-fluid" />
-            </div>
-            <div className={styles.topDishWrapper}>
-                <div className="row">
-                    {popularDishData.map(singleData => <SingleDishCard singleData={singleData} key={Math.random()} />)}
+                <div>
+                    <p>Our Top Rated Dishes</p>
+                    <h2>Try Something New!</h2>
+                    <img src={headingDark} alt="" className="img-fluid" />
+                </div>
+                <div className={styles.topDishWrapper}>
+                    <div className="row">
+                        {popularDishData.map(singleData => <SingleDishCard singleData={singleData} key={Math.random()} />)}
+                    </div>
                 </div>
             </div>
         </section>

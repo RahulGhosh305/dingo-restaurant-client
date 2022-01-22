@@ -63,6 +63,9 @@
 
 /** Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+  .videoWrapper {
+    padding-top: 60px;
+  }
 }
 
 /** Extra extra large devices (large screen desktops, 1400px and up) */
