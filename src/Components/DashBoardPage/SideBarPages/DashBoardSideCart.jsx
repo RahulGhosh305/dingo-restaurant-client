@@ -16,9 +16,9 @@ const DashBoardSideCart = (props) => {
                     </div>
                     <div className="text-center">
                         <div className="d-flex justify-content-lg-end justify-content-evenly">
-                            <h3>
+                            <h4>
                                 <CountUp end={title} duration={5}/>K+
-                            </h3>
+                            </h4>
                         </div>
                         <h6 className="card-title text-uppercase text-muted">{desc}</h6>
                     </div>

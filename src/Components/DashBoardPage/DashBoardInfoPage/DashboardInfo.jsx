@@ -23,7 +23,6 @@ const DashboardInfo = () => {
                 <div className="col-md-12">
                     <FavItems />
                 </div>
-                <p className="text-center text-muted mt-3">Dingo - Restaurant Admin Dashboard © 2021 All Rights Reserved. Made with by RG.</p>
             </div>
         </div>
     );

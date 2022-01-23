@@ -131,6 +131,7 @@ const Sidebar = () => {
                             <p>Here is your restaurant summary with graph view.</p>
                             <div className="mt-5">
                                 <Outlet />
+                                <p className="text-center text-muted mt-3">Dingo - Restaurant Admin Dashboard © 2021 All Rights Reserved. Made with by RG.</p>
                             </div>
                         </div>
                     </div>

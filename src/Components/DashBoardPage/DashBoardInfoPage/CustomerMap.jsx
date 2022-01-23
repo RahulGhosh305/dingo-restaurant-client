@@ -34,12 +34,12 @@ const CustomerMap = () => {
                 </ComposedChart>
             </div>
 
-            <div class="card border-0 bg-dark mt-4">
-                <img src={customerMap1} class="card-img" alt="..." />
-                <div class="card-img-overlay">
-                    <h5 class="card-title">Fresh Morning Tea</h5>
-                    <p class="card-text">Wake up to bed is good for health and body. To fit good work out at least one hour. After work out you need a fresh drink as like a tea. This tea is best after work out.</p>
-                    <p class="card-text">Last updated 3 months ago</p>
+            <div className="card border-0 bg-dark mt-4">
+                <img src={customerMap1} className="card-img" alt="..." />
+                <div className="card-img-overlay">
+                    <h5 className="card-title">Fresh Morning Tea</h5>
+                    <p className="card-text">Wake up to bed is good for health and body. To fit good work out at least one hour. After work out you need a fresh drink as like a tea. This tea is best after work out.</p>
+                    <p className="card-text">Last updated 3 months ago</p>
                 </div>
             </div>
         </div>
