@@ -4,16 +4,23 @@ import styles from './Review.module.css'
 import reviewRight1 from '../../../utility/test3.jpg'
 import reviewRight2 from '../../../utility/test12.jpg'
 import reviewRight3 from '../../../utility/test10.jpg'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar } from '@fortawesome/free-solid-svg-icons'
+import ReviewImgCard from './ReviewImgCard';
+
 
 const Review = () => {
+    const imgData = [
+        { img: reviewRight1 },
+        { img: reviewRight2 },
+        { img: reviewRight3 },
+    ]
     return (
-        <div className="text-center">
+        <div className="">
             <div className="row">
                 <div className="col-md-8">
-                    <h3>Recent Review</h3>
-                    <p>Here is customer review about your restaurant</p>
+                    <div className="ms-3">
+                        <h3>Recent Review</h3>
+                        <p>Here is customer review about your restaurant</p>
+                    </div>
                     <div className="overflow-auto vh-100 px-3 mb-3">
                         <ReviewCard />
                         <ReviewCard />
@@ -34,36 +41,9 @@ const Review = () => {
                 </div>
                 <div className="col-md-4">
                     <div className={styles.reviewRightWrapper}>
-                        <div className="card mb-2 border-0">
-                            <img src={reviewRight1} className="card-img-top" alt="..." />
-                            <div className="card-body">
-                                <i><FontAwesomeIcon icon={faStar} /></i>
-                                <i><FontAwesomeIcon icon={faStar} /></i>
-                                <i><FontAwesomeIcon icon={faStar} /></i>
-                                <i><FontAwesomeIcon icon={faStar} /></i>
-                                <i><FontAwesomeIcon icon={faStar} /></i>
-                            </div>
-                        </div>
-                        <div className="card mb-2 border-0">
-                            <img src={reviewRight3} className="card-img" alt="..." />
-                            <div className="card-body">
-                                <i><FontAwesomeIcon icon={faStar} /></i>
-                                <i><FontAwesomeIcon icon={faStar} /></i>
-                                <i><FontAwesomeIcon icon={faStar} /></i>
-                                <i><FontAwesomeIcon icon={faStar} /></i>
-                                <i><FontAwesomeIcon icon={faStar} /></i>
-                            </div>
-                        </div>
-                        <div className="card border-0">
-                            <img src={reviewRight2} className="card-img" alt="..." />
-                            <div className="card-body">
-                                <i><FontAwesomeIcon icon={faStar} /></i>
-                                <i><FontAwesomeIcon icon={faStar} /></i>
-                                <i><FontAwesomeIcon icon={faStar} /></i>
-                                <i><FontAwesomeIcon icon={faStar} /></i>
-                                <i><FontAwesomeIcon icon={faStar} /></i>
-                            </div>
-                        </div>
+                        {
+                            imgData.map(singleData => <ReviewImgCard singleData={singleData} key={Math.random()} />)
+                        }
                     </div>
                 </div>
             </div>

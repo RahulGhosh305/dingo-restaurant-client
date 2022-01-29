@@ -12,17 +12,17 @@ const Info = () => {
         {
             image : phoneBlack,
             title : "Call Now",
-            subTitle : "+09 777 787 999"
+            subTitle : "+880 172 222 5555"
         },
         {
             image : location1,
             title : "Location",
-            subTitle : "Central Park,35/A Road"
+            subTitle : "Comilla City, 36/A Road"
         },
         {
             image : envelop,
             title : "Contact Us",
-            subTitle : "info@bingo.com"
+            subTitle : "info@dingo.com"
         },
         {
             image : clock3,

@@ -66,10 +66,10 @@ const OrderList = () => {
                 <p>Customer All Orders list data.</p>
             </div>
             <div className="table-responsive">
-                <table className="table table-hover bg-white">
+                <table className="table table-hover bg-white text-center">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
+                            <th scope="col">Order Id</th>
                             <th scope="col">Img</th>
                             <th scope="col">Location</th>
                             <th scope="col">Name</th>

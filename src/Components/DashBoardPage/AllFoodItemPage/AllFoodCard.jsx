@@ -11,13 +11,13 @@ const AllFoodCard = (props) => {
             <td>{name}</td>
             <td>{amount}</td>
             <td>
-                <button className="btn btn-success me-1 mb-1">
+                <button className="btn btn-sm btn-success me-1 mb-1">
                     {view}
                 </button>
-                <button className="btn btn-dark me-1 mb-1">
+                <button className="btn btn-sm btn-dark me-1 mb-1">
                     {update}
                 </button>
-                <button className="btn btn-danger mb-1">
+                <button className="btn btn-sm btn-danger mb-1">
                     {del}
                 </button>
             </td>

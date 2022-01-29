@@ -21,11 +21,18 @@
 .sideFoodCard {
   display: none;
 }
-.OutletBg {
-  padding: 15px;
+.outletWrapper {
   background-color: rgb(245, 245, 245);
 }
+.OutletBg {
+  background-image: url("../../../utility/notFoundBg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  padding: 15px;
+}
 .dashboard {
+  text-align: center;
   font-weight: 700;
   color: rgb(42, 42, 221);
 }

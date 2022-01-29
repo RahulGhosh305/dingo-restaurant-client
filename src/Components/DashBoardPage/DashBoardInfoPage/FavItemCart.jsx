@@ -8,10 +8,10 @@ const FavItemCart = (props) => {
     const { img, title, like, rating } = props.singleFav
     return (
         <div className="col-md-4">
-            <div class="card m-3 border-0">
-                <img src={img} class="card-img-top img-fluid" alt="..." />
-                <div class="card-body">
-                    <h5 class="card-title">{title}</h5>
+            <div className="card m-3 border-0">
+                <img src={img} className="card-img-top img-fluid" alt="..." />
+                <div className="card-body">
+                    <h5 className="card-title">{title}</h5>
                     <i className="me-1">
                         <FontAwesomeIcon className={styles.StarIcon} icon={faStar} />
                     </i>
@@ -29,8 +29,8 @@ const FavItemCart = (props) => {
                     </i>
                     <span>{rating}</span>
 
-                    <p class="card-text">reviews</p>
-                    <span class="badge rounded-pill bg-primary">{like}k Like it</span>
+                    <p className="card-text">reviews</p>
+                    <span className="badge rounded-pill bg-primary">{like}k Like it</span>
                 </div>
             </div>
         </div>

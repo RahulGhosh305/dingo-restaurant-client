@@ -31,7 +31,7 @@ const ContactBody = () => {
                                 </div>
                                 <div className="d-flex">
                                     <i className="me-2"><FontAwesomeIcon icon={faPhoneAlt} /></i>
-                                    <p>Phone (880) 173 777 2222</p>
+                                    <p>Phone (880) 172 222 5555</p>
                                 </div>
                                 <div className="d-flex">
                                     <i className="me-2"><FontAwesomeIcon icon={faEnvelopeOpen} /></i>

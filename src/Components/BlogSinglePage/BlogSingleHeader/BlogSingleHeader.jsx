@@ -6,18 +6,22 @@ import singleBlogImg from '../../../utility/singleBlogImg.webp';
 
 const BlogSingleHeader = () => {
     return (
-        <div style={{ marginTop: 150 }} className="container">
-            <div>
+        <div style={{ marginTop: 150 }}>
+            <div className="container">
+                <h2>HUNDREDS OF LIVE MUSIC VENUES IN SEOU</h2>
+                <p>Tincidunt integer eu augue augue nunc elit doloro luctus placerat scelerisque euismod iaculis eulacus nunc mi elito vehicula ut laoreeto acaliquam sit amet justo nunc gocuneore super tempore metus velo curae fugit nec ligula libero!</p>
+
                 <p className={styles.dateTime}>1 JANUARY, 2022 || <i className={styles.love}>&hearts;</i> (3)</p>
-                <div className="text-center">
+                <div className="d-flex justify-content-center">
                     <figure>
                         <img src={singleBlogImg} alt="" className="img-fluid" />
-                        <figcaption>Food Name</figcaption>
+                        <figcaption className="text-center">Fig.1 - Trulli, Puglia, Italy.</figcaption>
                     </figure>
                 </div>
-                <div>
-                    <p className={styles.singleBlogDescription}>Description :  ipsum dolor sit amet consectetur adipisicing elit. Sapiente ut nulla quibusdam, saepe quam vero voluptate minima commodi cum, voluptas facilis accusantium corporis voluptatibus? Sunt debitis adipisci veniam placeat cumque porro sequi itaque expedita tempora dignissimos vitae accusamus molestiae aliquam in magnam officiis vel esse incidunt repellendus, nisi ex dicta eius blanditiis? Tempore placeat eius nisi nihil, quia accusantium voluptas quas ratione dolorem quasi id obcaecati culpa natus, nemo aliquam magnam saepe accusamus minima veritatis voluptate velit est itaque! Consectetur assumenda tempora dolorum ducimus blanditiis molestiae nihil, commodi aspernatur eaque vel esse at velit soluta laborum iste, cumque provident fugiat molestias sed expedita vero, rem suscipit! Aperiam praesentium aspernatur possimus libero voluptate! Ut error voluptatem quas architecto est possimus expedita inventore autem at non, perferendis ullam veritatis quasi voluptatibus enim, obcaecati nesciunt nostrum. Temporibus nisi error consequatur. Numquam exercitationem voluptatem voluptate laboriosam cum. Blanditiis obcaecati doloremque laudantium pariatur, voluptatum eaque, commodi expedita voluptas vel aperiam molestias fuga? Accusantium, repellendus corrupti doloribus officia, recusandae dignissimos autem soluta, mollitia fugiat laboriosam similique. Ex blanditiis esse quidem distinctio delectus suscipit, quis maiores nemo vero optio aliquam minus soluta magni voluptate repellat necessitatibus sint, totam reiciendis, iusto velit a quod. Magni corrupti explicabo vel!</p>
-                </div>
+
+                <p>Recipes Description</p>
+                <p>Description :  ipsum dolor sit amet consectetur adipisicing elit. Sapiente ut nulla quibusdam, saepe quam vero voluptate minima commodi cum, voluptas facilis accusantium corporis voluptatibus? Sunt debitis adipisci veniam placeat cumque porro sequi itaque expedita tempora dignissimos vitae accusamus molestiae aliquam in magnam officiis vel esse incidunt repellendus, nisi ex dicta eius blanditiis? Tempore placeat eius nisi nihil, quia accusantium Magni corrupti explicabo vel! repellat necessitatibus sint, totam reiciendis, iusto velit a quod. Magni corrupti explicabo vel!</p>
+
             </div>
         </div>
     );

@@ -45,7 +45,7 @@ const Food = () => {
                         <div>
                             <div className={styles.foodTexts}>
                                 <p>Enjoy a complete food experience</p>
-                                <h2>Our Menu</h2>
+                                <h2>Favorite Menus</h2>
                                 <img src={headingDark} alt="" />
                             </div>
                             <div>

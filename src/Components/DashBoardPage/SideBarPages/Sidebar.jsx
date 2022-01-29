@@ -6,6 +6,7 @@ import { faBars, faClipboard, faDollarSign, faChartLine, faCoffee, faHome, faPlu
 import styles from './Sidebar.module.css';
 import { faComments, faHeart } from '@fortawesome/free-regular-svg-icons';
 import DashBoardSideCart from './DashBoardSideCart';
+import headingDark from '../../../utility/heading-dark.png'
 
 
 
@@ -44,7 +45,7 @@ const Sidebar = () => {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-md-3">
-                        <img src={Logo} alt="Icon" className={`img-fluid mb-2 ${styles.Logo}`} onClick={()=> navigate('/')} />
+                        <img src={Logo} alt="Icon" className={`img-fluid mb-2 ${styles.Logo}`} onClick={() => navigate('/')} />
                         <div className={styles.sidebarWrapper}>
                             <nav>
                                 <br />
@@ -125,13 +126,18 @@ const Sidebar = () => {
                         </div>
                     </div>
                     <div className="col-md-9 mt-2">
-                        <div className={styles.OutletBg}>
-                            <h2 className={`mt-3 ${styles.dashboard}`}>Dashboard</h2>
-                            <h5>Welcome to Dingo Admin!</h5>
-                            <p>Here is your restaurant summary with graph view.</p>
+                        <div className={styles.outletWrapper}>
+                            <div className={styles.OutletBg}>
+                                <h2 className={`mt-3 ${styles.dashboard}`}>Dashboard</h2>
+                                <div className="text-center">
+                                    <img src={headingDark} alt="" className="img-fluid  mb-4" />
+                                    <h4>Welcome to Dingo Admin!</h4>
+                                    <p>Here is your Dingo restaurant summary information.</p>
+                                </div>
+                            </div>
                             <div className="mt-5">
                                 <Outlet />
-                                <p className="text-center text-muted mt-3">Dingo - Restaurant Admin Dashboard © 2021 All Rights Reserved. Made with by RG.</p>
+                                <p className="text-center text-muted py-4">Dingo - Restaurant Admin Dashboard © 2021 All Rights Reserved. Made with by RG.</p>
                             </div>
                         </div>
                     </div>

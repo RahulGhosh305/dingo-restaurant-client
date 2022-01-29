@@ -16,7 +16,7 @@ const About = () => {
                             <p className={styles.aboutTitleParagraph}>Your pleasure of teasing</p>
                             <h2>Let’s Eat Together!</h2>
                             <img src={headingDark} alt="" className="img-fluid"/>
-                            <p className={styles.aboutDescription}> <sup><FontAwesomeIcon icon={faQuoteLeft} /></sup> Dear guests, you are welcomed to dine with us at <strong>Bingo Good Food restaurant</strong>. We will serve you with the mouth watering dishes. Have a pleasant dining experience. <sub><FontAwesomeIcon icon={faQuoteRight} /></sub> </p>
+                            <p className={styles.aboutDescription}> <sup><FontAwesomeIcon icon={faQuoteLeft} /></sup> Dear guests, you are welcomed to dine with us at <strong>Dingo Good Food restaurant</strong>. We will serve you with the mouth watering dishes. Have a pleasant dining experience. <sub><FontAwesomeIcon icon={faQuoteRight} /></sub> </p>
                             
                             <img src={sign} alt="" className="img-fluid" />
 

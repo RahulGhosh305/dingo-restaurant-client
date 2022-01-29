@@ -13,7 +13,7 @@ const CareerInfo = () => {
         },
         {
             img : phone,
-            title : "(880) 1732 121 121",
+            title : "(+880) 172 222 5555",
             des : "Instant response time from monday to friday from 10 am to 10 pm."
         },
         {

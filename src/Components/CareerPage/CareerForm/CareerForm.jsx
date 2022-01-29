@@ -23,7 +23,7 @@ const CareerForm = () => {
 
                         <input className="form-control mb-2" type='text' placeholder="About you" {...register("about", { required: true })} />
                         {errors.about && <span className="text-danger">* This field is required</span>}
-
+                        <br />
                         <input className="btn btn-success my-3" type="submit" value="Message" />
                     </form>
                 </div>

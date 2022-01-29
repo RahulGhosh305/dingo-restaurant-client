@@ -10,7 +10,7 @@ const BlogCard = (props) => {
         navigate("/blogSingle")
     }
     return (
-        <div className={styles.cardWrapper}>
+        <div onClick={()=> handleNavigate()} className={styles.cardWrapper}>
             <div className="container">
                 <div className="card border-0">
                     <div className={`card-header ${styles.cardHeader}`}>
@@ -25,7 +25,7 @@ const BlogCard = (props) => {
                     <div className="card-body">
                         <p className="card-text mt-2">{desc}</p>
                         <p className="card-text text-muted">{time}</p>
-                        <button onClick={()=> handleNavigate()} className="btn p-0">See More...</button>
+                        <p>See More...</p>
                     </div>
                 </div>
             </div>

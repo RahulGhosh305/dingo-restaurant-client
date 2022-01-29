@@ -1,5 +1,6 @@
 .cardWrapper {
     padding-top: 50px;
+    cursor: pointer;
 }
 .cardImg {
     display: flex;

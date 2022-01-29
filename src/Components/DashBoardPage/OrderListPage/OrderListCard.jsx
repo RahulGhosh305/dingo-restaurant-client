@@ -13,7 +13,7 @@ const OrderListCard = (props) => {
             <td>{amount}</td>
             <td>{date}</td>
             <td>
-                <button className="btn btn-warning">
+                <button className="btn btn-sm btn-dark">
                     {status}
                 </button>
             </td>

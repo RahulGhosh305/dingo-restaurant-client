@@ -11,17 +11,17 @@ const PopularDish = () => {
         {
             img: popularDish1,
             name: "Bread Fruit Cheese Sandwich",
-            price: "11.99"
+            price: "59.99"
         },
         {
             img: popularDish2,
             name: "Beef Cutlet with Spring Onion",
-            price: "5.99"
+            price: "49.99"
         },
         {
             img: popularDish3,
             name: "Meat with sauce & Vegetables",
-            price: "9.99"
+            price: "99.99"
         },
     ]
     return (
