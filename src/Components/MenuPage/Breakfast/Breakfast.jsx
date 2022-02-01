@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import styles from './Breakfast.module.css'
 import sitePic1 from '../../../utility/menuDishSiteImg1.jpg';
 import headingDark from '../../../utility/heading-dark.png';

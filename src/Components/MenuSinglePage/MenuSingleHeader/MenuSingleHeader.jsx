@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from './MenuSingleHeader.module.css';
+// import styles from './MenuSingleHeader.module.css';
 import { useParams } from "react-router-dom";
 
 
@@ -24,7 +24,7 @@ const MenuSingleHeader = () => {
             })
     }, [id])
 
-    const { name, title, foodCategory, shortDescription, tags, price, rating, servings, readyTime, prepTime, cookTime, makingPic1, makingPic2, makingPic3 } = data
+    const { name, title, foodCategory, shortDescription, price, rating, servings, readyTime, prepTime, cookTime, makingPic1, makingPic2, makingPic3 } = data
 
     const navigate = useNavigate()
     const handleNavigate = () => {
