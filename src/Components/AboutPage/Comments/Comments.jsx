@@ -13,7 +13,7 @@ const Comments = () => {
                 <div className="ms-3">
                     <h6 className={styles.commentName}>Michel Smith</h6>
                     <p>21 December 2021</p>
-                    <p>Disgo is a awesome restaurant. I found their much good evironment. Their food quality is best and much delicious. Fully family emvironment restaurant. You and also book for party center. Vary friendly.</p>
+                    <p>Dingo is a awesome restaurant. I found their much good environment. Their food quality is best and much delicious. Fully family environment restaurant. You and also book for party center. Vary friendly.</p>
                 </div>
             </div>
         </div>

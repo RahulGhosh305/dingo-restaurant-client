@@ -1,12 +1,14 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './Breakfast.module.css'
 import sitePic1 from '../../../utility/menuDishSiteImg1.jpg';
 import headingDark from '../../../utility/heading-dark.png';
 import Card from '../Card/Card';
-import breakfastFood from './BreakfastData.js';
-import breakfastDrink from './BreakfastDrink.js';
+import useFetch from "../useFetch.js";
 
 const Breakfast = () => {
+    const [breakfastFood] = useFetch('http://localhost:5000/breakfastFood')
+    const [breakfastDrink] = useFetch('http://localhost:5000/breakfastDrink')
+
     return (
         <div>
             <div className="container">

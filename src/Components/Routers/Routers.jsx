@@ -29,7 +29,7 @@ const Routers = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/menus" element={<Menu />} />
-            <Route path="/menuSingle" element={<MenuSingle />} />
+            <Route path="/menuSingle/:menuSingleID" element={<MenuSingle />} />
             <Route path='/addCart' element={<AddCart />} />
             <Route path='/checkout' element={<UserForm />} />
             <Route path="/blogs" element={<Blogs />} />

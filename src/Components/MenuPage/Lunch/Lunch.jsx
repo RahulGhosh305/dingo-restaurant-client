@@ -2,12 +2,12 @@ import React from 'react';
 import styles from './Lunch.module.css'
 import sitePic2 from '../../../utility/menuDishSiteImg2.jpg';
 import headingDark from '../../../utility/heading-dark.png';
-import lunchFood from './LunchFood.js';
-import lunchDrink from './lunchDrink.js';
 import Card from '../Card/Card';
-
+import useFetch from "../useFetch.js";
 
 const Lunch = () => {
+    const [lunchFood] = useFetch('http://localhost:5000/lunchFood')
+    const [lunchDrink] = useFetch('http://localhost:5000/lunchDrink')
     return (
         <div>
             <div className="container">

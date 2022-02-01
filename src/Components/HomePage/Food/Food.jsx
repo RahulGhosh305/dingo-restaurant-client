@@ -1,42 +1,17 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import FoodCard from './FoodCard';
 import styles from './Food.module.css';
 import headingDark from '../../../utility/heading-dark.png'
 import menuImage from '../../../utility/menuImage.png';
 
 const Food = () => {
-    const homePageMenuData = [
-        {
-            name : "Chicken Curry",
-            describe : "This Chicken Curry Is Weeknight Dinner Goals.",
-            price : "35",
-        },
-        {
-            name : "Salad with blue cheese",
-            describe : "This is an excellent salad option for a starter, or as a stylish side salad!",
-            price : "29",
-        },
-        {
-            name : "Mexican Pasta",
-            describe : "This Mexican Pasta recipe is absolutely bursting with your favorites.",
-            price : "15",
-        },
-        {
-            name : "Chill & Hot Burger",
-            describe : "Yummy, testy hot burger to italian flavors.",
-            price : "11",
-        },
-        {
-            name : "Chicken And Rice",
-            describe : "This Chicken and Rice recipe has captured the hearts of people.",
-            price : "21",
-        },
-        {
-            name : "Mutton Curry",
-            describe : "Delicious, soft chunks of Indian style spiced onion tomato gravy.",
-            price : "25",
-        },
-    ]
+    const [menuData, setMenuData] = useState([])
+    useEffect(() => {
+        fetch('http://localhost:5000/homeMenus')
+        .then(res => res.json())
+        .then(data => setMenuData(data))
+    },[])
+    // console.log(homePageMenuData);
     return (
         <section className={styles.foodWrapper}>
             <div className="container">
@@ -50,7 +25,7 @@ const Food = () => {
                             </div>
                             <div>
                                 {
-                                    homePageMenuData.map( singleMenuItem => <FoodCard singleMenuItem={singleMenuItem} key={Math.random()}/> )
+                                    menuData.map( singleMenuItem => <FoodCard singleMenuItem={singleMenuItem} key={Math.random()}/> )
                                 }
                             </div>
                         </div>

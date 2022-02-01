@@ -2,11 +2,11 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './Card.module.css'
 const Card = (props) => {
-    const { title, desc, price } = props.food
+    const { title, shortDescription, price, _id } = props.food
     const navigate = useNavigate()
     const handleGoSinglePage = (title, price) => {
-        console.log("Clicked", title, price);
-        navigate('/menuSingle')
+        navigate(`/menuSingle/${_id}`)
+        // console.log("Clicked", title, price, _id);
     }
 
     return (
@@ -14,7 +14,7 @@ const Card = (props) => {
             <div className="d-flex justify-content-between">
                 <div className="">
                     <h6>{title}</h6>
-                    <p>{desc}</p>
+                    <p>{shortDescription}</p>
                 </div>
                 <div>
                     <h6>{price} Tk.</h6>

@@ -2,11 +2,12 @@ import React from 'react';
 import sitePic3 from '../../../utility/menuDishSiteImg3.jpg';
 import styles from './Dinner.module.css';
 import headingDark from '../../../utility/heading-dark.png';
-import DinnerFood from './DinnerFood.js';
-import DinnerDrink from './DinnerDrink.js';
 import Card from '../Card/Card';
+import useFetch from "../useFetch.js";
 
 const Dinner = () => {
+    const [dinnerFood] = useFetch('http://localhost:5000/dinnerFood')
+    const [dinnerDrink] = useFetch('http://localhost:5000/dinnerDrink')
     return (
         <>
             <div className="container">
@@ -26,13 +27,13 @@ const Dinner = () => {
                             <div className="row">
                                 <div className="col-md-6">
                                     {
-                                        DinnerFood.map(singleFood => <Card food={singleFood} key={Math.random()} />)
+                                        dinnerFood.map(singleFood => <Card food={singleFood} key={Math.random()} />)
                                     }
                                 </div>
 
                                 <div className="col-md-6">
                                     {
-                                        DinnerDrink.map(singleFood => <Card food={singleFood} key={Math.random()} />)
+                                        dinnerDrink.map(singleFood => <Card food={singleFood} key={Math.random()} />)
                                     }
                                 </div>
                             </div>

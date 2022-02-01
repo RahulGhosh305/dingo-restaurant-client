@@ -3,16 +3,17 @@ import { useNavigate } from 'react-router-dom';
 import styles from './FoodCard.module.css'
 
 const FoodCard = (props) => {
+    const {title, shortDescription, price, _id} = props.singleMenuItem
     const navigate = useNavigate()
     const handleNavigate = () => {
-        navigate('/menuSingle')
+        navigate(`/menuSingle/${_id}`)
+        // console.log(_id);
     }
-    const {name, describe, price} = props.singleMenuItem
     return (
         <div onClick={()=> handleNavigate()} className={styles.menuItem}>
             <div>
-                <h5>{name}</h5>
-                <p>{describe}</p>
+                <h5>{title}</h5>
+                <p>{shortDescription}</p>
             </div>
             <h5>{price} Tk.</h5>
         </div>
