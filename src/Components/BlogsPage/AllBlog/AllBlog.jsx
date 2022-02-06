@@ -1,10 +1,18 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import BlogCard from '../BlogCard/BlogCard';
-import AllBlogData from './AllBlogData.js';
 import headingDark from '../../../utility/heading-dark.png';
 import styles from './AllBlog.module.css';
 
 const AllBlog = () => {
+    const [blogCardData, setBlogCardData] = useState([])
+    useEffect(() => {
+        fetch("http://localhost:5000/BlogPageBlog")
+        .then(res => res.json())
+        .then(data => {
+            // console.log(data)
+            setBlogCardData(data)
+        })
+    },[])
     return (
         <>
             <div className={styles.allWrapper}>
@@ -14,7 +22,7 @@ const AllBlog = () => {
             </div>
             <div>
                 {
-                    AllBlogData.map(singleData => <BlogCard blogData={singleData} key={Math.random()} />)
+                    blogCardData.map(singleData => <BlogCard blogData={singleData} key={Math.random()} />)
                 }
             </div>
         </>

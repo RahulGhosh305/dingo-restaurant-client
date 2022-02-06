@@ -22,6 +22,8 @@ import AddAdmin from '../DashBoardPage/AddAdminPage/AddAdmin';
 import Customers from '../DashBoardPage/Customers/Customers.jsx';
 import AllFoodItems from '../DashBoardPage/AllFoodItemPage/AllFoodItems.jsx';
 import DashboardInfo from '../DashBoardPage/DashBoardInfoPage/DashboardInfo.jsx';
+import ViewItem from '../DashBoardPage/ViewItem/ViewItem.jsx';
+import ReservationTable from '../DashBoardPage/ReservationTable/ReservationTable.jsx';
 
 const Routers = () => {
     return (
@@ -33,7 +35,7 @@ const Routers = () => {
             <Route path='/addCart' element={<AddCart />} />
             <Route path='/checkout' element={<UserForm />} />
             <Route path="/blogs" element={<Blogs />} />
-            <Route path="/blogSingle" element={<BlogSingle />} />
+            <Route path="/blogSingle/:singleID" element={<BlogSingle />} />
             <Route path="/reservation" element={<Reservation />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/career" element={<Career />} />
@@ -41,7 +43,7 @@ const Routers = () => {
             <Route path='/signUp' element={<UserSignUp />} />
             <Route path='*' element={<NotFound />} />
             <Route path='/dashboard/*' element={<DashBoard />} >
-            {/* dashboardInfo */}
+            {/* Inner dashboard Routes*/}
                 <Route path="" element={<DashboardInfo />} />
                 <Route path="addFood" element={<AddFoodItem />} />
                 <Route path="reviews" element={<Review />} />
@@ -49,7 +51,9 @@ const Routers = () => {
                 <Route path="addAdmin" element={<AddAdmin />} />
                 <Route path="customers" element={<Customers />} />
                 <Route path="allFoods" element={<AllFoodItems />} />
+                <Route path="reservationTable" element={<ReservationTable />} />
             </Route>
+            <Route path="/view/:ID" element={<ViewItem />} />
         </Routes>
     );
 };

@@ -1,18 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ReviewCard from './ReviewCard';
 import styles from './Review.module.css'
-import reviewRight1 from '../../../utility/test3.jpg'
-import reviewRight2 from '../../../utility/test12.jpg'
-import reviewRight3 from '../../../utility/test10.jpg'
+import reviewRight1 from '../../../utility/reviewRight1.jpg'
+import reviewRight2 from '../../../utility/reviewRight2.jpg'
+import reviewRight3 from '../../../utility/reviewRight3.jpg'
 import ReviewImgCard from './ReviewImgCard';
 
 
 const Review = () => {
+    const [reviewData, setReviewData] = useState([])
+    useEffect(() => {
+        fetch('http://localhost:5000/restaurantReview')
+        .then(res => res.json())
+        .then(data => {
+            // console.log(data)
+            setReviewData(data)
+        })
+    },[])
     const imgData = [
         { img: reviewRight1 },
         { img: reviewRight2 },
         { img: reviewRight3 },
     ]
+;
+    
     return (
         <div className="">
             <div className="row">
@@ -22,21 +33,9 @@ const Review = () => {
                         <p>Here is customer review about your restaurant</p>
                     </div>
                     <div className="overflow-auto vh-100 px-3 mb-3">
-                        <ReviewCard />
-                        <ReviewCard />
-                        <ReviewCard />
-                        <ReviewCard />
-                        <ReviewCard />
-                        <ReviewCard />
-                        <ReviewCard />
-                        <ReviewCard />
-                        <ReviewCard />
-                        <ReviewCard />
-                        <ReviewCard />
-                        <ReviewCard />
-                        <ReviewCard />
-                        <ReviewCard />
-                        <ReviewCard />
+                        {
+                            reviewData.map(singleReview => <ReviewCard singleReview={singleReview} key={Math.random()}/>)
+                        }
                     </div>
                 </div>
                 <div className="col-md-4">

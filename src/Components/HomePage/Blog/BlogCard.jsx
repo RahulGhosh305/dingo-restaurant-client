@@ -1,11 +1,20 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import SingleBlogCard from './SingleBlogCard';
-import blogCardData from './BlogData'
+
 
 const BlogCard = () => {
+    const [blogCardData, setBlogCardData] = useState([])
+    useEffect(() => {
+        fetch("http://localhost:5000/homePageBlog")
+        .then(res => res.json())
+        .then(data => {
+            // console.log(data)
+            setBlogCardData(data)
+        })
+    },[])
     const settings = {
         dots: true,
         infinite: true,

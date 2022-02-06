@@ -45,6 +45,15 @@ const FavItems = () => {
             rating : 155
         },
     ]
+    // const [data, setData] = useState([])
+    // useEffect(() => {
+    //     fetch("http://localhost:5000/DinnerFood")
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             console.log(data)
+    //             setData(data)
+    //         })
+    // }, [])
     
     return (
         <div className="bg-white mt-4">

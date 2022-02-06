@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import TrendingCard from './TrendingCard';
-import TrendingData from './TrendingData.js';
 
 const TreadingItem = () => {
+    const [data, setData] = useState([])
+    useEffect(() => {
+        fetch("http://localhost:5000/homeMenus")
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                setData(data)
+            })
+    }, [])
     return (
         <div className="border-0 card text-dark mt-3">
             <div className="card-body">
@@ -14,7 +22,7 @@ const TreadingItem = () => {
                         </div>
 
                         {
-                           TrendingData.map(singleData => <TrendingCard singleData={singleData} key={Math.random()}/>) 
+                            data.map(singleData => <TrendingCard singleData={singleData} key={Math.random()} />)
                         }
 
                     </div>

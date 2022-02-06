@@ -53,7 +53,7 @@ const MenuSingleHeader = () => {
                     <div className="col-md-4 mb-4">
                         <ul className="list-group list-group-flush list-group-numbered">
                             {
-                                allIngredient.map(singleIngredient => <li key={Math.random()} className="list-group-item list-group-item-action list-group-item-warning">{singleIngredient}</li>)
+                                allIngredient.map(singleIngredient => <li key={Math.random()} className="list-group-item list-group-item-action list-group-item-light">{singleIngredient}</li>)
                             }
                         </ul>
                     </div>

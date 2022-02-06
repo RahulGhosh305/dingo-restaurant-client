@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import dashFavPic1 from '../../../utility/dashFavPic1.jpg'
 import dashFavPic2 from '../../../utility/dashFavPic2.jpg'
 import dashFavPic3 from '../../../utility/dashFavPic3.jpg'
@@ -7,6 +7,8 @@ import dashFavPic5 from '../../../utility/dashFavPic5.jpg'
 import AllFoodCard from './AllFoodCard';
 
 const AllFoodItems = () => {
+    const [allFoodCategory, setAllFoodCategory] = useState([])
+
     const data = [
         {
             id: 1,
@@ -54,6 +56,15 @@ const AllFoodItems = () => {
             update : "Update"
         },
     ]
+    useEffect(() => {
+        fetch("http://localhost:5000/allFoods")
+        .then(res => res.json())
+        .then(data => {
+            // console.log(data)
+            setAllFoodCategory(data)
+        })
+    },[])
+
     return (
         <div className="text-center">
             <h3>All Menus</h3>
@@ -62,7 +73,7 @@ const AllFoodItems = () => {
                 <table className="table table-hover bg-white">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
+                            <th scope="col">#Item ID</th>
                             <th scope="col">Img</th>
                             <th scope="col">Name</th>
                             <th scope="col">Amount</th>
@@ -72,7 +83,7 @@ const AllFoodItems = () => {
 
                     <tbody className="">
                         {
-                            data.map(data => <AllFoodCard data={data} key={Math.random()} />)
+                            allFoodCategory.map(data => <AllFoodCard data={data} key={Math.random()} />)
                         }
                     </tbody>
                 </table>

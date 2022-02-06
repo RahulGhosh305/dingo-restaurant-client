@@ -1,6 +1,7 @@
 .cardWrapper {
     margin-top: 35px;
     padding: 0px 10px;
+    cursor: pointer;
 }
 .imgBlogChef {
     margin-right: 10px;
