@@ -4,10 +4,10 @@ import TrendingCard from './TrendingCard';
 const TreadingItem = () => {
     const [data, setData] = useState([])
     useEffect(() => {
-        fetch("http://localhost:5000/homeMenus")
+        fetch("http://localhost:5000/HomeMenu")
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 setData(data)
             })
     }, [])

@@ -6,8 +6,8 @@ import Card from '../Card/Card';
 import useFetch from "../useFetch.js";
 
 const Dinner = () => {
-    const [dinnerFood] = useFetch('http://localhost:5000/dinnerFood')
-    const [dinnerDrink] = useFetch('http://localhost:5000/dinnerDrink')
+    const [dinnerFood] = useFetch('http://localhost:5000/DinnerFood')
+    const [dinnerDrink] = useFetch('http://localhost:5000/DinnerDrink')
     return (
         <>
             <div className="container">

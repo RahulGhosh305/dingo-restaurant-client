@@ -17,7 +17,7 @@ export default function App() {
             {errors.Email && <span className="text-danger">* Email field is required</span>}
             <br />
 
-            <input className="form-control" placeholder="Any Message" {...register("Message", { required: true })} />
+            <textarea className="form-control" placeholder="Any Message" {...register("Message", { required: true })} />
             {errors.Message && <span className="text-danger">* Message field is required</span>}
             <br />
 

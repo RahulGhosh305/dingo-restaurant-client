@@ -7,7 +7,7 @@ import menuImage from '../../../utility/menuImage.png';
 const Food = () => {
     const [menuData, setMenuData] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/homeMenus')
+        fetch('http://localhost:5000/HomeMenu')
         .then(res => res.json())
         .then(data => setMenuData(data))
     },[])

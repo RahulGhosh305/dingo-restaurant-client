@@ -24,6 +24,7 @@ import AllFoodItems from '../DashBoardPage/AllFoodItemPage/AllFoodItems.jsx';
 import DashboardInfo from '../DashBoardPage/DashBoardInfoPage/DashboardInfo.jsx';
 import ViewItem from '../DashBoardPage/ViewItem/ViewItem.jsx';
 import ReservationTable from '../DashBoardPage/ReservationTable/ReservationTable.jsx';
+import NewBlogPost from '../DashBoardPage/NewBlogPost/NewBlogPost.jsx';
 
 const Routers = () => {
     return (
@@ -52,6 +53,7 @@ const Routers = () => {
                 <Route path="customers" element={<Customers />} />
                 <Route path="allFoods" element={<AllFoodItems />} />
                 <Route path="reservationTable" element={<ReservationTable />} />
+                <Route path="newBlog" element={<NewBlogPost />} />
             </Route>
             <Route path="/view/:ID" element={<ViewItem />} />
         </Routes>

@@ -105,6 +105,12 @@ const Sidebar = () => {
                                         </li>
                                         <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
                                             <div className="d-flex align-items-center">
+                                                <FontAwesomeIcon icon={faClipboard} />
+                                                <Link className={`nav-link ms-2 ${styles.listLink}`} to="newBlog">New Blog Post</Link>
+                                            </div>
+                                        </li>
+                                        <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
+                                            <div className="d-flex align-items-center">
                                                 <FontAwesomeIcon icon={faUserShield} />
                                                 <Link className={`nav-link ms-2 ${styles.listLink}`} to="addAdmin">Add Admin</Link>
                                             </div>

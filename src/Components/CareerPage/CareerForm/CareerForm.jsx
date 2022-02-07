@@ -10,19 +10,19 @@ const CareerForm = () => {
                 <div className="col-md-6 mb-3">
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <input className="form-control mb-2" type='text' placeholder="Full Name" {...register("fullName", { required: true })} />
-                        {errors.fullName && <span className="text-danger">* This field is required</span>}
+                        {errors.fullName && <span className="text-danger">* Full Name field is required</span>}
 
                         <input className="form-control mb-2" type='email' placeholder="E-Mail" {...register("email", { required: true })} />
-                        {errors.email && <span className="text-danger">* This field is required</span>}
+                        {errors.email && <span className="text-danger">* E-Mail field is required</span>}
 
                         <input className="form-control mb-2" type='tel' placeholder="Phone Number" {...register("phone", { required: true })} />
-                        {errors.phone && <span className="text-danger">* This field is required</span>}
+                        {errors.phone && <span className="text-danger">* Phone Number field is required</span>}
 
                         <input className="form-control mb-2" type='text' placeholder="Address" {...register("address", { required: true })} />
-                        {errors.address && <span className="text-danger">* This field is required</span>}
+                        {errors.address && <span className="text-danger">* Address field is required</span>}
 
-                        <input className="form-control mb-2" type='text' placeholder="About you" {...register("about", { required: true })} />
-                        {errors.about && <span className="text-danger">* This field is required</span>}
+                        <textarea className="form-control mb-2" type='text' placeholder="Introduces Yourself" {...register("about", { required: true })} />
+                        {errors.about && <span className="text-danger">* Introduces field is required</span>}
                         <br />
                         <input className="btn btn-success my-3" type="submit" value="Message" />
                     </form>

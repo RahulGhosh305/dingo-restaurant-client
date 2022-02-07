@@ -50,7 +50,7 @@ const CommentForm = () => {
                                 <input className="form-control mb-2" type="text" {...register("profession", { required: true })} placeholder="Profession" />
                                 {errors.profession && <span span className="text-danger">* profession field is required</span>}
 
-                                <input className="form-control mb-2" type="text" {...register("message", { required: true })} placeholder="Message" />
+                                <textarea className="form-control mb-2" type="text" {...register("message", { required: true })} placeholder="Message" />
                                 {errors.message && <span className="text-danger">* Message field is required</span>}
 
                                 <input value={new Date().toDateString()} className="form-control mb-2" {...register("date", { required: true })} />
