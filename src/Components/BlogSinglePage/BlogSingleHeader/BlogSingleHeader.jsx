@@ -23,7 +23,7 @@ const BlogSingleHeader = () => {
             })
     }, [id])
 
-    const { img, chefImg, title, date, rating, PrepTime, CookTime, TotalTime, Servings, shortDesc, longDesc, author, designation} = data
+    const { img, chefImg, title, date, rating, PrepTime, CookTime, TotalTime, Servings, longDesc, author, designation} = data
     // console.log(ingredients, directions);
     // console.log(img, chefImg, title, date, rating, PrepTime, CookTime, TotalTime, Servings, shortDesc, longDesc);
 
