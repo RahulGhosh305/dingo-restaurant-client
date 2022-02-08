@@ -15,6 +15,7 @@ const MenuSingleHeader = () => {
     // console.log(allIngredient);
     // console.log(data);
     useEffect(() => {
+        window.scrollTo(0,0)
         fetch(`http://localhost:5000/singleMenu/${id}`)
             .then(res => res.json())
             .then(data => {

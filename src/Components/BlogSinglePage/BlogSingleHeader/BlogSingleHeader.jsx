@@ -12,6 +12,7 @@ const BlogSingleHeader = () => {
     let id = singleID.singleID
     // console.log(id)
     useEffect(() => {
+        window.scrollTo(0,0)
         fetch(`http://localhost:5000/singleBlog/${id}`)
             .then(res => res.json())
             .then(data => {
@@ -22,8 +23,9 @@ const BlogSingleHeader = () => {
             })
     }, [id])
 
-    const { img, chefImg, title, date, rating, PrepTime, CookTime, TotalTime, Servings, shortDesc, longDesc, Ingredients, Directions } = data
-    // console.log(img, chefImg, title, date, rating, PrepTime, CookTime, TotalTime, Servings, shortDesc, longDesc, Ingredients, Directions);
+    const { img, chefImg, title, date, rating, PrepTime, CookTime, TotalTime, Servings, shortDesc, longDesc, author, designation} = data
+    // console.log(ingredients, directions);
+    // console.log(img, chefImg, title, date, rating, PrepTime, CookTime, TotalTime, Servings, shortDesc, longDesc);
 
     return (
         <div className="pb-2" style={{ marginTop: 150 }}>
@@ -65,12 +67,12 @@ const BlogSingleHeader = () => {
 
                 <div className="d-flex mt-5">
                     <figure>
-                        <img src={chefImg} alt="" className="img-fluid me-3" />
+                        <img src={chefImg} alt="" className="img-fluid me-3" style={{width : 140, height : 130}}/>
                         <figcaption className="text-center">Author</figcaption>
                     </figure>
                     <div className="my-auto">
-                        <h5>Jenifer</h5>
-                        <p className="m-0">Chief Chef.</p>
+                        <h5>{author ? author : "Jenifer"}</h5>
+                        <p className="m-0">{designation ? designation : "Chief Chef"}</p>
                         <p className="m-0">Dingo Restaurant</p>
                     </div>
                 </div>
