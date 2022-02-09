@@ -1,6 +1,7 @@
 import React from 'react';
+import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF, faGoogle, faTwitter, faLinkedinIn, faInstagram  } from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF, faGoogle, faTwitter, faLinkedinIn, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faPhoneAlt, faHome, faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons';
 import styles from './Footer.module.css'
 import headingDark from '../../../utility/heading-dark.png';
@@ -11,8 +12,29 @@ import img4 from '../../../utility/instagram-img4.jpg'
 import img5 from '../../../utility/instagram-img5.jpg'
 import img6 from '../../../utility/instagram-img6.jpg'
 
-
 const Footer = () => {
+    const { register, resetField, handleSubmit, formState: { errors } } = useForm({
+        mode: "onChange",
+        defaultValues: {
+            email: "",
+        }
+    });
+    const onSubmit = data => {
+        console.log(data)
+        fetch("http://localhost:5000/addNewsletter", {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then(res => res.json())
+            .then(json => {
+                // console.log(json)
+                alert(json)
+                resetField("email")
+            })
+    }
     const date = new Date()
     return (
         <footer className={styles.footerWrapper}>
@@ -44,65 +66,65 @@ const Footer = () => {
 
                     <div className="col-lg-4">
                         <div className={styles.colWrapper}>
-                        <h3>Opening Hours</h3>
-                        <div className={styles.schedulesData}>
-                            <div className={styles.schedules}>
-                                <p className={styles.schedulesDay}>Monday</p>
-                                <p>09am - 10pm</p>
+                            <h3>Opening Hours</h3>
+                            <div className={styles.schedulesData}>
+                                <div className={styles.schedules}>
+                                    <p className={styles.schedulesDay}>Monday</p>
+                                    <p>09am - 10pm</p>
+                                </div>
+                                <div className={styles.schedules}>
+                                    <p className={styles.schedulesDay}>Tuesday</p>
+                                    <p>09am - 10pm</p>
+                                </div>
+                                <div className={styles.schedules}>
+                                    <p className={styles.schedulesDay}>Wednesday</p>
+                                    <p>09am - 10pm</p>
+                                </div>
+                                <div className={styles.schedules}>
+                                    <p className={styles.schedulesDay}>Thursday</p>
+                                    <p>09am - 10pm</p>
+                                </div>
+                                <div className={styles.schedules}>
+                                    <p className={styles.schedulesDay}>Friday</p>
+                                    <p>2pm - 11pm</p>
+                                </div>
+                                <div className={styles.schedules}>
+                                    <p className={styles.schedulesDay}>Saturday</p>
+                                    <p>11am - 08pm</p>
+                                </div>
+                                <div className={styles.schedules}>
+                                    <p className={styles.schedulesDay}>Sunday</p>
+                                    <p>Closed</p>
+                                </div>
                             </div>
-                            <div className={styles.schedules}>
-                                <p className={styles.schedulesDay}>Tuesday</p>
-                                <p>09am - 10pm</p>
-                            </div>
-                            <div className={styles.schedules}>
-                                <p className={styles.schedulesDay}>Wednesday</p>
-                                <p>09am - 10pm</p>
-                            </div>
-                            <div className={styles.schedules}>
-                                <p className={styles.schedulesDay}>Thursday</p>
-                                <p>09am - 10pm</p>
-                            </div>
-                            <div className={styles.schedules}>
-                                <p className={styles.schedulesDay}>Friday</p>
-                                <p>2pm - 11pm</p>
-                            </div>
-                            <div className={styles.schedules}>
-                                <p className={styles.schedulesDay}>Saturday</p>
-                                <p>11am - 08pm</p>
-                            </div>
-                            <div className={styles.schedules}>
-                                <p className={styles.schedulesDay}>Sunday</p>
-                                <p>Closed</p>
-                            </div>
-                        </div>
                         </div>
                     </div>
 
                     <div className="col-lg-4">
                         <div className={styles.colWrapper}>
-                        <h3>Instagram</h3>
-                        <div className={styles.instagramPic}>
-                            <div className={`row g-2 ${styles.instagramData}`}>
-                                <div className="col-lg-4 col-6">
-                                    <img src={img1} alt="" className="img-fluid" />
-                                </div>
-                                <div className="col-lg-4 col-6">
-                                    <img src={img2} alt="" className="img-fluid" />
-                                </div>
-                                <div className="col-lg-4 col-6">
-                                    <img src={img3} alt="" className="img-fluid" />
-                                </div>
-                                <div className="col-lg-4 col-6 mt-lg-2">
-                                    <img src={img4} alt="" className="img-fluid" />
-                                </div>
-                                <div className="col-lg-4 col-6 mt-lg-2">
-                                    <img src={img5} alt="" className="img-fluid" />
-                                </div>
-                                <div className="col-lg-4 col-6 mt-lg-2">
-                                    <img src={img6} alt="" className="img-fluid" />
+                            <h3>Instagram</h3>
+                            <div className={styles.instagramPic}>
+                                <div className={`row g-2 ${styles.instagramData}`}>
+                                    <div className="col-lg-4 col-6">
+                                        <img src={img1} alt="" className="img-fluid" />
+                                    </div>
+                                    <div className="col-lg-4 col-6">
+                                        <img src={img2} alt="" className="img-fluid" />
+                                    </div>
+                                    <div className="col-lg-4 col-6">
+                                        <img src={img3} alt="" className="img-fluid" />
+                                    </div>
+                                    <div className="col-lg-4 col-6 mt-lg-2">
+                                        <img src={img4} alt="" className="img-fluid" />
+                                    </div>
+                                    <div className="col-lg-4 col-6 mt-lg-2">
+                                        <img src={img5} alt="" className="img-fluid" />
+                                    </div>
+                                    <div className="col-lg-4 col-6 mt-lg-2">
+                                        <img src={img6} alt="" className="img-fluid" />
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         </div>
                     </div>
                 </div>
@@ -129,16 +151,18 @@ const Footer = () => {
 
                     <div className={`col-12 col-sm-6 ${styles.followData}`}>
                         <h3>NewsLetter</h3>
-                        <form className="d-flex">
-                            <input className="form-control me-2" type="email" placeholder="Email"/>
-                            <input type="submit" className="btn btn-warning" value="Submit"/>
+                        <form className="d-flex" onSubmit={handleSubmit(onSubmit)}>
+                            <input className="form-control me-2" type="email" placeholder="E-mail" {...register("email", { required: true })} />
+                            <br />
+                            {errors.email && <span className="text-danger">*Email field is required</span>}
+                            <input className="btn btn-warning" value="Submit" type="submit" />
                         </form>
                     </div>
                 </div>
             </div>
 
             <div className="text-center">
-                <p>Copyright © {date.getFullYear()} Bingo Restaurant. All rights reserved by <i style={{fontSize : 20}}>&hearts;</i> Dingo.</p>
+                <p>Copyright © {date.getFullYear()} Bingo Restaurant. All rights reserved by <i style={{ fontSize: 20 }}>&hearts;</i> Dingo.</p>
             </div>
 
         </footer>

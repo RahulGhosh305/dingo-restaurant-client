@@ -25,6 +25,11 @@ import DashboardInfo from '../DashBoardPage/DashBoardInfoPage/DashboardInfo.jsx'
 import ViewItem from '../DashBoardPage/ViewItem/ViewItem.jsx';
 import ReservationTable from '../DashBoardPage/ReservationTable/ReservationTable.jsx';
 import NewBlogPost from '../DashBoardPage/NewBlogPost/NewBlogPost.jsx';
+import CareerMessage from '../DashBoardPage/CareerMessagePage/CareerMessage.jsx';
+import ContactMessage from '../DashBoardPage/ContactMessagePage/ContactMessage.jsx';
+import ViewContactMessage from '../DashBoardPage/ViewContactMessagePage/ViewContactMessage.jsx';
+import ViewCareerMessage from '../DashBoardPage/ViewCareerMessagePage/ViewCareerMessage.jsx';
+import NewsLetter from '../DashBoardPage/NewsLetterPage/NewsLetter.jsx';
 
 const Routers = () => {
     return (
@@ -54,8 +59,13 @@ const Routers = () => {
                 <Route path="allFoods" element={<AllFoodItems />} />
                 <Route path="reservationTable" element={<ReservationTable />} />
                 <Route path="newBlog" element={<NewBlogPost />} />
+                <Route path="careerMessage" element={<CareerMessage />} />
+                <Route path="ContactMessage" element={<ContactMessage />} />
+                <Route path="newsLetter" element={<NewsLetter />} />
             </Route>
             <Route path="/view/:ID" element={<ViewItem />} />
+            <Route path="/viewContactMessage/:ID" element={<ViewContactMessage />} />
+            <Route path="/viewCareerMessage/:ID" element={<ViewCareerMessage />} />
         </Routes>
     );
 };

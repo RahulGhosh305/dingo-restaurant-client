@@ -15,7 +15,7 @@ const Comments = () => {
     return (
         <div className="container">
             <h3>Comments</h3>
-            <h5 className="mb-3 text-muted">Our Happy Customers review.</h5>      
+            <h5 className="mb-3 text-muted">Our Happy Customers Review</h5>      
             {
                 commentData.slice(-2).map(singleData => <CommentCard singleData={singleData} key={Math.random()}/>)
             }

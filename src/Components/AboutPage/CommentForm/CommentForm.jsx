@@ -1,5 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser, faEnvelope, faPlusSquare, faComment, faCalendar } from '@fortawesome/free-solid-svg-icons'
 
 const CommentForm = () => {
 
@@ -37,24 +39,39 @@ const CommentForm = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-md-6 offset-md-3">
-                        <h4 className="mb-3 text-center">Leave a comment about our restaurant</h4>
+                        <h4 className="mb-3 text-center">Leave a comment about restaurant</h4>
                         <div>
                             <form onSubmit={handleSubmit(onSubmit)}>
 
-                                <input className="form-control mb-2" type="name" {...register("name", { required: true })} placeholder="Name" />
-                                {errors.name && <span className="text-danger">* Name field is required</span>}
+                                <div className="d-flex align-items-center">
+                                    <FontAwesomeIcon className="mb-2" icon={faUser} />
+                                    <input className="form-control ms-2 mb-2 border-0 border-bottom" type="name" {...register("name", { required: true })} placeholder="Name" />
+                                    {errors.name && <span className="text-danger">* Name field is required</span>}
+                                </div>
 
-                                <input className="form-control mb-2" type="email" {...register("email", { required: true })} placeholder="E-Mail" />
-                                {errors.email && <span span className="text-danger">* email field is required</span>}
+                                <div className="d-flex align-items-center">
+                                    <FontAwesomeIcon className="mb-2" icon={faEnvelope} />
+                                    <input className="form-control ms-2 mb-2 border-0 border-bottom" type="email" {...register("email", { required: true })} placeholder="E-Mail" />
+                                    {errors.email && <span span className="text-danger">* email field is required</span>}
+                                </div>
 
-                                <input className="form-control mb-2" type="text" {...register("profession", { required: true })} placeholder="Profession" />
+                                <div className="d-flex align-items-center">
+                                <FontAwesomeIcon className="mb-2" icon={faPlusSquare} />
+                                <input className="form-control ms-2 mb-2 border-0 border-bottom" type="text" {...register("profession", { required: true })} placeholder="Profession" />
                                 {errors.profession && <span span className="text-danger">* profession field is required</span>}
+                                </div>
 
-                                <textarea className="form-control mb-2" type="text" {...register("message", { required: true })} placeholder="Message" />
+                                <div className="d-flex align-items-center">
+                                <FontAwesomeIcon className="mb-4" icon={faComment} />
+                                <textarea className="form-control mb-2 border-0 border-bottom" type="text" {...register("message", { required: true })} placeholder="Message" />
                                 {errors.message && <span className="text-danger">* Message field is required</span>}
+                                </div>
 
-                                <input value={new Date().toDateString()} className="form-control mb-2" {...register("date", { required: true })} />
+                                <div className="d-flex align-items-center">
+                                <FontAwesomeIcon className="mb-2" icon={faCalendar} />
+                                <input value={new Date().toDateString()} className="form-control mb-2 border-0 border-bottom" {...register("date", { required: true })} />
                                 {errors.date && <span className="text-danger">* Date field is required</span>}
+                                </div>
 
                                 <input className="mt-3 mb-5 btn-warning form-control" type="submit" />
                             </form>

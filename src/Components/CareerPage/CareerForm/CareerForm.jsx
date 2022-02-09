@@ -2,8 +2,36 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 
 const CareerForm = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const { register, resetField, handleSubmit, formState: { errors } } = useForm({
+        mode: "onChange",
+        defaultValues: {
+            fullName: "",
+            email: "",
+            phone: "",
+            about: "",
+            Cv: "",
+        }
+    });
+    const onSubmit = data => {
+        console.log(data)
+        fetch("http://localhost:5000/addCareerMessage", {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+        .then(res => res.json())
+        .then(json => {
+            // console.log(json);
+            alert(json)
+            resetField("fullName")
+            resetField("email")
+            resetField("phone")
+            resetField("about")
+            resetField("Cv")
+        })
+    }
     return (
         <div className="container pt-5">
             <div className="row">
@@ -18,11 +46,11 @@ const CareerForm = () => {
                         <input className="form-control mb-2" type='tel' placeholder="Phone Number" {...register("phone", { required: true })} />
                         {errors.phone && <span className="text-danger">* Phone Number field is required</span>}
 
-                        <input className="form-control mb-2" type='text' placeholder="Address" {...register("address", { required: true })} />
-                        {errors.address && <span className="text-danger">* Address field is required</span>}
-
                         <textarea className="form-control mb-2" type='text' placeholder="Introduces Yourself" {...register("about", { required: true })} />
                         {errors.about && <span className="text-danger">* Introduces field is required</span>}
+
+                        <input className="form-control mb-2" type='text' placeholder="Resume Drive Link " {...register("Cv", { required: true })} />
+                        {errors.Cv && <span className="text-danger">* CV drive field is required</span>}
                         <br />
                         <input className="btn btn-success my-3" type="submit" value="Message" />
                     </form>

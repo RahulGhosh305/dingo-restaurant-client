@@ -2,9 +2,9 @@ import React from 'react';
 import { Outlet, Link, useNavigate } from "react-router-dom";
 import Logo from '../../../utility/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faClipboard, faDollarSign, faChartLine, faCoffee, faHome, faPlusSquare, faSignOutAlt, faTruck, faUsers, faUserShield, faUtensils, faChair } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faCompress, faClipboard, faDollarSign, faChartLine, faCoffee, faHome, faPlusSquare, faSignOutAlt, faTruck, faUsers, faUserShield, faUtensils, faChair, faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons'
 import styles from './Sidebar.module.css';
-import { faComments, faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faComments, faHeart, faPaperPlane } from '@fortawesome/free-regular-svg-icons';
 import DashBoardSideCart from './DashBoardSideCart';
 import headingDark from '../../../utility/heading-dark.png'
 
@@ -107,6 +107,24 @@ const Sidebar = () => {
                                             <div className="d-flex align-items-center">
                                                 <FontAwesomeIcon icon={faClipboard} />
                                                 <Link className={`nav-link ms-2 ${styles.listLink}`} to="newBlog">New Blog Post</Link>
+                                            </div>
+                                        </li>
+                                        <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
+                                            <div className="d-flex align-items-center">
+                                                <FontAwesomeIcon icon={faEnvelopeOpen} />
+                                                <Link className={`nav-link ms-2 ${styles.listLink}`} to="careerMessage">Career Message</Link>
+                                            </div>
+                                        </li>
+                                        <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
+                                            <div className="d-flex align-items-center">
+                                                <FontAwesomeIcon icon={faPaperPlane} />
+                                                <Link className={`nav-link ms-2 ${styles.listLink}`} to="newsLetter">NewsLetter</Link>
+                                            </div>
+                                        </li>
+                                        <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
+                                            <div className="d-flex align-items-center">
+                                                <FontAwesomeIcon icon={faCompress} />
+                                                <Link className={`nav-link ms-2 ${styles.listLink}`} to="contactMessage">Contact Message</Link>
                                             </div>
                                         </li>
                                         <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>

@@ -7,7 +7,7 @@ const ShortInfo = () => {
             <div className="row">
                 <div className="col-md-6">
                     <h4>Reserve By Phone</h4>
-                    <p>We take reservations for lunch and dinner. To make a reservation, please call us at (080)-1234-678 between 09am-7pm, Monday to Friday.</p>
+                    <p>We take reservations for lunch and dinner. To make a reservation, please call us at (+880172)-2225-555 between 09am-10pm, Monday to Sunday.</p>
                 </div>
                 <div className="col-md-6">
                     <h4>Private Parties & Event</h4>

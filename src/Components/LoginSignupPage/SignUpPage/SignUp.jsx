@@ -38,7 +38,7 @@ const SignUp = () => {
                     <input type="password" className={`form-control ms-2 mb-4 ${styles.customInput}`} {...register("RetypePassword", { required: true })} placeholder="Retype Password" />
                     {errors.RetypePassword && <span className="text-danger">* Retype-Password field is required</span>}
                 </div>
-                <input className="text-white bg-dark rounded" type="submit" value="Sign Up" />
+                <input className="text-white bg-success rounded" type="submit" value="Sign Up" />
 
             </form>
             

@@ -30,17 +30,17 @@ const Login = () => {
                     <input type="password" className={`form-control ms-2 mb-4 ${styles.customInput}`} {...register("password", { required: true })} placeholder="Password" />
                     {errors.password && <span className="text-danger">* Password field is required</span>}
                 </div>
-                <input className="text-white bg-dark rounded" type="submit" value="Log In" />
+                <input className="text-white bg-success rounded" type="submit" value="Log In" />
 
             </form>
 
             <div>
                 <div className="d-flex mt-5">
-                    <p className="mt-2">Or login with</p>
+                    <p className="mt-1">Or login with</p>
                     <div className="ms-2">
-                        <button style={{ fontSize: 16, color: "white", background: "#3b5998", }} className="btn me-1"> <FontAwesomeIcon icon={faFacebookF} /> </button>
-                        <button style={{ fontSize: 16, color: "white", background: "#db3236", }} className="btn me-1"> <FontAwesomeIcon icon={faGoogle} /> </button>
-                        <button style={{ fontSize: 16, color: "white", background: "#1DA1F2", }} className="btn me-1"> <FontAwesomeIcon icon={faTwitter} /> </button>
+                        <button style={{ fontSize: 14, color: "white", background: "#3b5998", }} className="btn btn-sm me-1"> <FontAwesomeIcon icon={faFacebookF} /> </button>
+                        <button style={{ fontSize: 14, color: "white", background: "#db3236", }} className="btn btn-sm me-1"> <FontAwesomeIcon icon={faGoogle} /> </button>
+                        <button style={{ fontSize: 14, color: "white", background: "#1DA1F2", }} className="btn btn-sm me-1"> <FontAwesomeIcon icon={faTwitter} /> </button>
                     </div>
                 </div>
                 <button onClick={()=> handleNavigate()} style={{paddingLeft : 0}} className="btn mt-3">Don't have account? Create one.</button>
