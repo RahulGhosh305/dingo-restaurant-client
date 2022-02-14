@@ -49,26 +49,26 @@ const CommentForm = () => {
                                     {errors.name && <span className="text-danger">* Name field is required</span>}
                                 </div>
 
-                                <div className="d-flex align-items-center">
+                                <div className="d-flex align-items-center mt-2">
                                     <FontAwesomeIcon className="mb-2" icon={faEnvelope} />
                                     <input className="form-control ms-2 mb-2 border-0 border-bottom" type="email" {...register("email", { required: true })} placeholder="E-Mail" />
                                     {errors.email && <span span className="text-danger">* email field is required</span>}
                                 </div>
 
-                                <div className="d-flex align-items-center">
+                                <div className="d-flex align-items-center mt-2">
                                 <FontAwesomeIcon className="mb-2" icon={faPlusSquare} />
                                 <input className="form-control ms-2 mb-2 border-0 border-bottom" type="text" {...register("profession", { required: true })} placeholder="Profession" />
                                 {errors.profession && <span span className="text-danger">* profession field is required</span>}
                                 </div>
 
-                                <div className="d-flex align-items-center">
+                                <div className="d-flex align-items-center mt-2">
                                 <FontAwesomeIcon className="mb-4" icon={faComment} />
                                 <textarea className="form-control mb-2 border-0 border-bottom" type="text" {...register("message", { required: true })} placeholder="Message" />
                                 {errors.message && <span className="text-danger">* Message field is required</span>}
                                 </div>
 
-                                <div className="d-flex align-items-center">
-                                <FontAwesomeIcon className="mb-2" icon={faCalendar} />
+                                <div className="d-flex align-items-center mt-2">
+                                <FontAwesomeIcon className="mb-3" icon={faCalendar} />
                                 <input value={new Date().toDateString()} className="form-control mb-2 border-0 border-bottom" {...register("date", { required: true })} />
                                 {errors.date && <span className="text-danger">* Date field is required</span>}
                                 </div>

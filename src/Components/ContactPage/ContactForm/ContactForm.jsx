@@ -42,14 +42,14 @@ export default function App() {
             </div>
             <br />
 
-            <div className="d-flex align-items-center">
+            <div className="d-flex align-items-center mt-2">
                 <FontAwesomeIcon icon={faPhoneAlt} />
                 <input className="form-control ms-2 border-0 border-bottom" type="tel" placeholder="Phone Number" {...register("Phone", { required: true })} />
                 {errors.Phone && <span className="text-danger">* Phone field is required</span>}
             </div>
             <br />
 
-            <div className="d-flex align-items-center">
+            <div className="d-flex align-items-center mt-2">
                 <FontAwesomeIcon className="mb-3" icon={faComments} />
                 <textarea className="form-control ms-2 border-0 border-bottom" type="text" placeholder="Any Message" {...register("Message", { required: true })} />
                 {errors.Message && <span className="text-danger">* Message field is required</span>}

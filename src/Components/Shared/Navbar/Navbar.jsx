@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import styles from './Navbar.module.css';
 import Logo from '../../../utility/logo.png'
 
@@ -34,32 +34,32 @@ const Navbar = () => {
                 <div className={styles.navbarInner}>
                     <nav className={navbarColor ? "navbar navbar-expand-lg fixed-top navbar-light bg-light" : "navbar navbar-expand-lg navbar-light"}>
                         <div className={`container ${styles.customContainer}`}>
-                            <img src={Logo} alt="Icon" className={`img-fluid ${styles.Logo}`} onClick={()=> navigate('/')} />
+                            <img src={Logo} alt="Icon" className={`img-fluid ${styles.Logo}`} onClick={() => navigate('/')} />
                             <button className={`navbar-toggler ${styles.navbarBtn}`} type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                 <span className="navbar-toggler-icon"></span>
                             </button>
                             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul className={`navbar-nav mx-auto mb-2 mb-lg-0 ${styles.navbarUl}`}>
                                     <li className={`nav-item ${styles.navbarList}`}>
-                                        <Link onClick={() => handleCollapse()} className={`nav-link ${styles.listLink}`} to="/">Home</Link>
+                                        <NavLink onClick={() => handleCollapse()} className={({ isActive }) => (isActive ? `nav-link ${styles.isActive}` : `nav-link ${styles.inActive}`)} to="/">Home</NavLink>
                                     </li>
                                     <li className={`nav-item ${styles.navbarList}`}>
-                                        <Link onClick={() => handleCollapse()} className={`nav-link ${styles.listLink}`} to="/about">About</Link>
+                                        <NavLink onClick={() => handleCollapse()} className={({ isActive }) => (isActive ? `nav-link ${styles.isActive}` : `nav-link ${styles.inActive}`)} to="/about">About</NavLink>
                                     </li>
                                     <li className={`nav-item ${styles.navbarList}`}>
-                                        <Link onClick={() => handleCollapse()} className={`nav-link ${styles.listLink}`} to="/menus">Menus</Link>
+                                        <NavLink onClick={() => handleCollapse()} className={({ isActive }) => (isActive ? `nav-link ${styles.isActive}` : `nav-link ${styles.inActive}`)} to="/menus">Menus</NavLink>
                                     </li>
                                     <li className={`nav-item ${styles.navbarList}`}>
-                                        <Link onClick={() => handleCollapse()} className={`nav-link ${styles.listLink}`} to="/blogs">Blogs</Link>
+                                        <NavLink onClick={() => handleCollapse()} className={({ isActive }) => (isActive ? `nav-link ${styles.isActive}` : `nav-link ${styles.inActive}`)} to="/blogs">Blogs</NavLink>
                                     </li>
                                     <li className={`nav-item ${styles.navbarList}`}>
-                                        <Link onClick={() => handleCollapse()} className={`nav-link ${styles.listLink}`} to="/reservation">Reservation</Link>
+                                        <NavLink onClick={() => handleCollapse()} className={({ isActive }) => (isActive ? `nav-link ${styles.isActive}` : `nav-link ${styles.inActive}`)} to="/reservation">Reservation</NavLink>
                                     </li>
                                     <li className={`nav-item ${styles.navbarList}`}>
-                                        <Link onClick={() => handleCollapse()} className={`nav-link ${styles.listLink}`} to="/contact">Contact</Link>
+                                        <NavLink onClick={() => handleCollapse()} className={({ isActive }) => (isActive ? `nav-link ${styles.isActive}` : `nav-link ${styles.inActive}`)} to="/contact">Contact</NavLink>
                                     </li>
                                     <li className={`nav-item ${styles.navbarList}`}>
-                                        <Link onClick={() => handleCollapse()} className={`nav-link ${styles.listLink}`} to="/career">Career</Link>
+                                        <NavLink onClick={() => handleCollapse()} className={({ isActive }) => (isActive ? `nav-link ${styles.isActive}` : `nav-link ${styles.inActive}`)} to="/career">Career</NavLink>
                                     </li>
                                 </ul>
                                 <div className={styles.reservation}>
