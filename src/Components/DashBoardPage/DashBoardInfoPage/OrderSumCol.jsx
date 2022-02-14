@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './OrderSumCol.module.css'
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
+import CountUp from 'react-countup';
+
 
 const OrderSumCol = () => {
     const data = [
@@ -43,7 +45,11 @@ const OrderSumCol = () => {
                         <div className={`card-body ${styles.dashboardInfoCart}`}>
                             <div className="d-flex justify-content-between">
                                 <div className="mt-2">
-                                    <h2><span className="badge bg-warning">25</span></h2>
+                                    <h2>
+                                        <span className="badge bg-warning">
+                                            <CountUp end={25} duration={5} />
+                                        </span>
+                                    </h2>
                                 </div>
                                 <div className='my-auto'>
                                     <h5 className="pt-1">Manage orders</h5>

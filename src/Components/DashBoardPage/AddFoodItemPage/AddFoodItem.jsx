@@ -6,7 +6,7 @@ const AddFoodItem = () => {
     const [imageUrl1, setImageUrl1] = useState("");
     const [imageUrl2, setImageUrl2] = useState("");
     const [imageUrl3, setImageUrl3] = useState("");
-    console.log(imageUrl1, imageUrl2, imageUrl3);
+    // console.log(imageUrl1, imageUrl2, imageUrl3);
 
     // USE FORM 
     const { register, resetField, handleSubmit, control, formState: { errors } } = useForm({
@@ -94,7 +94,6 @@ const AddFoodItem = () => {
                 resetField("makingPic3")
             })
 
-
     }
 
     // HANDLE IMAGE UPLOAD TO IMAGE BB HOSTING
@@ -115,47 +114,29 @@ const AddFoodItem = () => {
     return (
         <div>
             <div className="text-center">
-                <h3>Add New Menu</h3>
+                <h3>New Menu</h3>
                 <p>Add a new delicious food menu.</p>
             </div>
             <div className="row">
                 <div className="col-md-8 offset-md-2">
                     <div className="px-3">
                         <form onSubmit={handleSubmit(onSubmit)}>
-                            <input className="form-control mb-2" type="text" placeholder="New Menu Title" {...register("title", { required: true })} />
+
+                            <label className="d-flex justify-content-start">*Title :</label>
+                            <input className="form-control border-0 border-bottom mb-2" type="text"  {...register("title", { required: true })} />
                             {errors.title && <span className="text-danger">* Title field is required</span>}
 
-
-                            <input className="form-control mb-2" type="text" placeholder="Category" {...register("foodCategory", { required: true })} />
+                            <label className="d-flex justify-content-start mt-3">*Category :</label>
+                            <input className="form-control border-0 border-bottom mb-2" type="text" {...register("foodCategory", { required: true })} />
                             {errors.foodCategory && <span className="text-danger">* Category field is required</span>}
 
-                            <textarea className="form-control mb-2" type="text" placeholder="Short Description" {...register("shortDescription", { required: true })} />
+
+                            <label className="d-flex justify-content-start mt-3">*Description :</label>
+                            <textarea className="form-control border-0 border-bottom mb-2" type="text" placeholder="Short Description" {...register("shortDescription", { required: true })} />
                             {errors.shortDescription && <span className="text-danger">* Description field is required</span>}
 
 
-                            <label className="d-flex justify-content-start" htmlFor="">Food Instructions</label>
-                            <ul className="list-unstyled">
-                                {Instructions.map((item, index) => {
-                                    return (
-                                        <li key={Math.random()} className='d-flex'>
-                                            <textarea className="form-control mb-2 me-1" {...register(`foodInstructions.${index}.instructions`)} />
-                                            <button type="button" className="btn btn-sm mb-2 btn-dark" onClick={() => InstructionsRemove(index)}> Del </button>
-                                        </li>
-                                    );
-                                })}
-                            </ul>
-                            <section>
-                                <button
-                                    className="btn btn-sm btn-dark d-flex justify-content-start"
-                                    type="button"
-                                    onClick={() => {
-                                        InstructionsAppend({ instructions: "" });
-                                    }}
-                                > Add instructions
-                                </button>
-                            </section>
-
-                            <label className="d-flex justify-content-start mt-3" htmlFor="">Ingredient</label>
+                            <label className="d-flex justify-content-start mt-3" htmlFor="">*Food Ingredient :</label>
                             <ul className="list-unstyled">
                                 {Ingredient.map((item, index) => {
                                     return (
@@ -178,9 +159,33 @@ const AddFoodItem = () => {
                             </section>
 
 
+                            <label className="d-flex justify-content-start mt-3 ms-2">*Food Instructions :</label>
+                            <ul className="list-unstyled">
+                                {Instructions.map((item, index) => {
+                                    return (
+                                        <li key={Math.random()} className='d-flex'>
+                                            <textarea className="form-control mb-2 me-1" {...register(`foodInstructions.${index}.instructions`)} />
+                                            <button type="button" className="btn btn-sm mb-2 btn-dark" onClick={() => InstructionsRemove(index)}> Del </button>
+                                        </li>
+                                    );
+                                })}
+                            </ul>
+                            <section className="mb-4">
+                                <button
+                                    className="btn btn-sm btn-dark d-flex justify-content-start"
+                                    type="button"
+                                    onClick={() => {
+                                        InstructionsAppend({ instructions: "" });
+                                    }}
+                                > Add instructions
+                                </button>
+                            </section>
+
+
                             <div className="row">
                                 <div className="col-sm-6">
-                                    <select className="form-select" aria-label="Default select example" {...register("type", { required: true })}>
+                                    <label className="d-flex justify-content-start mt-3">*Post :</label>
+                                    <select className="form-select  border-0 border-bottom" aria-label="Default select example" {...register("type", { required: true })}>
                                         <option value="HomeMenu">Add To Home Menu</option>
                                         <option value="BreakFastFood">Add To Breakfast Food</option>
                                         <option value="BreakFastDrink">Add To Breakfast Drink</option>
@@ -192,18 +197,21 @@ const AddFoodItem = () => {
                                     {errors.type && <span className="text-danger">* Type field is required</span>}
                                 </div>
                                 <div className="col-sm-6">
-                                    <input className="form-control mb-2" type="text" placeholder="Tag Names" {...register("tags", { required: true })} />
+                                    <label className="d-flex justify-content-start mt-3">*Tag :</label>
+                                    <input className="form-control border-0 border-bottom mb-2" type="text" {...register("tags", { required: true })} />
                                     {errors.tags && <span className="text-danger">* Tag field is required</span>}
                                 </div>
                             </div>
 
                             <div className="row">
                                 <div className="col-sm-6">
-                                    <input className="form-control mb-2" type="number" placeholder="Price" {...register("price", { required: true })} />
+                                    <label className="d-flex justify-content-start mt-3">*Price :</label>
+                                    <input className="form-control border-0 border-bottom mb-2" type="number" {...register("price", { required: true })} />
                                     {errors.price && <span className="text-danger">* Price field is required</span>}
                                 </div>
                                 <div className="col-sm-6">
-                                    <select className="form-select" aria-label="Default select example" {...register("rating", { required: true })}>
+                                    <label className="d-flex justify-content-start mt-3">*Rating :</label>
+                                    <select className="form-select border-0 border-bottom" aria-label="Default select example" {...register("rating", { required: true })}>
                                         <option>2</option>
                                         <option>2.5</option>
                                         <option>3</option>
@@ -218,34 +226,43 @@ const AddFoodItem = () => {
 
                             <div className="row">
                                 <div className="col-sm-6">
-                                    <input className="form-control mb-2" type="text" placeholder="Ready Time : etc 30 Minutes" {...register("readyTime", { required: true })} />
+                                    <label className="d-flex justify-content-start mt-3">*Ready Time :</label>
+                                    <input className="form-control border-0 border-bottom mb-2" type="text" placeholder="etc 30 Minutes" {...register("readyTime", { required: true })} />
                                     {errors.readyTime && <span className="text-danger">* Ready Time field is required</span>}
                                 </div>
                                 <div className="col-sm-6">
-                                    <input className="form-control mb-2" type="text" placeholder="Prep Time : etc 30 Minutes" {...register("prepTime", { required: true })} />
+                                    <label className="d-flex justify-content-start mt-3">*Prep Time :</label>
+                                    <input className="form-control border-0 border-bottom mb-2" type="text" placeholder="etc 30 Minutes" {...register("prepTime", { required: true })} />
                                     {errors.prepTime && <span className="text-danger">* Prep Time field is required</span>}
                                 </div>
                             </div>
 
                             <div className="row">
                                 <div className="col-sm-6">
-                                    <input className="form-control mb-2" type="text" placeholder="Cook Time : etc 30 Minutes" {...register("cookTime", { required: true })} />
+                                    <label className="d-flex justify-content-start mt-3">*Cook Time :</label>
+                                    <input className="form-control border-0 border-bottom mb-2" type="text" placeholder="etc 30 Minutes" {...register("cookTime", { required: true })} />
                                     {errors.cookTime && <span className="text-danger">* Cook Time field is required</span>}
                                 </div>
                                 <div className="col-sm-6">
-                                    <input className="form-control mb-2" type="number" placeholder="Serving" {...register("servings", { required: true })} />
+                                    <label className="d-flex justify-content-start mt-3">*Servings :</label>
+                                    <input className="form-control border-0 border-bottom mb-2" type="number" {...register("servings", { required: true })} />
                                     {errors.servings && <span className="text-danger">* Servings field is required</span>}
                                 </div>
                             </div>
 
-                            <input className="form-control mb-2" type="text" placeholder="Image Name" {...register("name", { required: true })} />
+                            <label className="d-flex justify-content-start mt-3">*Image Name :</label>
+                            <input className="form-control border-0 border-bottom mb-2" type="text" {...register("name", { required: true })} />
                             {errors.name && <span className="text-danger">* Name field is required</span>}
 
-                            <input onChange={(e) => handleImgUpload(e, setImageUrl1)} className="form-control mb-2" type="file" name="One" required />
 
-                            <input onChange={(e) => handleImgUpload(e, setImageUrl2)} className="form-control mb-2" type="file" name="Two" required />
+                            <label className="d-flex justify-content-start mt-3">*Image 1st :</label>
+                            <input onChange={(e) => handleImgUpload(e, setImageUrl1)} className="form-control border-0 border-bottom mb-2" type="file" name="One" required />
 
-                            <input onChange={(e) => handleImgUpload(e, setImageUrl3)} className="form-control mb-2" type="file" name="Three" required />
+                            <label className="d-flex justify-content-start mt-3">*Image 2nd :</label>
+                            <input onChange={(e) => handleImgUpload(e, setImageUrl2)} className="form-control border-0 border-bottom mb-2" type="file" name="Two" required />
+
+                            <label className="d-flex justify-content-start mt-3">*Image 3rd :</label>
+                            <input onChange={(e) => handleImgUpload(e, setImageUrl3)} className="form-control border-0 border-bottom mb-2" type="file" name="Three" required />
 
                             <br />
                             <input type="submit" className="btn btn-success" value="Add Menu" />

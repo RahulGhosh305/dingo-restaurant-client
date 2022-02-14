@@ -16,7 +16,7 @@ const ViewItem = () => {
         fetch(`http://localhost:5000/singleMenu/${id}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 setData(data)
             })
     }, [])
@@ -29,7 +29,7 @@ const ViewItem = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-6 offset-md-3 shadow">
-                    <button onClick={() => handleNavigate()} className="btn btn-success">Back</button>
+                            <button onClick={() => handleNavigate()} className="btn btn-success mt-4">Back</button>
                             <div className="p-5">
                                 <div className="text-center">
                                 <h6>Code : #{_id}</h6>

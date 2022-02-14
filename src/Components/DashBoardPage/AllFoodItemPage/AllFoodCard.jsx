@@ -3,25 +3,33 @@ import { useNavigate } from 'react-router-dom';
 
 
 const AllFoodCard = (props) => {
-    const navigate = useNavigate()
+    const { _id, makingPic1, name, price } = props.data
+
     // VIEW 
+    const navigateView = useNavigate()
     const handleNavigate = (id) => {
-        navigate(`/view/${id}`)
+        navigateView(`/view/${id}`)
         // console.log(id);
     }
     // DELETE
     const deleteSingleMenu = (id) => {
-        console.log(id);
+        // console.log(id);
         fetch(`http://localhost:5000/deleteSingleMenu/${id}`, {
-            method : 'DELETE',
+            method: 'DELETE',
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log("delete One")
-            alert(data)
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log("delete One")
+                alert(data)
+            })
     }
-    const { _id, makingPic1, name, price} = props.data
+    // UPDATE
+    const navigateUpdate = useNavigate()
+    const handleUpdate = (id) => {
+        navigateUpdate(`/updateMenu/${id}`)
+        // console.log(id)
+    }
+
     return (
         <tr>
             <td>#{_id}</td>
@@ -31,10 +39,10 @@ const AllFoodCard = (props) => {
             <td>{name}</td>
             <td>{price}</td>
             <td>
-                <button onClick={() => handleNavigate(_id)}className="btn btn-sm btn-success me-1 mb-1">
+                <button onClick={() => handleNavigate(_id)} className="btn btn-sm btn-success me-1 mb-1">
                     View
                 </button>
-                <button className="btn btn-sm btn-dark me-1 mb-1">
+                <button onClick={()=> handleUpdate(_id)} className="btn btn-sm btn-dark me-1 mb-1">
                     Update
                 </button>
                 <button onClick={() => deleteSingleMenu(_id)} className="btn btn-sm btn-danger mb-1">

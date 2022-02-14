@@ -30,6 +30,7 @@ import ContactMessage from '../DashBoardPage/ContactMessagePage/ContactMessage.j
 import ViewContactMessage from '../DashBoardPage/ViewContactMessagePage/ViewContactMessage.jsx';
 import ViewCareerMessage from '../DashBoardPage/ViewCareerMessagePage/ViewCareerMessage.jsx';
 import NewsLetter from '../DashBoardPage/NewsLetterPage/NewsLetter.jsx';
+import UpdateMenu from '../DashBoardPage/UpdateMenuPage/UpdateMenu.jsx';
 
 const Routers = () => {
     return (
@@ -64,6 +65,7 @@ const Routers = () => {
                 <Route path="newsLetter" element={<NewsLetter />} />
             </Route>
             <Route path="/view/:ID" element={<ViewItem />} />
+            <Route path="/updateMenu/:ID" element={<UpdateMenu />} />
             <Route path="/viewContactMessage/:ID" element={<ViewContactMessage />} />
             <Route path="/viewCareerMessage/:ID" element={<ViewCareerMessage />} />
         </Routes>

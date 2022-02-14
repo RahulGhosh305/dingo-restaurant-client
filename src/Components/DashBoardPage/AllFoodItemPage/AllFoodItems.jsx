@@ -1,61 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import dashFavPic1 from '../../../utility/dashFavPic1.jpg'
-import dashFavPic2 from '../../../utility/dashFavPic2.jpg'
-import dashFavPic3 from '../../../utility/dashFavPic3.jpg'
-import dashFavPic4 from '../../../utility/dashFavPic4.jpg'
-import dashFavPic5 from '../../../utility/dashFavPic5.jpg'
 import AllFoodCard from './AllFoodCard';
 
 const AllFoodItems = () => {
     const [allFoodCategory, setAllFoodCategory] = useState([])
 
-    const data = [
-        {
-            id: 1,
-            img: dashFavPic1,
-            name: "Chicken",
-            amount: "120",
-            view : "View",
-            del : "Delete",
-            update : "Update"
-        },
-        {
-            id: 2,
-            img: dashFavPic2,
-            name: "Chicken",
-            amount: "160",
-            view : "View",
-            del : "Delete",
-            update : "Update"
-        },
-        {
-            id: 3,
-            img: dashFavPic3,
-            name: "Chicken",
-            amount: "140",
-            view : "View",
-            del : "Delete",
-            update : "Update"
-        },
-        {
-            id: 4,
-            img: dashFavPic4,
-            name: "Chicken",
-            amount: "150",
-            view : "View",
-            del : "Delete",
-            update : "Update"
-        },
-        {
-            id: 5,
-            img: dashFavPic5,
-            name: "Chicken",
-            amount: "180",
-            view : "View",
-            del : "Delete",
-            update : "Update"
-        },
-    ]
     useEffect(() => {
         fetch("http://localhost:5000/allFoods")
         .then(res => res.json())

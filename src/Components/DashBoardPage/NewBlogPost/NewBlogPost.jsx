@@ -115,17 +115,21 @@ const NewBlogPost = () => {
                     <div className="px-3">
                         <form onSubmit={handleSubmit(onSubmit)}>
 
-                            <input className="form-control mb-2 border-0 border-bottom" type="text" placeholder="New Blog Title" {...register("title", { required: true })} />
+                            <label className="d-flex justify-content-start">*Title :</label>
+                            <input className="form-control mb-2 border-0 border-bottom" type="text" {...register("title", { required: true })} />
                             {errors.title && <span className="text-danger">* Title field is required</span>}
 
-                            <textarea className="form-control mb-2 border-0 border-bottom" type="text" placeholder="Short Description" {...register("shortDesc", { required: true })} />
-                            {errors.shortDesc && <span className="text-danger">* Description field is required</span>}
+                            <label className="d-flex justify-content-start mt-3">*Description :</label>
+                            <textarea className="form-control mb-2 border-0 border-bottom" type="text" {...register("shortDesc", { required: true })} />
+                            {errors.shortDesc && <span className="text-danger">*Description field is required</span>}
 
-                            <textarea className="form-control mb-2 border-0 border-bottom" type="text" placeholder="Long Description" {...register("longDesc", { required: true })} />
+                            <label className="d-flex justify-content-start mt-3">*Long Description :</label>
+                            <textarea className="form-control mb-2 border-0 border-bottom" type="text" {...register("longDesc", { required: true })} />
                             {errors.longDesc && <span className="text-danger">* Description field is required</span>}
 
                             <div className="row">
                                 <div className="col-sm-6">
+                                    <label className="d-flex justify-content-start mt-3">*Add To :</label>
                                     <select className="form-select border-0 border-bottom" aria-label="Default select example" {...register("category", { required: true })}>
                                         <option Value="homePage">Add To Home Page</option>
                                         <option Value="blogPage">Add To Blog Page</option>
@@ -133,6 +137,7 @@ const NewBlogPost = () => {
                                     {errors.category && <span className="text-danger">* Category field is required</span>}
                                 </div>
                                 <div className="col-sm-6">
+                                    <label className="d-flex justify-content-start mt-3">*Rating :</label>
                                     <select className="form-select border-0 border-bottom" aria-label="Default select example" {...register("rating", { required: true })}>
                                         <option>2</option>
                                         <option>2.5</option>
@@ -146,7 +151,7 @@ const NewBlogPost = () => {
                                 </div>
                             </div>
 
-                            <label className="d-flex justify-content-start mt-2" htmlFor="">Food Ingredients</label>
+                            <label className="d-flex justify-content-start mt-3" htmlFor="">*Food Ingredients</label>
                             <ul className="list-unstyled">
                                 {Ingredients.map((item, index) => {
                                     return (
@@ -168,7 +173,7 @@ const NewBlogPost = () => {
                                 </button>
                             </section>
 
-                            <label className="d-flex justify-content-start mt-3" htmlFor="">Directions</label>
+                            <label className="d-flex justify-content-start mt-3" htmlFor="">*Food Directions</label>
                             <ul className="list-unstyled">
                                 {Directions.map((item, index) => {
                                     return (
@@ -179,7 +184,7 @@ const NewBlogPost = () => {
                                     );
                                 })}
                             </ul>
-                            <section className="mb-4">
+                            <section className="">
                                 <button
                                     className="btn btn-sm btn-dark d-flex justify-content-start"
                                     type="button"
@@ -192,47 +197,54 @@ const NewBlogPost = () => {
 
                             <div className="row">
                                 <div className="col-sm-6">
-                                    <input className="form-control mb-2 border-0 border-bottom" type="text" placeholder="Cook Time : etc 30 Minutes" {...register("CookTime", { required: true })} />
+                                    <label className="d-flex justify-content-start mt-3">*Cook Time :</label>
+                                    <input className="form-control mb-2 border-0 border-bottom" type="text" placeholder="etc 30 Minutes" {...register("CookTime", { required: true })} />
                                     {errors.CookTime && <span className="text-danger">* Cook Time field is required</span>}
                                 </div>
                                 <div className="col-sm-6">
-                                    <input className="form-control mb-2 border-0 border-bottom" type="text" placeholder="Prep Time : etc 30 Minutes" {...register("PrepTime", { required: true })} />
+                                    <label className="d-flex justify-content-start mt-3">*Prep Time :</label>
+                                    <input className="form-control mb-2 border-0 border-bottom" type="text" placeholder="etc 30 Minutes" {...register("PrepTime", { required: true })} />
                                     {errors.PrepTime && <span className="text-danger">* Prep Time field is required</span>}
                                 </div>
                             </div>
 
                             <div className="row">
                                 <div className="col-sm-6">
-                                    <input className="form-control mb-2 border-0 border-bottom" type="text" placeholder="Total Time : etc 30 Minutes" {...register("TotalTime", { required: true })} />
+                                    <label className="d-flex justify-content-start mt-3">*Total Time :</label>
+                                    <input className="form-control mb-2 border-0 border-bottom" type="text" placeholder="etc 30 Minutes" {...register("TotalTime", { required: true })} />
                                     {errors.TotalTime && <span className="text-danger">* Total Time field is required</span>}
                                 </div>
                                 <div className="col-sm-6">
-                                    <input className="form-control mb-2 border-0 border-bottom" type="number" placeholder="Serving" {...register("Servings", { required: true })} />
+                                    <label className="d-flex justify-content-start mt-3">*Servings :</label>
+                                    <input className="form-control mb-2 border-0 border-bottom" type="number" {...register("Servings", { required: true })} />
                                     {errors.Servings && <span className="text-danger">* Servings field is required</span>}
                                 </div>
                             </div>
 
-                            <label className="d-flex justify-content-start" htmlFor="">Blog Photo</label>
+                            <label className="d-flex justify-content-start mt-3" htmlFor="">*Blog Photo</label>
                             <input onChange={(e) => handleImgUpload(e, setBlogImage)} className="form-control mb-2 border-0 border-bottom" type="file" name="One" required />
 
-                            <label className="d-flex justify-content-start" htmlFor="">Author/Chef Photo</label>
+                            <label className="d-flex justify-content-start mt-3" htmlFor="">*Author/Chef Photo</label>
                             <input onChange={(e) => handleImgUpload(e, setChefImage)} className="form-control mb-3 border-0 border-bottom" type="file" name="Two" required />
 
                             <div className="row">
                                 <div className="col-sm-6">
-                                    <input className="form-control mb-2 border-0 border-bottom" type="text" placeholder="Author Name" {...register("author", { required: true })} />
+                                    <label className="d-flex justify-content-start mt-3" htmlFor="">*Author Name</label>
+                                    <input className="form-control mb-2 border-0 border-bottom" type="text" {...register("author", { required: true })} />
                                     {errors.author && <span className="text-danger">* Author Name field is required</span>}
                                 </div>
                                 <div className="col-sm-6">
-                                    <input className="form-control mb-2 border-0 border-bottom" type="text" placeholder="Author Designation" {...register("designation", { required: true })} />
+                                    <label className="d-flex justify-content-start mt-3" htmlFor="">*Author Designation</label>
+                                    <input className="form-control mb-2 border-0 border-bottom" type="text" {...register("designation", { required: true })} />
                                     {errors.designation && <span className="text-danger">* Designation field is required</span>}
                                 </div>
                             </div>
-
-                            <input defaultValue={new Date().toDateString()} className="form-control mb-2 border-0 border-bottom" />
+                            
+                            <label className="d-flex justify-content-start mt-3" htmlFor="">*Date</label>
+                            <input defaultValue={new Date().toDateString()} className="form-control mb-1 border-0 border-bottom" />
 
                             <br />
-                            <input type="submit" className="btn btn-success" value="Add Menu" />
+                            <input type="submit" className="btn btn-success" Value="Add Menu" />
                         </form>
                     </div>
                 </div>
