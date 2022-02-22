@@ -1,10 +1,16 @@
 import React from 'react';
+import { UserLoginContext } from '../../App';
 import Sidebar from './SideBarPages/Sidebar';
 
 const DashBoard = () => {
     return (
         <>
-            <Sidebar />
+            <UserLoginContext.Consumer>
+                {
+                    (value) => <Sidebar loginData={value} />
+                }
+            </UserLoginContext.Consumer>
+            {/* <Sidebar /> */}
         </>
     );
 };

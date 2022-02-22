@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import styles from './Navbar.module.css';
 import Logo from '../../../utility/logo.png'
+import { UserLoginContext } from '../../../App';
 
 
 //* NAVBAR COMPONENT
 const Navbar = () => {
+    const loggedInUser = useContext(UserLoginContext);
+    // console.log(loggedInUser)
     const navigate = useNavigate()
     //* Navbar Background Change
     const [navbarColor, setNavbarColor] = useState(false)
@@ -62,8 +65,11 @@ const Navbar = () => {
                                         <NavLink onClick={() => handleCollapse()} className={({ isActive }) => (isActive ? `nav-link ${styles.isActive}` : `nav-link ${styles.inActive}`)} to="/career">Career</NavLink>
                                     </li>
                                 </ul>
-                                <div className={styles.reservation}>
-                                    <Link className={`nav-link ${styles.navLink}`} to="/login">LogIn</Link>
+                                <div className={`d-flex justify-content-center ${styles.reservation}`}>
+                                    {
+                                        loggedInUser.email ? <img src={loggedInUser.photo} alt="" className="img-fluid rounded-circle" style={{width: '40px'}}/> :
+                                        <Link className={`nav-link ${styles.navLink}`} to="/login">LogIn</Link>
+                                    }
                                 </div>
                             </div>
                         </div>

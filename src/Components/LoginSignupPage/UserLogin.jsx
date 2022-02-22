@@ -2,18 +2,25 @@ import React from 'react';
 import Navbar from '../Shared/Navbar/Navbar';
 import Login from './LoginPage/Login';
 import LoginImg from '../../utility/loginImg.jpg'
+import { UserLoginContext } from '../../App';
 
 const UserLogin = () => {
     return (
         <div style={{ height: "100vh" }}>
-            <Navbar />
+            <div className="container">
+                <Navbar />
+            </div>
             <div style={{ position: "relative", top: "100px" }}>
                 <div className="container">
                     <div className="row">
                         <div className="col-md-8 offset-md-2">
                             <div className="row">
                                 <div className="col-md-8 my-auto">
-                                    <Login />
+                                    <UserLoginContext.Consumer>
+                                        {
+                                            (value) => <Login loginData={value}/>
+                                        }
+                                    </UserLoginContext.Consumer>
                                 </div>
                                 <div className="col-md-4">
                                     <div className="d-flex justify-content-center mt-5">

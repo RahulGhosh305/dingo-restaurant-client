@@ -1,18 +1,83 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faLock, faUserAlt } from '@fortawesome/free-solid-svg-icons';
 import styles from './SignUp.module.css'
 import { useNavigate } from 'react-router-dom';
+import initializeAuthentication from '../firebase.initialize';
+import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
+
+
 
 const SignUp = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
-    const navigate = useNavigate()
+    const [errorMessage, setErrorMessage] = useState("")
+    const { register, resetField, handleSubmit, formState: { errors } } = useForm({
+        mode: "onChange",
+        defaultValues: {
+            name: "",
+            email: "",
+            password: "",
+            RetypePassword: ""
+        }
+    });
 
+    //* Go Sign In Page 
+    const navigate = useNavigate()
     const handleNavigate = () => {
         navigate('/login')
     }
+
+    //* Sign Up Submit Form
+    const onSubmit = data => {
+        console.log(data)
+        //* Password validation (Basic)
+        if (data.password.length && data.RetypePassword.length < 6) {
+            clearInputField()
+            setErrorMessage("Password must be at least 6 characters.")
+            return
+        }
+        if (data.password !== data.RetypePassword) {
+            clearInputField()
+            setErrorMessage("Password not match");
+            return
+        }
+        //* SignUp authentication By (Email/Password)
+        initializeAuthentication()
+        const auth = getAuth();
+        createUserWithEmailAndPassword(auth, data.email, data.password, data.RetypePassword)
+            .then((result) => {
+                const user = result.user
+                console.log(user)
+                // console.log(result.user.emailVerified)
+                verifyEmail()
+                clearInputField()
+                setErrorMessage("");
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorCode, errorMessage)
+                clearInputField()
+                setErrorMessage(errorCode);
+            });
+    }
+    //* Email Verification
+    const verifyEmail = () => {
+        const auth = getAuth();
+        sendEmailVerification(auth.currentUser)
+            .then((result) => {
+                // console.log(result);
+                alert("Email sent successfully! Please Verified your email")
+            });
+    }
+
+    const clearInputField = () => {
+        resetField("name")
+        resetField("email")
+        resetField("password")
+        resetField("RetypePassword")
+    }
+
     return (
         <div className="container">
             <h2 className="my-3 ms-1 text-center">Sign Up</h2>
@@ -39,10 +104,10 @@ const SignUp = () => {
                     {errors.RetypePassword && <span className="text-danger">* Retype-Password field is required</span>}
                 </div>
                 <input className="text-white bg-success rounded" type="submit" value="Sign Up" />
-
+                <div className="mt-2 text-danger">{errorMessage}</div>
             </form>
-            
-            <button onClick={()=> handleNavigate()} style={{paddingLeft : 0}} className="btn mt-3">I'm already member.</button>
+
+            <button onClick={() => handleNavigate()} style={{ paddingLeft: 0 }} className="btn">Already member! <u>Sign In</u> </button>
 
         </div>
     );

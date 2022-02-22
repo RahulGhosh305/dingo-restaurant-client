@@ -7,7 +7,9 @@ import SignUpImg from '../../utility/signupImg.jpg'
 const UserSignUp = () => {
     return (
         <div style={{ height: "100vh" }}>
-            <Navbar />
+            <div className="container">
+                <Navbar />
+            </div>
             <div style={{ position: "relative", top: "100px" }}>
                 <div className="container">
                     <div className="row">

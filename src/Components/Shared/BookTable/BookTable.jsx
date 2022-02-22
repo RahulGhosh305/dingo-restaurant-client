@@ -6,8 +6,37 @@ import { faWifi, faCar, faWallet } from '@fortawesome/free-solid-svg-icons'
 import { useForm } from "react-hook-form";
 
 const BookTable = () => {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const { register, resetField, handleSubmit, formState: { errors } } = useForm({
+        mode: "onChange",
+        defaultValues: {
+            date: "",
+            time: "",
+            people: "",
+            phone: "",
+            table: "",
+        }
+      });
+    const onSubmit = data => {
+        // console.log(data)
+        fetch('http://localhost:5000/addReservation', {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+              'Content-type': 'application/json; charset=UTF-8',
+            }
+        })
+        .then(res => res.json())
+        .then(jsonData => {
+            // console.log(jsonData)
+            alert(jsonData)
+            resetField("date")
+            resetField("time")
+            resetField("people")
+            resetField("phone")
+            resetField("table")
+        })
+    }
+
     return (
         <section className={styles.BookTableWrapper}>
             <div className="container">
@@ -44,15 +73,29 @@ const BookTable = () => {
                             <div className="p-3">
                                 <div className="row">
                                     <div className={`col-md-6 mb-2 ${styles.InputGroup}`}>
-
                                         <label htmlFor="ReservationDate" className="ms-2 mb-1">*Reservation Date :</label>
-                                        <input type="date" className="form-control" {...register("date", { required: true })} />
+                                        <input type='date' className="form-control" {...register("date", { required: true })}/>  
                                         {errors.date && <span className="text-danger">*This field is required</span>}
                                     </div>
                                     <div className={`col-md-6 mb-2 ${styles.InputGroup}`}>
                                         <label htmlFor="ReservationTime" className="ms-2 mb-1">*Reservation Time :</label>
-                                        <input type="time" className="form-control"  {...register("time", { required: true })} />
+                                        <select className="form-select border-0 border-bottom" aria-label="Default select example" {...register("time", { required: true })}>
+                                            <option>Select Time</option>
+                                            <option>9.00-10.00 AM</option>
+                                            <option>10.00-11.00 AM</option>
+                                            <option>2.00-3.00 PM</option>
+                                            <option>3.00-4.00 PM</option>
+                                            <option>4.00-5.00 PM</option>
+                                            <option>5.00-6.00 PM</option>
+                                            <option>6.00-7.00 PM</option>
+                                            <option>7.00-8.00 PM</option>
+                                            <option>8.00-9.00 PM</option>
+                                            <option>9.00-10.00 PM</option>
+                                            <option></option>
+                                        </select>
                                         {errors.time && <span className="text-danger">*This field is required</span>}
+                                        {/* <input type="time" className="form-control"  {...register("time", { required: true })} />
+                                        {errors.time && <span className="text-danger">*This field is required</span>} */}
                                     </div>
                                 </div>
                                 <div className="row">
@@ -79,14 +122,14 @@ const BookTable = () => {
                                         {errors.table && <span className="text-danger">*This field is required</span>}
                                     </div>
                                     <div className={`col-md-6 mb-2 col-lg-4 mx-auto ${styles.InputGroup}`}>
-                                        <label htmlFor="phone" className="ms-2 mb-1">*Phone :</label>
-                                        <input type="tel" className="form-control" placeholder="Phone Number" {...register("phone", { required: true })} />
+                                        <label htmlFor="phone" className="ms-2 mb-1">*Phone Number :</label>
+                                        <input type="tel" className="form-control" placeholder="01XXX-XXXXXX" {...register("phone", { required: true })} />
                                         {errors.phone && <span className="text-danger">*This field is required</span>}
                                     </div>
                                 </div>
 
                                 <div className="d-flex justify-content-center">
-                                    <input type="submit" className="btn btn-warning mt-1" value="Make Reservation" />
+                                    <input type="submit" className="btn btn-secondary mt-1" value="Make Reservation" />
                                 </div>
                             </div>
                         </form>

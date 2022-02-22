@@ -7,10 +7,13 @@ import styles from './Sidebar.module.css';
 import { faComments, faHeart, faPaperPlane } from '@fortawesome/free-regular-svg-icons';
 import DashBoardSideCart from './DashBoardSideCart';
 import headingDark from '../../../utility/heading-dark.png'
+import { getAuth, signOut } from "firebase/auth";
+import initializeAuthentication from '../../LoginSignUpPage/firebase.initialize';
 
 
 
-const Sidebar = () => {
+const Sidebar = (props) => {
+    const { setLogOut } = props.loginData
     const navigate = useNavigate()
     const handleCollapse = () => {
         const nav = document.getElementById("collapsibleNavbar");
@@ -40,6 +43,17 @@ const Sidebar = () => {
             desc: "orders"
         },
     ]
+    //* Sign Out
+    initializeAuthentication()
+    const handleSignOut = () => {
+        const auth = getAuth();
+        signOut(auth).then(() => {
+            setLogOut({})
+            // Sign-out successful. 
+        }).catch((error) => {
+            // An error happened.
+        });
+    }
     return (
         <div style={{ marginTop: 20 }}>
             <div className="container-fluid">
@@ -136,7 +150,7 @@ const Sidebar = () => {
                                         <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
                                             <div className="d-flex align-items-center">
                                                 <FontAwesomeIcon icon={faSignOutAlt} />
-                                                <Link className={`nav-link ms-2 ${styles.listLink}`} to="">Log Out</Link>
+                                                <Link onClick={handleSignOut} className={`nav-link ms-2 ${styles.listLink}`} to="">Log Out</Link>
                                             </div>
                                         </li>
                                     </ul>
