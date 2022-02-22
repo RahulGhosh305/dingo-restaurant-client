@@ -10,8 +10,8 @@ const BlogHeader = () => {
                     <div className="">
                         <div className="d-flex justify-content-center">
                             <div className={styles.blogBannerTexts}>
-                                <p className={styles.blogTitle}>Blogs</p>
-                                <p className={styles.blogDesc}>News and interesting news from our world.</p>
+                                <h2>Blogs</h2>
+                                <p>News and interesting news from our world.</p>
                             </div>
                         </div>
                     </div>

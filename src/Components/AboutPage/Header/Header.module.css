@@ -19,17 +19,12 @@
 }
 .headerWrapper h2 {
     font-size: 34px;
-    color: #fff;
 }
 .headerWrapper p {
     font-size: 22px;
-    color : #fff;
 }
 .headerWrapper li {
     font-size: 18px;
-}
-.colorWhite {
-    color : #fff;
 }
 
 /** Small devices (landscape phones, 576px and up) */

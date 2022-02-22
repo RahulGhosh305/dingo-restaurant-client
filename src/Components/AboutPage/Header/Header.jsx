@@ -15,7 +15,7 @@ const Header = () => {
                             <nav aria-label="breadcrumb">
                                 <ol className="breadcrumb">
                                     <li className="breadcrumb-item"><Link to="/">Home</Link></li>
-                                    <li className={`breadcrumb-item ${styles.colorWhite}`} aria-current="page">About Us</li>
+                                    <li className="breadcrumb-item" aria-current="page">About Us</li>
                                 </ol>
                             </nav>
                         </div>
