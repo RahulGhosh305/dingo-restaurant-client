@@ -5,7 +5,6 @@ import Logo from '../../../utility/logo.png'
 import { UserLoginContext } from '../../../App';
 import avatar from "../../../utility/commentAvatar.jpg"
 
-
 //* NAVBAR COMPONENT
 const Navbar = () => {
     const [isLoggedIn, SetIsLoggedIn] = useContext(UserLoginContext);

@@ -8,6 +8,7 @@ import useCustomAuthFunction from '../useCustomAuthFunction';
 
 
 
+
 const SignUp = () => {
     const {createNewUserWithEmailAndPassword, sentErrorMessage} = useCustomAuthFunction()
     const [errorMessage, setErrorMessage] = useState("")

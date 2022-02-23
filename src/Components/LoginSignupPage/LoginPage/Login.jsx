@@ -9,8 +9,10 @@ import { useNavigate } from 'react-router-dom';
 import useCustomAuthFunction from '../useCustomAuthFunction';
 
 
+
 const Login = () => {
-    const {signInEmailAndPassword, signInWithGoogle, resetPassword, sentErrorMessage} = useCustomAuthFunction()
+    const {signInEmailAndPassword, signInWithGoogle, resetPassword, sentErrorMessage} = useCustomAuthFunction() 
+
     const { register, resetField, handleSubmit, formState: { errors } } = useForm({
         mode: "onChange",
         defaultValues: {

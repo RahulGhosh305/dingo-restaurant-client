@@ -1,6 +1,7 @@
 import React, { createContext, useState } from 'react';
 import Routers from "./Components/Routers/Routers";
 import ScrollToTop from "react-scroll-to-top";
+import AuthProvider from './Components/LoginSignUpPage/AuthContext';
 
 
 //* Context API's
@@ -14,9 +15,12 @@ function App() {
   return (
     <UserLoginContext.Provider value={[isLoggedIn, SetIsLoggedIn]}>
       <ScrollToTop smooth />
-      <Routers />
+      <AuthProvider>
+        <Routers />
+      </AuthProvider>
     </UserLoginContext.Provider>
   );
 }
+
 
 export default App;

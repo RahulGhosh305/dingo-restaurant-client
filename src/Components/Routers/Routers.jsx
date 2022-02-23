@@ -31,17 +31,18 @@ import ViewContactMessage from '../DashBoardPage/ViewContactMessagePage/ViewCont
 import ViewCareerMessage from '../DashBoardPage/ViewCareerMessagePage/ViewCareerMessage.jsx';
 import NewsLetter from '../DashBoardPage/NewsLetterPage/NewsLetter.jsx';
 import UpdateMenu from '../DashBoardPage/UpdateMenuPage/UpdateMenu.jsx';
+import PrivateRoute from '../LoginSignUpPage/PrivateRoute.jsx';
 
 const Routers = () => {
     return (
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/menus" element={<Menu />} />
-            <Route path="/menuSingle/:menuSingleID" element={<MenuSingle />} />
+            <Route path="/about" element={ <PrivateRoute> <About /> </PrivateRoute> } />
+            <Route path="/menus" element={ <PrivateRoute> <Menu /> </PrivateRoute> } />
+            <Route path="/menuSingle/:menuSingleID" element={ <MenuSingle /> } />
             <Route path='/addCart' element={<AddCart />} />
             <Route path='/checkout' element={<UserForm />} />
-            <Route path="/blogs" element={<Blogs />} />
+            <Route path="/blogs" element={ <PrivateRoute> <Blogs /> </PrivateRoute>} />
             <Route path="/blogSingle/:singleID" element={<BlogSingle />} />
             <Route path="/reservation" element={<Reservation />} />
             <Route path="/contact" element={<Contact />} />

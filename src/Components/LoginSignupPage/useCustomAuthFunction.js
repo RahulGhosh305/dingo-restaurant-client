@@ -3,7 +3,7 @@ import { UserLoginContext } from "../../App";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, sendEmailVerification, sendPasswordResetEmail, signOut } from "firebase/auth";
 import { initializeApp } from "firebase/app";
 import firebaseConfig from './firebase.config';
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 
 //* Initialize Firebase
@@ -13,7 +13,10 @@ const auth = getAuth();
 const useCustomAuthFunction = () => {
     const [isLoggedIn, SetIsLoggedIn] = useContext(UserLoginContext)
     const [errorMessage, setErrorMessage] = useState("")
-    const homeNavigate = useNavigate()
+
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || '/';
 
     //* Sent Error Message to Form
     const sentErrorMessage = () => {
@@ -42,7 +45,7 @@ const useCustomAuthFunction = () => {
         signInWithEmailAndPassword(auth, email, password)
             .then((result) => {
                 const user = result.user
-                console.log(user)
+                // console.log(user)
                 const { displayName, email, photoURL } = result.user;
                 console.log(displayName, email, photoURL);
                 const loggedInUser = {
@@ -53,8 +56,9 @@ const useCustomAuthFunction = () => {
                 if (user && user.emailVerified) {
                     SetIsLoggedIn(loggedInUser)
                     setErrorMessage("");
-                    homeNavigate('/')
-                } else {
+                    navigate(from, { replace: true });
+                } 
+                else {
                     setErrorMessage("Check Email! Verify First")
                 }
             })
@@ -80,6 +84,7 @@ const useCustomAuthFunction = () => {
                     photo: photoURL,
                 }
                 SetIsLoggedIn(loggedInUser)
+                navigate(from, { replace: true });
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -127,6 +132,7 @@ const useCustomAuthFunction = () => {
     }
 
     return {
+        isLoggedIn,
         createNewUserWithEmailAndPassword,
         signInEmailAndPassword,
         signInWithGoogle,
