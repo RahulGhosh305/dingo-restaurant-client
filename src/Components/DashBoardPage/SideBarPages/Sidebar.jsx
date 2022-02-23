@@ -7,20 +7,22 @@ import styles from './Sidebar.module.css';
 import { faComments, faHeart, faPaperPlane } from '@fortawesome/free-regular-svg-icons';
 import DashBoardSideCart from './DashBoardSideCart';
 import headingDark from '../../../utility/heading-dark.png'
-import { getAuth, signOut } from "firebase/auth";
-import initializeAuthentication from '../../LoginSignUpPage/firebase.initialize';
+import useCustomAuthFunction from '../../LoginSignUpPage/useCustomAuthFunction';
 
 
 
-const Sidebar = (props) => {
-    const { setLogOut } = props.loginData
-    const navigate = useNavigate()
+const Sidebar = () => {
+    //* function
+    const {SignOut} = useCustomAuthFunction()
+    //* Navbar Collapsed with onClicked event
     const handleCollapse = () => {
         const nav = document.getElementById("collapsibleNavbar");
         const btn = document.getElementById("navbarBtn");
         nav.classList.remove("show");
         btn.classList.add("collapsed");
     };
+    const homeNavigate = useNavigate()
+
     const cartData = [
         {
             icon: faCoffee,
@@ -43,23 +45,12 @@ const Sidebar = (props) => {
             desc: "orders"
         },
     ]
-    //* Sign Out
-    initializeAuthentication()
-    const handleSignOut = () => {
-        const auth = getAuth();
-        signOut(auth).then(() => {
-            setLogOut({})
-            // Sign-out successful. 
-        }).catch((error) => {
-            // An error happened.
-        });
-    }
     return (
         <div style={{ marginTop: 20 }}>
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-md-3">
-                        <img src={Logo} alt="Icon" className={`img-fluid mb-2 ${styles.Logo}`} onClick={() => navigate('/')} />
+                        <img src={Logo} alt="Icon" className={`img-fluid mb-2 ${styles.Logo}`} onClick={() => homeNavigate('/')} />
                         <div className={styles.sidebarWrapper}>
                             <nav>
                                 <br />
@@ -150,7 +141,7 @@ const Sidebar = (props) => {
                                         <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
                                             <div className="d-flex align-items-center">
                                                 <FontAwesomeIcon icon={faSignOutAlt} />
-                                                <Link onClick={handleSignOut} className={`nav-link ms-2 ${styles.listLink}`} to="">Log Out</Link>
+                                                <Link onClick={SignOut} className={`nav-link ms-2 ${styles.listLink}`} to="/">Log Out</Link>
                                             </div>
                                         </li>
                                     </ul>

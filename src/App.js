@@ -6,24 +6,13 @@ import ScrollToTop from "react-scroll-to-top";
 //* Context API's
 export const UserLoginContext = createContext();
 
-
 function App() {
   //* useState 
-  const [isLoggedIn, SetIsLoggedIn] = useState({
-    loginStateChange: (data) => {
-      SetIsLoggedIn(data)
-      // console.log(data);
-    },
-    // setLogOut : (data) => {
-    //   SetIsLoggedIn(data)
-    //   console.log("clicked")
-    // }
-  })
-  console.log(isLoggedIn);
+  const [isLoggedIn, SetIsLoggedIn] = useState({})
+  // console.log(isLoggedIn);
 
-  
   return (
-    <UserLoginContext.Provider value={isLoggedIn}>
+    <UserLoginContext.Provider value={[isLoggedIn, SetIsLoggedIn]}>
       <ScrollToTop smooth />
       <Routers />
     </UserLoginContext.Provider>

@@ -4,12 +4,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faLock, faUserAlt } from '@fortawesome/free-solid-svg-icons';
 import styles from './SignUp.module.css'
 import { useNavigate } from 'react-router-dom';
-import initializeAuthentication from '../firebase.initialize';
-import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
+import useCustomAuthFunction from '../useCustomAuthFunction';
 
 
 
 const SignUp = () => {
+    const {createNewUserWithEmailAndPassword, sentErrorMessage} = useCustomAuthFunction()
     const [errorMessage, setErrorMessage] = useState("")
     const { register, resetField, handleSubmit, formState: { errors } } = useForm({
         mode: "onChange",
@@ -42,35 +42,12 @@ const SignUp = () => {
             return
         }
         //* SignUp authentication By (Email/Password)
-        initializeAuthentication()
-        const auth = getAuth();
-        createUserWithEmailAndPassword(auth, data.email, data.password, data.RetypePassword)
-            .then((result) => {
-                const user = result.user
-                console.log(user)
-                // console.log(result.user.emailVerified)
-                verifyEmail()
-                clearInputField()
-                setErrorMessage("");
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                console.log(errorCode, errorMessage)
-                clearInputField()
-                setErrorMessage(errorCode);
-            });
-    }
-    //* Email Verification
-    const verifyEmail = () => {
-        const auth = getAuth();
-        sendEmailVerification(auth.currentUser)
-            .then((result) => {
-                // console.log(result);
-                alert("Email sent successfully! Please Verified your email")
-            });
+        createNewUserWithEmailAndPassword(data.email, data.password, data.RetypePassword)
+        clearInputField()
+        setErrorMessage("")
     }
 
+    //* Input Field Clear
     const clearInputField = () => {
         resetField("name")
         resetField("email")
@@ -104,10 +81,12 @@ const SignUp = () => {
                     {errors.RetypePassword && <span className="text-danger">* Retype-Password field is required</span>}
                 </div>
                 <input className="text-white bg-success rounded" type="submit" value="Sign Up" />
+
                 <div className="mt-2 text-danger">{errorMessage}</div>
+                <div className="mt-2 text-danger">{sentErrorMessage()}</div>
             </form>
 
-            <button onClick={() => handleNavigate()} style={{ paddingLeft: 0 }} className="btn">Already member! <u>Sign In</u> </button>
+            <button onClick={() => handleNavigate()} style={{ paddingLeft: 0 }} className="btn">Already registered! <u>Sign In</u> </button>
 
         </div>
     );

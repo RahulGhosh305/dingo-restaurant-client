@@ -3,12 +3,13 @@ import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom';
 import styles from './Navbar.module.css';
 import Logo from '../../../utility/logo.png'
 import { UserLoginContext } from '../../../App';
+import avatar from "../../../utility/commentAvatar.jpg"
 
 
 //* NAVBAR COMPONENT
 const Navbar = () => {
-    const loggedInUser = useContext(UserLoginContext);
-    // console.log(loggedInUser)
+    const [isLoggedIn, SetIsLoggedIn] = useContext(UserLoginContext);
+    // console.log(isLoggedIn)
     const navigate = useNavigate()
     //* Navbar Background Change
     const [navbarColor, setNavbarColor] = useState(false)
@@ -69,7 +70,9 @@ const Navbar = () => {
                                 </ul>
                                 <div className={`d-flex justify-content-center ${styles.reservation}`}>
                                     {
-                                        loggedInUser.email ? <img src={loggedInUser.photo} alt="" className="img-fluid rounded-circle" style={{ width: '40px' }} /> :
+                                        isLoggedIn.email ? <Link className={({ isActive }) => (isActive ? `nav-link ${styles.isActive}` : `nav-link ${styles.inActive}`)} to="/dashboard">
+                                            <img src={isLoggedIn.photo == null ? avatar : isLoggedIn.photo} alt="" className="img-fluid rounded-circle" style={{ width: '45px' }} />
+                                        </Link> :
                                         <Link className={`nav-link ${styles.navLink}`} to="/login">LogIn</Link>
                                     }
                                 </div>

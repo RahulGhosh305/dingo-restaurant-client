@@ -6,16 +6,16 @@ import { faFacebookF, faGoogle, faTwitter } from '@fortawesome/free-brands-svg-i
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import styles from './Login.module.css'
 import { useNavigate } from 'react-router-dom';
-import initializeAuthentication from '../firebase.initialize';
-import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
-
+import useCustomAuthFunction from '../useCustomAuthFunction';
 
 
 const Login = (props) => {
+    const {signInEmailAndPassword, signInWithGoogle, resetPassword, sentErrorMessage} = useCustomAuthFunction()
     const [errorMessage, setErrorMessage] = useState("")
     const [Email, setEmail] = useState("")
     // console.log(props.loginData)
-    const { loginStateChange } = props.loginData
+    const [isLoggedIn, SetIsLoggedIn] = props.loginData
+    // console.log(isLoggedIn)
     const { register, resetField, handleSubmit, formState: { errors } } = useForm({
         mode: "onChange",
         defaultValues: {
@@ -24,86 +24,24 @@ const Login = (props) => {
         }
     });
 
-    // const homeNavigate = useNavigate()
     //* Go Sign Up Page 
     const signUpNavigate = useNavigate()
     const handleNavigate = () => {
         signUpNavigate('/signUp')
     }
 
-
     //* Sign In Submit Form
     const onSubmit = data => {
         console.log(data)
-        setEmail(data.email)
         //* SignIn authentication By (Email/Password)
-        const auth = getAuth();
-        signInWithEmailAndPassword(auth, data.email, data.password)
-            .then((result) => {
-                const user = result.user
-                console.log(user)
-                // if (user && user.emailVerified) {
-                //     homeNavigate('/')
-                // } else {
-                //     setErrorMessage("Check Email! Verify First")
-                // }
-                setErrorMessage("");
-                clearInputField()
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                console.log(errorCode, errorMessage)
-                setErrorMessage(errorCode);
-                clearInputField()
-            });
+        signInEmailAndPassword(data.email, data.password)
+        clearInputField()
     }
 
     const clearInputField = () => {
         resetField("email")
         resetField("password")
     }
-
-    //* SignUp authentication By (Google)
-    initializeAuthentication()
-    const googleProvider = new GoogleAuthProvider();
-    const handleGoogleSignIn = () => {
-        const auth = getAuth();
-        signInWithPopup(auth, googleProvider)
-            .then(result => {
-                // const user = result.user;
-                // console.log(user);
-                const { displayName, email, photoURL } = result.user;
-                const loggedInUser = {
-                    name: displayName,
-                    email: email,
-                    photo: photoURL,
-                }
-                loginStateChange(loggedInUser)
-            })
-            .catch(error => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                const email = error.email;
-                console.log(errorCode, errorMessage, email);
-            })
-    }
-
-    //* Reset Password by Mail
-    const resetPasswordHandler = (e) => {
-        e.preventDefault()
-        const auth = getAuth();
-        sendPasswordResetEmail(auth, Email)
-            .then((result) => {
-                alert("Reset Mail Sent Successfully")
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                console.log(errorCode, errorMessage);
-            });
-    }
-
 
     return (
         <div className="container">
@@ -121,15 +59,15 @@ const Login = (props) => {
                     {errors.password && <span className="text-danger">* Password field is required</span>}
                 </div>
                 <input className="text-white bg-success rounded me-1" type="submit" value="Sign In" />
-                <button onClick={resetPasswordHandler} className="text-white bg-success rounded">Reset Password</button>
-                <div className="mt-2 text-danger">{errorMessage}</div>
+                <button onClick={resetPassword} className="text-white bg-success rounded">Reset Password</button>
+                <div className="mt-2 text-danger">{sentErrorMessage()}</div>
             </form>
 
             <div>
                 <div className="d-flex mt-5">
                     <p className="mt-1">Or use one of these options</p>
                     <div className="ms-2">
-                        <button onClick={handleGoogleSignIn} style={{ fontSize: 14, color: "white", background: "#db3236", }} className="btn btn-sm me-2">
+                        <button onClick={signInWithGoogle} style={{ fontSize: 14, color: "white", background: "#db3236", }} className="btn btn-sm me-2">
                             <FontAwesomeIcon icon={faGoogle} />
                         </button>
 

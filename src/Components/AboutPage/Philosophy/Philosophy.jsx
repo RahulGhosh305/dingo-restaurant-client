@@ -12,7 +12,7 @@ const Philosophy = () => {
                     <div className={styles.philosophyWrapper}>
                         <h6>Our story meet our strategy</h6>
                         <h2>Philosophy</h2>
-                        <img src={headingDark} alt="" className="img-fluid"/>
+                        <img src={headingDark} alt="" className="img-fluid" />
 
                         <p>Food for us comes from our relatives, whether they have wings or fins or roots. That is how we consider food. Food has a culture. It has a history. It has a story. It has relationships. Food brings people together on many different levels. It’s nourishment of the soul and body; it’s truly love.</p>
 
@@ -21,7 +21,7 @@ const Philosophy = () => {
                 </div>
 
                 <div className="col-12 col-md-4">
-                    <img src={Chef} alt=""  className="img-fluid" />
+                    <img src={Chef} alt="" className="img-fluid" />
                 </div>
             </div>
         </div>
