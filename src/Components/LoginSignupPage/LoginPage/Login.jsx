@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
@@ -9,13 +9,8 @@ import { useNavigate } from 'react-router-dom';
 import useCustomAuthFunction from '../useCustomAuthFunction';
 
 
-const Login = (props) => {
+const Login = () => {
     const {signInEmailAndPassword, signInWithGoogle, resetPassword, sentErrorMessage} = useCustomAuthFunction()
-    const [errorMessage, setErrorMessage] = useState("")
-    const [Email, setEmail] = useState("")
-    // console.log(props.loginData)
-    const [isLoggedIn, SetIsLoggedIn] = props.loginData
-    // console.log(isLoggedIn)
     const { register, resetField, handleSubmit, formState: { errors } } = useForm({
         mode: "onChange",
         defaultValues: {
