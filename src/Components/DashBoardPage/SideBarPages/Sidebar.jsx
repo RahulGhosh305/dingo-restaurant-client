@@ -7,13 +7,14 @@ import styles from './Sidebar.module.css';
 import { faComments, faHeart, faPaperPlane } from '@fortawesome/free-regular-svg-icons';
 import DashBoardSideCart from './DashBoardSideCart';
 import headingDark from '../../../utility/heading-dark.png'
-import useCustomAuthFunction from '../../LoginSignUpPage/useCustomAuthFunction';
+import useAuth from '../../LoginSignUpPage/useAuthHook';
 
 
 
 const Sidebar = () => {
-    //* function
-    const {SignOut} = useCustomAuthFunction()
+    //* function from useCustomAuthFunction
+    const {SignOut} = useAuth()
+
     //* Navbar Collapsed with onClicked event
     const handleCollapse = () => {
         const nav = document.getElementById("collapsibleNavbar");

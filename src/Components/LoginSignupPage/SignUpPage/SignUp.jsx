@@ -4,13 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faLock, faUserAlt } from '@fortawesome/free-solid-svg-icons';
 import styles from './SignUp.module.css'
 import { useNavigate } from 'react-router-dom';
-import useCustomAuthFunction from '../useCustomAuthFunction';
+import useAuth from '../useAuthHook';
 
 
 
 
 const SignUp = () => {
-    const {createNewUserWithEmailAndPassword, sentErrorMessage} = useCustomAuthFunction()
+    //* function from useCustomAuthFunction
+    const {createNewUserWithEmailAndPassword, sentErrorMessage} = useAuth()
     const [errorMessage, setErrorMessage] = useState("")
     const { register, resetField, handleSubmit, formState: { errors } } = useForm({
         mode: "onChange",

@@ -1,5 +1,4 @@
-import { useContext, useState } from "react";
-import { UserLoginContext } from "../../App";
+import { useState } from "react";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, sendEmailVerification, sendPasswordResetEmail, signOut } from "firebase/auth";
 import { initializeApp } from "firebase/app";
 import firebaseConfig from './firebase.config';
@@ -11,7 +10,7 @@ initializeApp(firebaseConfig);
 const auth = getAuth();
 
 const useCustomAuthFunction = () => {
-    const [isLoggedIn, SetIsLoggedIn] = useContext(UserLoginContext)
+    const [isLoggedIn, SetIsLoggedIn] = useState({})
     const [errorMessage, setErrorMessage] = useState("")
 
     const location = useLocation();
@@ -57,7 +56,7 @@ const useCustomAuthFunction = () => {
                     SetIsLoggedIn(loggedInUser)
                     setErrorMessage("");
                     navigate(from, { replace: true });
-                } 
+                }
                 else {
                     setErrorMessage("Check Email! Verify First")
                 }
@@ -133,6 +132,7 @@ const useCustomAuthFunction = () => {
 
     return {
         isLoggedIn,
+        setErrorMessage,
         createNewUserWithEmailAndPassword,
         signInEmailAndPassword,
         signInWithGoogle,

@@ -1,13 +1,15 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom';
 import styles from './Navbar.module.css';
 import Logo from '../../../utility/logo.png'
-import { UserLoginContext } from '../../../App';
 import avatar from "../../../utility/commentAvatar.jpg"
+import useAuth from '../../LoginSignUpPage/useAuthHook'
+
 
 //* NAVBAR COMPONENT
 const Navbar = () => {
-    const [isLoggedIn, SetIsLoggedIn] = useContext(UserLoginContext);
+    //* function from useCustomAuthFunction
+    const {isLoggedIn} = useAuth();
     // console.log(isLoggedIn)
     const navigate = useNavigate()
     //* Navbar Background Change

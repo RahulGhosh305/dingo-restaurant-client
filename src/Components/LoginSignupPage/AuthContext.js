@@ -4,9 +4,9 @@ import useCustomAuthFunction from "./useCustomAuthFunction";
 export const AuthContext = createContext({})
 
 const AuthProvider = ({ children }) => {
-    const authValue = useCustomAuthFunction()
+    const authValues = useCustomAuthFunction()
 
-    return <AuthContext.Provider value={authValue}>
+    return <AuthContext.Provider value={authValues}>
         {children}
     </AuthContext.Provider>
 }

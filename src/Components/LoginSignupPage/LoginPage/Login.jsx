@@ -6,13 +6,13 @@ import { faFacebookF, faGoogle, faTwitter } from '@fortawesome/free-brands-svg-i
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import styles from './Login.module.css'
 import { useNavigate } from 'react-router-dom';
-import useCustomAuthFunction from '../useCustomAuthFunction';
+import useAuth from '../useAuthHook';
 
 
 
 const Login = () => {
-    const {signInEmailAndPassword, signInWithGoogle, resetPassword, sentErrorMessage} = useCustomAuthFunction() 
-
+    //* function from useCustomAuthFunction
+    const {signInEmailAndPassword, signInWithGoogle, resetPassword, sentErrorMessage, setErrorMessage} = useAuth()
     const { register, resetField, handleSubmit, formState: { errors } } = useForm({
         mode: "onChange",
         defaultValues: {
@@ -25,6 +25,7 @@ const Login = () => {
     const signUpNavigate = useNavigate()
     const handleNavigate = () => {
         signUpNavigate('/signUp')
+        setErrorMessage("")
     }
 
     //* Sign In Submit Form
