@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, sendEmailVerification, sendPasswordResetEmail, signOut } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, sendEmailVerification, sendPasswordResetEmail, signOut, onAuthStateChanged } from "firebase/auth";
 import { initializeApp } from "firebase/app";
 import firebaseConfig from './firebase.config';
 import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 
 //* Initialize Firebase
@@ -129,6 +130,22 @@ const useCustomAuthFunction = () => {
                 console.log(error);
             });
     }
+    
+
+    //* Get the currently signed-in user
+    //* To get the current user is by setting an observer on the Auth object
+    useEffect(()=>{
+        const unsubscribed = onAuthStateChanged(auth, (user) => {
+            if(user) {
+                SetIsLoggedIn(user)
+            }
+            else{
+                SetIsLoggedIn({})
+            }
+        })
+
+        return () => unsubscribed
+    },[])
 
     return {
         isLoggedIn,
