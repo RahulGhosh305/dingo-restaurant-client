@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Header from './Header/Header';
 import Philosophy from './Philosophy/Philosophy';
 import ChooseUS from './ChooseUS/ChooseUS';
@@ -9,6 +9,9 @@ import Comments from './Comments/Comments';
 import MediaCart from './MediaCart/MediaCart';
 
 const About = () => {
+    useEffect(() => {
+        window.scrollTo(0,0)
+    },[])
     return (
         <div>
             <Header />

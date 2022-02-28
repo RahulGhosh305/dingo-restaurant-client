@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import styles from './MenuSingleHeader.module.css';
 import { useParams } from "react-router-dom";
+import useCart from '../../AddCart/useCartHook';
+
 
 
 
 const MenuSingleHeader = () => {
+    const { handleAddProduct } = useCart()
     const [data, setData] = useState([])
     const [allIngredient, setAllIngredient] = useState([])
     const [allFoodInstructions, setFoodInstructions] = useState([])
@@ -14,8 +16,9 @@ const MenuSingleHeader = () => {
     // console.log(id)
     // console.log(allIngredient);
     // console.log(data);
+
     useEffect(() => {
-        window.scrollTo(0,0)
+        window.scrollTo(0, 0)
         fetch(`http://localhost:5000/singleMenu/${id}`)
             .then(res => res.json())
             .then(data => {
@@ -27,10 +30,12 @@ const MenuSingleHeader = () => {
 
     const { name, title, foodCategory, shortDescription, price, rating, servings, readyTime, prepTime, cookTime, makingPic1, makingPic2, makingPic3 } = data
 
-    const navigate = useNavigate()
-    const handleNavigate = () => {
-        navigate('/addCart')
+    const orderNavigate = useNavigate()
+    const navigate = (productItem) => {
+        handleAddProduct(productItem)
+        orderNavigate("/addCart")
     }
+
     return (
         <div style={{ marginTop: 120 }}>
             <div className="container">
@@ -38,7 +43,7 @@ const MenuSingleHeader = () => {
                     <h2 className='text-center text-capitalize mb-2'>{title}</h2>
                     <p className="text-center">{shortDescription}</p>
                 </div>
-                <button onClick={() => handleNavigate()} className="btn btn-primary my-3">Make A Order</button>
+                <button onClick={() => navigate(data)} className="btn btn-primary my-3">Make A Order</button>
                 <h4 className="mb-2"># Food Category : {foodCategory}</h4>
                 {/* <h5 className="text-primary"># {tags}</h5> */}
                 <div className='d-flex justify-content-between flex-wrap'>

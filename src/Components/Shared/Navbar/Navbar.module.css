@@ -36,6 +36,9 @@
   color: #000 !important;
   font-size: 18px;
 }
+.reservation{
+  width : 80px
+}
 .reservation .navLink {
   text-align: center;
   font-size: 18px;

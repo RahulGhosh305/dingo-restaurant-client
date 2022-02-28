@@ -40,8 +40,8 @@ const Routers = () => {
             {/* <Route path="/about" element={ <PrivateRoute> <About /> </PrivateRoute> } /> */}
             <Route path="/about" element={ <About /> } />
             <Route path="/menus" element={ <Menu />  } />
-            <Route path="/menuSingle/:menuSingleID" element={ <MenuSingle /> } />
-            <Route path='/addCart' element={<AddCart />} />
+            <Route path="/menuSingle/:menuSingleID" element={ <MenuSingle/> } />
+            <Route path='/addCart' element={<AddCart/>} />
             <Route path='/checkout' element={<UserForm />} />
             <Route path="/blogs" element={ <Blogs /> } />
             <Route path="/blogSingle/:singleID" element={<BlogSingle />} />

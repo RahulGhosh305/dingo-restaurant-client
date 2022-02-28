@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styles from './BookTable.module.css';
 import headingDark from '../../../utility/heading-dark.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -6,6 +6,9 @@ import { faWifi, faCar, faWallet } from '@fortawesome/free-solid-svg-icons'
 import { useForm } from "react-hook-form";
 
 const BookTable = () => {
+    useEffect(() => {
+        window.scrollTo(0,0)
+    },[])
     const { register, resetField, handleSubmit, formState: { errors } } = useForm({
         mode: "onChange",
         defaultValues: {
