@@ -2,12 +2,11 @@ import React from 'react';
 import Navbar from '../Shared/Navbar/Navbar';
 import CartHeader from './CartHeader/CartHeader';
 
-const AddCart = ({cartItems, handleAddProduct, handleRemoveProduct, handleCartClearance}) => {
+const AddCart = () => {
     return (
         <>
             <Navbar />
             <CartHeader/>
-            {/* <CartHeader handleCartClearance={handleCartClearance} cartItems={cartItems} handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct}/> */}
         </>
     );
 };
