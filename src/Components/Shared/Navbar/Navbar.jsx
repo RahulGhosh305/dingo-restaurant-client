@@ -4,12 +4,19 @@ import styles from './Navbar.module.css';
 import Logo from '../../../utility/logo.png'
 import avatar from "../../../utility/commentAvatar.jpg"
 import useAuth from '../../LoginSignUpPage/useAuthHook'
+import useCart from '../../AddCart/useCartHook';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
 
 //* NAVBAR COMPONENT
 const Navbar = () => {
     //* function from useCustomAuthFunction
-    const {isLoggedIn} = useAuth();
+    const { isLoggedIn } = useAuth();
+    //* function from useCartFunction
+    const { cartItems } = useCart()
+
+
     // console.log(isLoggedIn)
     const navigate = useNavigate()
     //* Navbar Background Change
@@ -68,13 +75,20 @@ const Navbar = () => {
                                     <li className={`nav-item ${styles.navbarList}`}>
                                         <NavLink className={({ isActive }) => (isActive ? `nav-link ${styles.isActive}` : `nav-link ${styles.inActive}`)} to="/career">Career</NavLink>
                                     </li>
+                                    {
+                                        cartItems.length >= 1 && <li className={`nav-item ${styles.navbarList}`}>
+                                            <NavLink className={({ isActive }) => (isActive ? `nav-link ${styles.isActive}` : `nav-link ${styles.inActive}`)} to="/addCart">
+                                                <FontAwesomeIcon icon={faShoppingCart}/> <sup className="">{cartItems.length}</sup>
+                                            </NavLink>
+                                        </li>
+                                    }
                                 </ul>
-                                <div className={`d-flex justify-content-center ${styles.reservation}`}>
+                                <div className={`d-flex justify-content-center ${styles.login}`}>
                                     {
                                         isLoggedIn.email ? <NavLink className={({ isActive }) => (isActive ? `nav-link ${styles.isActive}` : `nav-link ${styles.inActive}`)} to="/dashboard">
                                             <img src={isLoggedIn.photo == null ? avatar : isLoggedIn.photo} alt="" className="img-fluid rounded-circle" style={{ width: '45px' }} />
                                         </NavLink> :
-                                        <NavLink className={`nav-link ${styles.navLink}`} to="/login">LogIn</NavLink>
+                                            <NavLink className={`nav-link ${styles.navLink}`} to="/login">LogIn</NavLink>
                                     }
                                 </div>
                             </div>

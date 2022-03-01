@@ -3,8 +3,14 @@ import FormUserDetails from './FormUserDetails';
 import FormPaymentDetails from './FormPaymentDetails';
 import Confirm from './Confirm';
 import Success from './Success';
+import useCart from '../AddCart/useCartHook'
+import useAuth from '../LoginSignUpPage/useAuthHook';
 
 const UserForm = () => {
+  const {isLoggedIn} = useAuth();
+  const { cartItems } = useCart()
+  const Bill = cartItems.reduce((price, item) => price + item.quantity * item.price, 0)
+  // console.log(Bill)
   const [userFrom, setUserForm] = useState({
     fullName: "",
     email: "",
@@ -42,10 +48,15 @@ const UserForm = () => {
       cardNumber,
       cvc,
       expireDate,
+      Bill : Bill,
+      cartItems,
+      logInEmail : isLoggedIn.email,
+      isLoggedInEmailName : isLoggedIn.displayName
     })
   }
 
   // console.log(userFrom);
+
 
   switch (step) {
     case 1:

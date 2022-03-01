@@ -33,7 +33,7 @@ const FormPaymentDetails = ({ nextStep, prevStep, values, handleChange }) => {
                     <input onChange={handleChange} defaultValue={values.cvc} className="form-control mb-2" type="number" placeholder="CVC Number" {...register("cvc", { required: true })} />
                     {errors.cvc && <span className="text-danger mb-1">* CVC Number is required</span>}
 
-                    <input onChange={handleChange} defaultValue={values.expireDate} className="form-control mb-2" type="date" placeholder="Expire Date" {...register("expireDate", { required: true })} />
+                    <input onChange={handleChange} defaultValue={values.expireDate} className="form-control mb-2" placeholder="Expire Date Formate mm/dd/yyyy" {...register("expireDate", { required: true })} />
                     {errors.expireDate && <span className="text-danger mb-1">* Expire Date field is required</span>}
                     <br />
 

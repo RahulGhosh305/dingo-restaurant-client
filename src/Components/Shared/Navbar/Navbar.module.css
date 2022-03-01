@@ -36,10 +36,10 @@
   color: #000 !important;
   font-size: 18px;
 }
-.reservation{
+.login{
   width : 80px
 }
-.reservation .navLink {
+.login .navLink {
   text-align: center;
   font-size: 18px;
   font-weight: 500;

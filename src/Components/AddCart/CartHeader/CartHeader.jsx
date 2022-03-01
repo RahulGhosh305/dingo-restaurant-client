@@ -19,10 +19,13 @@ const CartHeader = () => {
                     <div className="row mt-4">
                         <div className="col-md-6">
                             <h3 className="mb-3">Checkout or add some items to your cart</h3>
-                            {cartItems.length > 0 ? <p className="mb-2">{cartItems.length} items are added</p> : <p className="mb-2">No items are added</p>}
-                            <button className="btn btn-sm btn-success" onClick={() => handleCartClearance()}>Clear Cart</button>
+                            {
+                                cartItems.length >= 1 && (
+                                    <button className="btn btn-sm btn-success" onClick={() => handleCartClearance()}>Clear Cart</button>
+                                )
+                            }
                         </div>
-                        <div className="col-md-4">
+                        <div className=" offset-md-2 col-md-4">
                             <div className="table-responsive">
                                 <table className="table">
                                     <tbody>
@@ -85,7 +88,7 @@ const CartHeader = () => {
                             <input className="form-control me-2" type="text" placeholder=" Coupon Code " aria-label="Search" />
                             <button className="btn btn-outline-success" type="submit">Apply</button>
                         </form>
-                        <button onClick={() => handleNavigate()} className="btn btn-success">Check Out</button>
+                        <button onClick={() => handleNavigate()} className="btn btn-sm btn-success">Check Out</button>
                     </div>
                 </div>
             </div>
