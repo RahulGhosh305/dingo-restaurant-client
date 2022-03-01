@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Outlet, Link, useNavigate } from "react-router-dom";
 import Logo from '../../../utility/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,9 +12,9 @@ import useAuth from '../../LoginSignUpPage/useAuthHook';
 
 
 const Sidebar = () => {
+    const [adminEmails, setAdminEmails] = useState([])
     //* function from useCustomAuthFunction
-    const {SignOut} = useAuth()
-
+    const { SignOut, isLoggedIn } = useAuth()
     //* Navbar Collapsed with onClicked event
     const handleCollapse = () => {
         const nav = document.getElementById("collapsibleNavbar");
@@ -46,6 +46,16 @@ const Sidebar = () => {
             desc: "orders"
         },
     ]
+    useEffect(() => {
+        fetch('http://localhost:5000/allAdmin')
+            .then(res => res.json())
+            .then(data => {
+                setAdminEmails(data);
+            })
+    }, [])
+    console.log(isLoggedIn)
+    const isAdmin = adminEmails.find(adminEmail => adminEmail.email === isLoggedIn.email)
+    // console.log(isAdmin)
     return (
         <div style={{ marginTop: 20 }}>
             <div className="container-fluid">
@@ -59,93 +69,119 @@ const Sidebar = () => {
                                     <FontAwesomeIcon icon={faBars} />
                                 </button>
                                 <div className="collapse mt-2 navbar-collapse" id="collapsibleNavbar">
-                                    <ul className="list-group list-group-flush">
-                                        <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
-                                            <div className="d-flex align-items-center">
-                                                <FontAwesomeIcon icon={faHome} />
-                                                <Link className={`nav-link ms-2 ${styles.listLink}`} to="/">Home</Link>
-                                            </div>
-                                        </li>
-                                        <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
-                                            <div className="d-flex align-items-center">
-                                                <FontAwesomeIcon icon={faChartLine} />
-                                                <Link className={`nav-link ms-2 ${styles.listLink}`} to="">DashBoard</Link>
-                                                {/* dashboardInfo */}
-                                            </div>
-                                        </li>
-                                        <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
-                                            <div className="d-flex align-items-center">
-                                                <FontAwesomeIcon icon={faPlusSquare} />
-                                                <Link className={`nav-link ms-2 ${styles.listLink}`} to="addFood">Add Menu</Link>
-                                            </div>
-                                        </li>
-                                        <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
-                                            <div className="d-flex align-items-center">
-                                                <FontAwesomeIcon icon={faUtensils} />
-                                                <Link className={`nav-link ms-2 ${styles.listLink}`} to="allFoods">All Menus</Link>
-                                            </div>
-                                        </li>
-                                        <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
-                                            <div className="d-flex align-items-center">
-                                                <FontAwesomeIcon icon={faComments} />
-                                                <Link className={`nav-link ms-2 ${styles.listLink}`} to="reviews">Reviews</Link>
-                                            </div>
-                                        </li>
-                                        <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
-                                            <div className="d-flex align-items-center">
-                                                <FontAwesomeIcon icon={faChair} />
-                                                <Link className={`nav-link ms-2 ${styles.listLink}`} to="reservationTable">Reservation Table</Link>
-                                            </div>
-                                        </li>
-                                        <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
-                                            <div className="d-flex align-items-center">
-                                                <FontAwesomeIcon icon={faTruck} />
-                                                <Link className={`nav-link ms-2 ${styles.listLink}`} to="orderList">Orders</Link>
-                                            </div>
-                                        </li>
-                                        <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
-                                            <div className="d-flex align-items-center">
-                                                <FontAwesomeIcon icon={faUsers} />
-                                                <Link className={`nav-link ms-2 ${styles.listLink}`} to="customers">Customers</Link>
-                                            </div>
-                                        </li>
-                                        <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
-                                            <div className="d-flex align-items-center">
-                                                <FontAwesomeIcon icon={faClipboard} />
-                                                <Link className={`nav-link ms-2 ${styles.listLink}`} to="newBlog">New Blog Post</Link>
-                                            </div>
-                                        </li>
-                                        <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
-                                            <div className="d-flex align-items-center">
-                                                <FontAwesomeIcon icon={faEnvelopeOpen} />
-                                                <Link className={`nav-link ms-2 ${styles.listLink}`} to="careerMessage">Career Message</Link>
-                                            </div>
-                                        </li>
-                                        <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
-                                            <div className="d-flex align-items-center">
-                                                <FontAwesomeIcon icon={faPaperPlane} />
-                                                <Link className={`nav-link ms-2 ${styles.listLink}`} to="newsLetter">NewsLetter</Link>
-                                            </div>
-                                        </li>
-                                        <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
-                                            <div className="d-flex align-items-center">
-                                                <FontAwesomeIcon icon={faCompress} />
-                                                <Link className={`nav-link ms-2 ${styles.listLink}`} to="contactMessage">Contact Message</Link>
-                                            </div>
-                                        </li>
-                                        <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
-                                            <div className="d-flex align-items-center">
-                                                <FontAwesomeIcon icon={faUserShield} />
-                                                <Link className={`nav-link ms-2 ${styles.listLink}`} to="addAdmin">Add Admin</Link>
-                                            </div>
-                                        </li>
-                                        <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
-                                            <div className="d-flex align-items-center">
-                                                <FontAwesomeIcon icon={faSignOutAlt} />
-                                                <Link onClick={SignOut} className={`nav-link ms-2 ${styles.listLink}`} to="/">Log Out</Link>
-                                            </div>
-                                        </li>
-                                    </ul>
+
+
+                                    {
+                                        isAdmin ?
+                                            <ul className="list-group list-group-flush">
+                                                <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
+                                                    <div className="d-flex align-items-center">
+                                                        <FontAwesomeIcon icon={faHome} />
+                                                        <Link className={`nav-link ms-2 ${styles.listLink}`} to="/">Home</Link>
+                                                    </div>
+                                                </li>
+                                                <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
+                                                    <div className="d-flex align-items-center">
+                                                        <FontAwesomeIcon icon={faChartLine} />
+                                                        <Link className={`nav-link ms-2 ${styles.listLink}`} to="">DashBoard</Link>
+                                                    </div>
+                                                </li>
+                                                <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
+                                                    <div className="d-flex align-items-center">
+                                                        <FontAwesomeIcon icon={faPlusSquare} />
+                                                        <Link className={`nav-link ms-2 ${styles.listLink}`} to="addFood">Add Menu</Link>
+                                                    </div>
+                                                </li>
+                                                <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
+                                                    <div className="d-flex align-items-center">
+                                                        <FontAwesomeIcon icon={faUtensils} />
+                                                        <Link className={`nav-link ms-2 ${styles.listLink}`} to="allFoods">All Menus</Link>
+                                                    </div>
+                                                </li>
+                                                <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
+                                                    <div className="d-flex align-items-center">
+                                                        <FontAwesomeIcon icon={faComments} />
+                                                        <Link className={`nav-link ms-2 ${styles.listLink}`} to="reviews">Reviews</Link>
+                                                    </div>
+                                                </li>
+                                                <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
+                                                    <div className="d-flex align-items-center">
+                                                        <FontAwesomeIcon icon={faChair} />
+                                                        <Link className={`nav-link ms-2 ${styles.listLink}`} to="reservationTable">Reservation Table</Link>
+                                                    </div>
+                                                </li>
+                                                <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
+                                                    <div className="d-flex align-items-center">
+                                                        <FontAwesomeIcon icon={faTruck} />
+                                                        <Link className={`nav-link ms-2 ${styles.listLink}`} to="orderList">Orders</Link>
+                                                    </div>
+                                                </li>
+                                                <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
+                                                    <div className="d-flex align-items-center">
+                                                        <FontAwesomeIcon icon={faUsers} />
+                                                        <Link className={`nav-link ms-2 ${styles.listLink}`} to="customers">Customers</Link>
+                                                    </div>
+                                                </li>
+                                                <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
+                                                    <div className="d-flex align-items-center">
+                                                        <FontAwesomeIcon icon={faClipboard} />
+                                                        <Link className={`nav-link ms-2 ${styles.listLink}`} to="newBlog">New Blog Post</Link>
+                                                    </div>
+                                                </li>
+                                                <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
+                                                    <div className="d-flex align-items-center">
+                                                        <FontAwesomeIcon icon={faEnvelopeOpen} />
+                                                        <Link className={`nav-link ms-2 ${styles.listLink}`} to="careerMessage">Career Message</Link>
+                                                    </div>
+                                                </li>
+                                                <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
+                                                    <div className="d-flex align-items-center">
+                                                        <FontAwesomeIcon icon={faPaperPlane} />
+                                                        <Link className={`nav-link ms-2 ${styles.listLink}`} to="newsLetter">NewsLetter</Link>
+                                                    </div>
+                                                </li>
+                                                <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
+                                                    <div className="d-flex align-items-center">
+                                                        <FontAwesomeIcon icon={faCompress} />
+                                                        <Link className={`nav-link ms-2 ${styles.listLink}`} to="contactMessage">Contact Message</Link>
+                                                    </div>
+                                                </li>
+                                                <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
+                                                    <div className="d-flex align-items-center">
+                                                        <FontAwesomeIcon icon={faUserShield} />
+                                                        <Link className={`nav-link ms-2 ${styles.listLink}`} to="addAdmin">Add Admin</Link>
+                                                    </div>
+                                                </li>
+                                                <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
+                                                    <div className="d-flex align-items-center">
+                                                        <FontAwesomeIcon icon={faSignOutAlt} />
+                                                        <Link onClick={SignOut} className={`nav-link ms-2 ${styles.listLink}`} to="/">Log Out</Link>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            :
+                                            <ul className="list-group list-group-flush">
+                                                <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
+                                                    <div className="d-flex align-items-center">
+                                                        <FontAwesomeIcon icon={faHome} />
+                                                        <Link className={`nav-link ms-2 ${styles.listLink}`} to="/">Home</Link>
+                                                    </div>
+                                                </li>
+                                                <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
+                                                    <div className="d-flex align-items-center">
+                                                        <FontAwesomeIcon icon={faTruck} />
+                                                        <Link className={`nav-link ms-2 ${styles.listLink}`} to="customerOrder">Orders</Link>
+                                                    </div>
+                                                </li>
+                                                <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
+                                                    <div className="d-flex align-items-center">
+                                                        <FontAwesomeIcon icon={faSignOutAlt} />
+                                                        <Link onClick={SignOut} className={`nav-link ms-2 ${styles.listLink}`} to="/">Log Out</Link>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                    }
+
                                 </div>
                             </nav>
                             <div className={styles.sideFoodCard}>
@@ -167,7 +203,7 @@ const Sidebar = () => {
                                 <h2 className={`mt-3 ${styles.dashboard}`}>Dashboard</h2>
                                 <div className="text-center">
                                     <img src={headingDark} alt="" className="img-fluid  mb-4" />
-                                    <h4>Welcome to Dingo Admin!</h4>
+                                    <h4>Welcome to Dingo {isAdmin ? "Admin!" : `${isLoggedIn.name || isLoggedIn.displayName}`}</h4>
                                     <p>Here is your Dingo restaurant summary information.</p>
                                 </div>
                             </div>

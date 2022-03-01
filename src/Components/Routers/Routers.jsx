@@ -32,6 +32,7 @@ import ViewCareerMessage from '../DashBoardPage/ViewCareerMessagePage/ViewCareer
 import NewsLetter from '../DashBoardPage/NewsLetterPage/NewsLetter.jsx';
 import UpdateMenu from '../DashBoardPage/UpdateMenuPage/UpdateMenu.jsx';
 import SingleFoodOrderView from '../DashBoardPage/OrderListPage/SingleFoodOrderView.jsx';
+import CustomerOrder from '../DashBoardPage/CustomerOrderPage/CustomerOrder.jsx';
 // import PrivateRoute from '../LoginSignUpPage/PrivateRoute.jsx';
 
 const Routers = () => {
@@ -66,6 +67,7 @@ const Routers = () => {
                 <Route path="careerMessage" element={<CareerMessage />} />
                 <Route path="ContactMessage" element={<ContactMessage />} />
                 <Route path="newsLetter" element={<NewsLetter />} />
+                <Route path="customerOrder" element={<CustomerOrder />} />
             </Route>
             <Route path="/view/:ID" element={<ViewItem />} />
             <Route path="/updateMenu/:ID" element={<UpdateMenu />} />
