@@ -51,7 +51,12 @@
   -ms-border-radius: 50px;
   -o-border-radius: 50px;
 }
-
+.cartNumberReceiver{
+  position: relative;
+}
+.cartShopNumber{
+  position: absolute;
+}
 /** Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
   .navbarWrapper {

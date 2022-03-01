@@ -8,7 +8,22 @@ const Confirm = ({ nextStep, prevStep, values }) => {
     const { fullName, email, phone, address, city, cardName, cardNumber, cvc, expireDate, cartItems, logInEmail, isLoggedInEmailName, Bill } = values
     const { handleSubmit } = useForm();
     const onSubmit = data => {
-        const  values = { fullName, email, phone, address, city, cardName, cardNumber, cvc, expireDate, cartItems, logInEmail, isLoggedInEmailName, Bill }
+        const  values = { 
+            status : "New Order", 
+            fullName,
+            email, 
+            phone, 
+            address, 
+            city, 
+            cardName, 
+            cardNumber, 
+            cvc, 
+            expireDate, 
+            cartItems, 
+            logInEmail, 
+            isLoggedInEmailName, 
+            Bill 
+        }
         // console.log(values);
         //* PROCESS TO SERVER FORM 
         fetch('http://localhost:5000/makeFoodOrder', {
@@ -46,8 +61,8 @@ const Confirm = ({ nextStep, prevStep, values }) => {
                             <h5>Order Information</h5>
                             <h6>List of Cart Items {cartItems.length}</h6>
                             <div className="table-responsive">
-                                <table className="table table-sm table-hover bg-white text-center">
-                                    <thead>
+                                <table className="table table-sm table-hover bg-white">
+                                    <thead className="text-center">
                                         <tr>
                                             <th scope="col">No</th>
                                             <th scope="col">Img</th>
@@ -59,7 +74,7 @@ const Confirm = ({ nextStep, prevStep, values }) => {
 
                                     <tbody className="">
                                         {
-                                            cartItems.map((item, index) => <tr key={Math.random()}>
+                                            cartItems.map((item, index) => <tr className="text-center" key={Math.random()}>
                                                 <td>{index + 1}</td>
                                                 <td>
                                                     <img style={{ minWidth: 75, height: 75, borderRadius: 15, }} src={item.makingPic1} className=" p-2 img-fluid rounded-start" alt="..." />
@@ -70,7 +85,7 @@ const Confirm = ({ nextStep, prevStep, values }) => {
                                             </tr>)
                                         }
                                         <tr>
-                                            <td colSpan="2">Total Amount: {Bill} Tk.</td>
+                                            <td colSpan="2"><strong>Total Amount: {Bill} Tk.</strong></td>
                                         </tr>
                                     </tbody>
                                 </table>

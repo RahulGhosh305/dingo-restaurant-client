@@ -31,6 +31,7 @@ import ViewContactMessage from '../DashBoardPage/ViewContactMessagePage/ViewCont
 import ViewCareerMessage from '../DashBoardPage/ViewCareerMessagePage/ViewCareerMessage.jsx';
 import NewsLetter from '../DashBoardPage/NewsLetterPage/NewsLetter.jsx';
 import UpdateMenu from '../DashBoardPage/UpdateMenuPage/UpdateMenu.jsx';
+import SingleFoodOrderView from '../DashBoardPage/OrderListPage/SingleFoodOrderView.jsx';
 // import PrivateRoute from '../LoginSignUpPage/PrivateRoute.jsx';
 
 const Routers = () => {
@@ -70,6 +71,7 @@ const Routers = () => {
             <Route path="/updateMenu/:ID" element={<UpdateMenu />} />
             <Route path="/viewContactMessage/:ID" element={<ViewContactMessage />} />
             <Route path="/viewCareerMessage/:ID" element={<ViewCareerMessage />} />
+            <Route path="/foodOrderView/:ID" element={<SingleFoodOrderView />} />
         </Routes>
     );
 };

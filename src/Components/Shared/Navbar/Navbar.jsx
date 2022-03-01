@@ -76,9 +76,12 @@ const Navbar = () => {
                                         <NavLink className={({ isActive }) => (isActive ? `nav-link ${styles.isActive}` : `nav-link ${styles.inActive}`)} to="/career">Career</NavLink>
                                     </li>
                                     {
-                                        cartItems.length >= 1 && <li className={`nav-item ${styles.navbarList}`}>
+                                        cartItems.length >= 1 && <li className={`nav-item position-relative pe-0 ${styles.navbarList}`}>
                                             <NavLink className={({ isActive }) => (isActive ? `nav-link ${styles.isActive}` : `nav-link ${styles.inActive}`)} to="/addCart">
-                                                <FontAwesomeIcon icon={faShoppingCart}/> <sup className="">{cartItems.length}</sup>
+                                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                                    {cartItems.length}
+                                                </span>
+                                                <FontAwesomeIcon className={styles.cartNumberReceiver} icon={faShoppingCart} />
                                             </NavLink>
                                         </li>
                                     }
