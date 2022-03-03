@@ -86,7 +86,7 @@ const Navbar = () => {
                                         </li>
                                     }
                                 </ul>
-                                <div className={`d-flex justify-content-center ${styles.login}`}>
+                                <div className={`d-flex justify-content-center mx-auto ${styles.login}`}>
                                     {
                                         isLoggedIn.email ? <NavLink className={({ isActive }) => (isActive ? `nav-link ${styles.isActive}` : `nav-link ${styles.inActive}`)} to="/dashboard">
                                             <img src={isLoggedIn.photo == null ? avatar : isLoggedIn.photo} alt="" className="img-fluid rounded-circle" style={{ width: '45px' }} />

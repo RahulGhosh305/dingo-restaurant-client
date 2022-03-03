@@ -1,15 +1,14 @@
 import React from 'react';
 
 const CustomerListCard = (props) => {
-    const {Id, img, name, loc, price} = props.data
+    const {Id, img, name, email, birth} = props.data
+    const index = props.i
     return (
         <tr>
-            <th scope="row">#{Id}</th>
-            <td>{img}</td>
-            <td>{124}</td>
+            <th scope="row">#{index}</th>
             <td>{name}</td>
-            <td>{loc}</td>
-            <td>{price}</td>
+            <td>{email}</td>
+            <td>{birth}</td>
         </tr>
     );
 };

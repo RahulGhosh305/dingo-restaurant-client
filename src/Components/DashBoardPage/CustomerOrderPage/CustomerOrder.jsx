@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import useAuth from '../../LoginSignUpPage/useAuthHook';
+import styles from './CustomerOrder.module.css'
 
 const CustomerOrder = () => {
     const [items, setItems] = useState([])
@@ -13,19 +15,28 @@ const CustomerOrder = () => {
                 setItems(data)
             })
     }, [email])
-    console.log(items)
+    // console.log(items)
+    const customerViewOrderNavigate = useNavigate()
+    const handleViewCustomerOrder = (id) => {
+        // console.log(id);
+        customerViewOrderNavigate(`/customerOrderViewNavigate/${id}`)
+    }
     return (
         <div className="container">
             <h5>Your Ordered Items</h5>
 
             {
-                items.map((singleItem, index) => <div key={Math.random()}>
+                items.map((singleItem, index) => <div onClick={() => handleViewCustomerOrder(singleItem._id)} className={styles.cursor} key={Math.random()}>
                     <div className="card mb-3">
                         <div className="row g-0">
                             <div className="col-md-12">
                                 <div className="card-body">
-                                    <button className="card-title btn btn-sm btn-dark disabled">Order: {index + 1}</button>
-                                    <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    <div className="btn-group" role="group" aria-label="Basic example">
+                                        <button className="card-title btn btn-sm btn-dark disabled me-1">Order: {index + 1}</button>
+                                    </div>
+                                    <p className="card-text">Status: <strong className="text-primary">{singleItem.status}</strong></p>
+                                    <p className="card-text">Amount: {singleItem.Bill} Tk <strong>Paid</strong> </p>
+                                    <p className="card-text">Hello, foodie don't be worry your order is ready for approvel. When your order is approve it's show be to your status <strong>Order Approved</strong>. For check order details please click to view your order.</p>
                                 </div>
                             </div>
                         </div>

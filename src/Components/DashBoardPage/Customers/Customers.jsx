@@ -1,81 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import CustomerListCard from './CustomerListCard';
 
 const Customers = () => {
-    const data = [
-        {
-            Id: 1,
-            img : "img",
-            cusID: "125",
-            name : "name",
-            loc : "Loc",
-            price : "2",
-        },
-        {
-            Id: 2,
-            img : "img",
-            cusID: "125",
-            name : "name",
-            loc : "Loc",
-            price : "3",
-        },
-        {
-            Id: 3,
-            img : "img",
-            cusID: "125",
-            name : "name",
-            loc : "Loc",
-            price : "4",
-        },
-        {
-            Id: 4,
-            img : "img",
-            cusID: "125",
-            name : "name",
-            loc : "Loc",
-            price : "2",
-        },
-        {
-            Id: 5,
-            img : "img",
-            cusID: "125",
-            name : "name",
-            loc : "Loc",
-            price : "3",
-        },
-        {
-            Id: 6,
-            img : "img",
-            cusID: "125",
-            name : "name",
-            loc : "Loc",
-            price : "4",
-        },
-    ]
+    const [adminInfo, setAdminInfo] = useState([])
+    useEffect(() => {
+        fetch('http://localhost:5000/allAdmin')
+        .then(res => res.json())
+        .then(data => {
+            setAdminInfo(data)
+        })
+    },[])
     return (
         <div>
             <div className="text-center">
-                <h3>General Customers</h3>
-                <p>Here is your general customers list data</p>
+                <h3>General Admin</h3>
+                <p>Here is our general Admins</p>
             </div>
-            <div className="table-responsive">
-            <table className="table bg-white text-center">
-                <thead className="bg-dark text-white">
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Img</th>
-                        <th scope="col">CustomerID</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Location</th>
-                        <th scope="col">Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        data.map(data => <CustomerListCard  data={data} key={Math.random()}/>)    
-                    }
-                </tbody>
-            </table>
+            <div className="table-responsive mx-2">
+                <table className="table bg-white text-center">
+                    <thead className="bg-dark text-white">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">E-Mail</th>
+                            <th scope="col">Birthday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            adminInfo.map((data, index) => <CustomerListCard data={data} i={index + 1}key={Math.random()} />)
+                        }
+                    </tbody>
+                </table>
             </div>
         </div>
     );

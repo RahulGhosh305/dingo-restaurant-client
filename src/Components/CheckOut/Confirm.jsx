@@ -9,7 +9,7 @@ const Confirm = ({ nextStep, prevStep, values }) => {
     const { handleSubmit } = useForm();
     const onSubmit = data => {
         const  values = { 
-            status : "New Order", 
+            status : "Pending", 
             fullName,
             email, 
             phone, 
