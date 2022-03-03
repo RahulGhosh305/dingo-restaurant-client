@@ -19,7 +19,7 @@ import AddFoodItem from '../DashBoardPage/AddFoodItemPage/AddFoodItem.jsx';
 import Review from '../DashBoardPage/ReviewsPage/Review.jsx';
 import OrderList from '../DashBoardPage/OrderListPage/OrderList';
 import AddAdmin from '../DashBoardPage/AddAdminPage/AddAdmin';
-import Admins from '../DashBoardPage/Customers/Admins.jsx';
+import Admins from '../DashBoardPage/AdminPage/Admins.jsx';
 import AllFoodItems from '../DashBoardPage/AllFoodItemPage/AllFoodItems.jsx';
 import DashboardInfo from '../DashBoardPage/DashBoardInfoPage/DashboardInfo.jsx';
 import ViewItem from '../DashBoardPage/ViewItem/ViewItem.jsx';
