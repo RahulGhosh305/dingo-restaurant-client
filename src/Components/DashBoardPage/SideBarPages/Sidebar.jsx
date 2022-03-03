@@ -51,11 +51,12 @@ const Sidebar = () => {
             .then(res => res.json())
             .then(data => {
                 setAdminEmails(data);
+                // console.log(data);
             })
     }, [])
-    console.log(isLoggedIn)
+    // console.log(isLoggedIn)
     const isAdmin = adminEmails.find(adminEmail => adminEmail.email === isLoggedIn.email)
-    console.log(isAdmin)
+    // console.log(isAdmin)
     return (
         <div style={{ marginTop: 20 }}>
             <div className="container-fluid">
@@ -88,14 +89,14 @@ const Sidebar = () => {
                                                 </li>
                                                 <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
                                                     <div className="d-flex align-items-center">
-                                                        <FontAwesomeIcon icon={faPlusSquare} />
-                                                        <Link className={`nav-link ms-2 ${styles.listLink}`} to="addFood">Add Menu</Link>
+                                                        <FontAwesomeIcon icon={faUtensils} />
+                                                        <Link className={`nav-link ms-2 ${styles.listLink}`} to="allFoods">All Menus</Link>
                                                     </div>
                                                 </li>
                                                 <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
                                                     <div className="d-flex align-items-center">
-                                                        <FontAwesomeIcon icon={faUtensils} />
-                                                        <Link className={`nav-link ms-2 ${styles.listLink}`} to="allFoods">All Menus</Link>
+                                                        <FontAwesomeIcon icon={faPlusSquare} />
+                                                        <Link className={`nav-link ms-2 ${styles.listLink}`} to="addFood">Add Menu</Link>
                                                     </div>
                                                 </li>
                                                 <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
@@ -114,12 +115,6 @@ const Sidebar = () => {
                                                     <div className="d-flex align-items-center">
                                                         <FontAwesomeIcon icon={faTruck} />
                                                         <Link className={`nav-link ms-2 ${styles.listLink}`} to="orderList">Orders</Link>
-                                                    </div>
-                                                </li>
-                                                <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
-                                                    <div className="d-flex align-items-center">
-                                                        <FontAwesomeIcon icon={faUsers} />
-                                                        <Link className={`nav-link ms-2 ${styles.listLink}`} to="customers">Admins</Link>
                                                     </div>
                                                 </li>
                                                 <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
@@ -144,6 +139,12 @@ const Sidebar = () => {
                                                     <div className="d-flex align-items-center">
                                                         <FontAwesomeIcon icon={faCompress} />
                                                         <Link className={`nav-link ms-2 ${styles.listLink}`} to="contactMessage">Contact Message</Link>
+                                                    </div>
+                                                </li>
+                                                <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>
+                                                    <div className="d-flex align-items-center">
+                                                        <FontAwesomeIcon icon={faUsers} />
+                                                        <Link className={`nav-link ms-2 ${styles.listLink}`} to="admins">Admins</Link>
                                                     </div>
                                                 </li>
                                                 <li onClick={() => handleCollapse()} className={`list-group-item list-group-item-action ${styles.customNavLink}`}>

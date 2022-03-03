@@ -9,7 +9,7 @@ const OrderList = () => {
         fetch('http://localhost:5000/allFoodOrders')
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 setFoodOrders(data)
             })
     }, [])

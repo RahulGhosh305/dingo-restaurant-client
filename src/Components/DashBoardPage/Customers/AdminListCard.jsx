@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CustomerListCard = (props) => {
+const AdminListCard = (props) => {
     const {Id, img, name, email, birth} = props.data
     const index = props.i
     return (
@@ -13,4 +13,4 @@ const CustomerListCard = (props) => {
     );
 };
 
-export default CustomerListCard;
+export default AdminListCard;

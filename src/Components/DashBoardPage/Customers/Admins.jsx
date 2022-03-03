@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import CustomerListCard from './CustomerListCard';
+import AdminListCard from './AdminListCard';
 
-const Customers = () => {
+const Admins = () => {
     const [adminInfo, setAdminInfo] = useState([])
     useEffect(() => {
         fetch('http://localhost:5000/allAdmin')
@@ -28,7 +28,7 @@ const Customers = () => {
                     </thead>
                     <tbody>
                         {
-                            adminInfo.map((data, index) => <CustomerListCard data={data} i={index + 1}key={Math.random()} />)
+                            adminInfo.map((data, index) => <AdminListCard data={data} i={index + 1}key={Math.random()} />)
                         }
                     </tbody>
                 </table>
@@ -37,4 +37,4 @@ const Customers = () => {
     );
 };
 
-export default Customers;
+export default Admins;

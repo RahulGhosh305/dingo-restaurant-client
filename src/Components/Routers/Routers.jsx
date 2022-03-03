@@ -19,7 +19,7 @@ import AddFoodItem from '../DashBoardPage/AddFoodItemPage/AddFoodItem.jsx';
 import Review from '../DashBoardPage/ReviewsPage/Review.jsx';
 import OrderList from '../DashBoardPage/OrderListPage/OrderList';
 import AddAdmin from '../DashBoardPage/AddAdminPage/AddAdmin';
-import Customers from '../DashBoardPage/Customers/Customers.jsx';
+import Admins from '../DashBoardPage/Customers/Admins.jsx';
 import AllFoodItems from '../DashBoardPage/AllFoodItemPage/AllFoodItems.jsx';
 import DashboardInfo from '../DashBoardPage/DashBoardInfoPage/DashboardInfo.jsx';
 import ViewItem from '../DashBoardPage/ViewItem/ViewItem.jsx';
@@ -61,7 +61,7 @@ const Routers = () => {
                 <Route path="reviews" element={<Review />} />
                 <Route path="orderList" element={<OrderList />} />
                 <Route path="addAdmin" element={<AddAdmin />} />
-                <Route path="customers" element={<Customers />} />
+                <Route path="admins" element={<Admins />} />
                 <Route path="allFoods" element={<AllFoodItems />} />
                 <Route path="reservationTable" element={<ReservationTable />} />
                 <Route path="newBlog" element={<NewBlogPost />} />
