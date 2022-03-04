@@ -8,7 +8,6 @@
     padding: 100px 0;
     height : 550px;
     position: relative;
-    z-index: 9;
     display: flex;
     justify-content: center;
 }

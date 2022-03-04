@@ -23,7 +23,10 @@ const MediaCart = () => {
                     </div>
                 </div>
                 <div className="col-md-4">
-                    <iframe width="360" height="315" src="https://www.youtube.com/embed/kRCH8kD1GD0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                    <div className="d-flex justify-content-center mb-3">
+
+                    <iframe width="300" height="185" src="https://www.youtube.com/embed/kRCH8kD1GD0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                    </div>
                 </div>
             </div>
         </div>

@@ -34,23 +34,22 @@ import UpdateMenu from '../DashBoardPage/UpdateMenuPage/UpdateMenu.jsx';
 import SingleFoodOrderView from '../DashBoardPage/OrderListPage/SingleFoodOrderView.jsx';
 import CustomerOrder from '../DashBoardPage/CustomerOrderPage/CustomerOrder.jsx';
 import CustomerOrderView from '../DashBoardPage/CustomerOrderViewPage/CustomerOrderView.jsx';
-// import PrivateRoute from '../LoginSignUpPage/PrivateRoute.jsx';
+import PrivateRoute from '../LoginSignUpPage/PrivateRoute.jsx';
 
 const Routers = () => {
     return (
         <Routes>
             <Route path="/" element={<Home />} />
-            {/* <Route path="/about" element={ <PrivateRoute> <About /> </PrivateRoute> } /> */}
-            <Route path="/about" element={ <About /> } />
-            <Route path="/menus" element={ <Menu />  } />
+            <Route path="/about" element={ <PrivateRoute> <About /> </PrivateRoute> } />
+            <Route path="/menus" element={ <PrivateRoute> <Menu /> </PrivateRoute> } />
             <Route path="/menuSingle/:menuSingleID" element={ <MenuSingle/> } />
             <Route path='/addCart' element={<AddCart/>} />
             <Route path='/checkout' element={<UserForm />} />
-            <Route path="/blogs" element={ <Blogs /> } />
+            <Route path="/blogs" element={ <PrivateRoute> <Blogs /> </PrivateRoute> } />
             <Route path="/blogSingle/:singleID" element={<BlogSingle />} />
-            <Route path="/reservation" element={<Reservation />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/career" element={<Career />} />
+            <Route path="/reservation" element={ <PrivateRoute> <Reservation /> </PrivateRoute> } />
+            <Route path="/contact" element={ <PrivateRoute> <Contact /> </PrivateRoute> } />
+            <Route path="/career" element={ <PrivateRoute> <Career /> </PrivateRoute> } />
             <Route path='/login' element={<UserLogin />} />
             <Route path='/signUp' element={<UserSignUp />} />
             <Route path='*' element={<NotFound />} />

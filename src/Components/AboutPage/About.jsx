@@ -7,13 +7,15 @@ import Footer from '../Shared/Footer/Footer';
 import CommentFrom from './CommentForm/CommentForm'
 import Comments from './Comments/Comments';
 import MediaCart from './MediaCart/MediaCart';
+import Navbar from '../Shared/Navbar/Navbar';
 
 const About = () => {
     useEffect(() => {
         window.scrollTo(0,0)
     },[])
     return (
-        <div>
+        <>
+            <Navbar />
             <Header />
             <Philosophy />
             <ChooseUS />
@@ -22,7 +24,7 @@ const About = () => {
             <Comments />
             <CommentFrom />
             <Footer/>
-        </div>
+        </>
     );
 };
 
