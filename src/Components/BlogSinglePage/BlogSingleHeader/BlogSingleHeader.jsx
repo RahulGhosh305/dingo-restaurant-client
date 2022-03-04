@@ -13,7 +13,7 @@ const BlogSingleHeader = () => {
     // console.log(id)
     useEffect(() => {
         window.scrollTo(0,0)
-        fetch(`http://localhost:5000/singleBlog/${id}`)
+        fetch(`https://stormy-temple-85899.herokuapp.com/singleBlog/${id}`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data)

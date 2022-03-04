@@ -47,7 +47,7 @@ const FavItems = () => {
     ]
     // const [data, setData] = useState([])
     // useEffect(() => {
-    //     fetch("http://localhost:5000/DinnerFood")
+    //     fetch("https://stormy-temple-85899.herokuapp.com/DinnerFood")
     //         .then(res => res.json())
     //         .then(data => {
     //             console.log(data)

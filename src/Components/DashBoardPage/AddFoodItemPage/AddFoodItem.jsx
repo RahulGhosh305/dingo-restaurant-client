@@ -63,7 +63,7 @@ const AddFoodItem = () => {
         }
         console.log(sendFormMenuData)
 
-        fetch("http://localhost:5000/addMenu", {
+        fetch("https://stormy-temple-85899.herokuapp.com/addMenu", {
             method: 'POST',
             body: JSON.stringify(sendFormMenuData),
             headers: {

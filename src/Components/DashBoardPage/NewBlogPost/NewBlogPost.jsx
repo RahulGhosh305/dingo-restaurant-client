@@ -59,7 +59,7 @@ const NewBlogPost = () => {
         }
         // console.log(sendBlogData)
 
-        fetch("http://localhost:5000/addBlog", {
+        fetch("https://stormy-temple-85899.herokuapp.com/addBlog", {
             method: 'POST',
             body: JSON.stringify(sendBlogData),
             headers: {

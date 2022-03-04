@@ -4,7 +4,7 @@ import NewsLetterCard from './NewsLetterCard';
 const NewsLetter = () => {
     const [data, setData] = useState([])
     useEffect(() => {
-        fetch("http://localhost:5000/allNewsLetter")
+        fetch("https://stormy-temple-85899.herokuapp.com/allNewsLetter")
         .then(res => res.json())
         .then(json => {
             // console.log(json)

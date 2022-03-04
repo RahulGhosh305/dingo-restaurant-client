@@ -26,7 +26,7 @@ const Confirm = ({ nextStep, prevStep, values }) => {
         }
         // console.log(values);
         //* PROCESS TO SERVER FORM 
-        fetch('http://localhost:5000/makeFoodOrder', {
+        fetch('https://stormy-temple-85899.herokuapp.com/makeFoodOrder', {
             method: 'POST',
             body: JSON.stringify(values),
             headers: {

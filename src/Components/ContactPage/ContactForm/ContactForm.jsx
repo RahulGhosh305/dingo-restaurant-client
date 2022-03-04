@@ -14,7 +14,7 @@ export default function App() {
       });
     const onSubmit = data => {
         // console.log(data)
-        fetch("http://localhost:5000/contactUsMessage", {
+        fetch("https://stormy-temple-85899.herokuapp.com/contactUsMessage", {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {

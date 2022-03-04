@@ -4,7 +4,7 @@ import TrendingCard from './TrendingCard';
 const TreadingItem = () => {
     const [data, setData] = useState([])
     useEffect(() => {
-        fetch("http://localhost:5000/HomeMenu")
+        fetch("https://stormy-temple-85899.herokuapp.com/HomeMenu")
             .then(res => res.json())
             .then(data => {
                 // console.log(data)

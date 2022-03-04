@@ -16,7 +16,7 @@ const CommentForm = () => {
     });
     const onSubmit = data => {
         // console.log(data)
-        fetch("http://localhost:5000/addRestaurantReview", {
+        fetch("https://stormy-temple-85899.herokuapp.com/addRestaurantReview", {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {

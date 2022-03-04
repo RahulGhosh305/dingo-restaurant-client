@@ -12,7 +12,7 @@ const ViewCareerMessage = () => {
         navigate('/dashboard/careerMessage')
     }
     useEffect(() => {
-        fetch(`http://localhost:5000/singleCareerMessage/${ID}`)
+        fetch(`https://stormy-temple-85899.herokuapp.com/singleCareerMessage/${ID}`)
             .then(res => res.json())
             .then(json => {
                 // console.log(json)

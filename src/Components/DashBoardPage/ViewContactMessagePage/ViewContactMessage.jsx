@@ -11,7 +11,7 @@ const ViewContactMessage = () => {
         navigate('/dashboard/contactMessage')
     }
     useEffect(() => {
-        fetch(`http://localhost:5000/singleContactUsMessage/${ID}`)
+        fetch(`https://stormy-temple-85899.herokuapp.com/singleContactUsMessage/${ID}`)
             .then(res => res.json())
             .then(json => {
                 // console.log(json)

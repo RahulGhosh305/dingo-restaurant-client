@@ -14,7 +14,7 @@ const AllFoodCard = (props) => {
     // DELETE
     const deleteSingleMenu = (id) => {
         // console.log(id);
-        fetch(`http://localhost:5000/deleteSingleMenu/${id}`, {
+        fetch(`https://stormy-temple-85899.herokuapp.com/deleteSingleMenu/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())

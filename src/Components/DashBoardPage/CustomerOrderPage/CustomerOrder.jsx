@@ -8,7 +8,7 @@ const CustomerOrder = () => {
     const { isLoggedIn } = useAuth()
     const email = isLoggedIn.email
     useEffect(() => {
-        fetch(`http://localhost:5000/customerOrderMenu?email=${email}`)
+        fetch(`https://stormy-temple-85899.herokuapp.com/customerOrderMenu?email=${email}`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data)

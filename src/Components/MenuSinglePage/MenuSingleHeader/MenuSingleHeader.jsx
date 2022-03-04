@@ -19,7 +19,7 @@ const MenuSingleHeader = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0)
-        fetch(`http://localhost:5000/singleMenu/${id}`)
+        fetch(`https://stormy-temple-85899.herokuapp.com/singleMenu/${id}`)
             .then(res => res.json())
             .then(data => {
                 setData(data)

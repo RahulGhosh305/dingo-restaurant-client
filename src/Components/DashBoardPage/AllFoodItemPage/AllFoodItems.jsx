@@ -5,7 +5,7 @@ const AllFoodItems = () => {
     const [allFoodCategory, setAllFoodCategory] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:5000/allFoods")
+        fetch("https://stormy-temple-85899.herokuapp.com/allFoods")
         .then(res => res.json())
         .then(data => {
             // console.log(data)

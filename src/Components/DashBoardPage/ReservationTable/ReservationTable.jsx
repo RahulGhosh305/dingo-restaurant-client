@@ -5,7 +5,7 @@ import ReservationCard from './ReservationCard';
 const ReservationTable = () => {
     const [reservationData, setReservationData] = useState([])
     useEffect(()=> {
-        fetch('http://localhost:5000/allReservation')
+        fetch('https://stormy-temple-85899.herokuapp.com/allReservation')
         .then(res => res.json())
         .then(jsonData => {
             // console.log(jsonData);

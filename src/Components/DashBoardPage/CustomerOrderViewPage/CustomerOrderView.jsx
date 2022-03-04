@@ -8,7 +8,7 @@ const CustomerOrderView = () => {
     const { ID } = useParams()
     // console.log(ID)
     useEffect(() => {
-        fetch(`http://localhost:5000/singleFoodOrderView/${ID}`)
+        fetch(`https://stormy-temple-85899.herokuapp.com/singleFoodOrderView/${ID}`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data[0])
