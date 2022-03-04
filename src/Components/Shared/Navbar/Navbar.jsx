@@ -76,9 +76,9 @@ const Navbar = () => {
                                         <NavLink className={({ isActive }) => (isActive ? `nav-link ${styles.isActive}` : `nav-link ${styles.inActive}`)} to="/career">Career</NavLink>
                                     </li>
                                     {
-                                        cartItems.length >= 1 && <li className={`nav-item position-relative pe-0 ${styles.navbarList}`}>
+                                        cartItems.length >= 1 && <li className={`nav-item position-relative ${styles.navbarList}`}>
                                             <NavLink className={({ isActive }) => (isActive ? `nav-link ${styles.isActive}` : `nav-link ${styles.inActive}`)} to="/addCart">
-                                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                                <span class="position-absolute top-0 start-55 translate-middle badge rounded-pill bg-danger">
                                                     {cartItems.length}
                                                 </span>
                                                 <FontAwesomeIcon className={styles.cartNumberReceiver} icon={faShoppingCart} />
@@ -88,10 +88,12 @@ const Navbar = () => {
                                 </ul>
                                 <div className={`d-flex justify-content-center mx-auto ${styles.login}`}>
                                     {
-                                        isLoggedIn.email ? <NavLink className={({ isActive }) => (isActive ? `nav-link ${styles.isActive}` : `nav-link ${styles.inActive}`)} to="/dashboard">
+                                        isLoggedIn.email ? 
+                                        <NavLink className={({ isActive }) => (isActive ? `nav-link ${styles.isActive}` : `nav-link ${styles.inActive}`)} to="/dashboard">
                                             <img src={isLoggedIn.photo == null ? avatar : isLoggedIn.photo} alt="" className="img-fluid rounded-circle" style={{ width: '45px' }} />
-                                        </NavLink> :
-                                            <NavLink className={`nav-link ${styles.navLink}`} to="/login">LogIn</NavLink>
+                                        </NavLink> 
+                                        :
+                                        <NavLink className={`nav-link ${styles.navLink}`} to="/login">LogIn</NavLink>
                                     }
                                 </div>
                             </div>

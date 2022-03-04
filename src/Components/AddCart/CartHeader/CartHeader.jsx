@@ -51,8 +51,7 @@ const CartHeader = () => {
                         <table className="table border text-center">
                             <thead>
                                 <tr className="table-dark">
-                                    <th scope="col"></th>
-                                    <th scope="col">Image</th>
+                                    <th scope="col">IMAGE</th>
                                     <th scope="col">PRODUCT</th>
                                     <th scope="col">PRICE</th>
                                     <th scope="col">QUANTITY</th>
@@ -61,8 +60,7 @@ const CartHeader = () => {
                             </thead>
                             <tbody>
                                 {
-                                    cartItems.map((item, index) => <tr key={Math.random()}>
-                                        <th scope="row">{index + 1}</th>
+                                    cartItems.map((item) => <tr key={Math.random()}>
                                         <td style={{ width: 80 }}>
                                             <img src={item.makingPic1} alt="img" className="img-fluid" />
                                         </td>
