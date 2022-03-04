@@ -16,9 +16,7 @@ const Home = () => {
     },[])
     return (
         <>
-            <div className="container">
             <Navbar/>
-            </div>
             <Header />
             <Info />
             <About />

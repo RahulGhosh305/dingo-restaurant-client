@@ -162,7 +162,7 @@ const Footer = () => {
             </div>
 
             <div className="text-center">
-                <p>Copyright © {date.getFullYear()} Bingo Restaurant. All rights reserved by <i style={{ fontSize: 20 }}>&hearts;</i> Dingo.</p>
+                <p className="px-3">Copyright © {date.getFullYear()} Bingo Restaurant. All rights reserved by <i style={{ fontSize: 20 }}>&hearts;</i> Dingo.</p>
             </div>
 
         </footer>

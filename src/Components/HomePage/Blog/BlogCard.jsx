@@ -19,7 +19,7 @@ const BlogCard = () => {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 4,
+        slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
         initialSlide: 0,
@@ -34,7 +34,7 @@ const BlogCard = () => {
                 }
             },
             {
-                breakpoint: 1199,
+                breakpoint: 900,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
@@ -42,7 +42,7 @@ const BlogCard = () => {
                 }
             },
             {
-                breakpoint: 770,
+                breakpoint: 600,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1

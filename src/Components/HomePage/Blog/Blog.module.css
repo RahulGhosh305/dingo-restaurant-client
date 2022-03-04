@@ -11,9 +11,16 @@
 .postTexts img{
     padding : 15px 0px;
 }
+.blogMaxWidth{
+    width: 90%;
+}
 
 /** LargeSmall devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {}
+@media (min-width: 576px) {
+    .blogMaxWidth{
+        width: 100%;
+    }
+}
 
 /** Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {}

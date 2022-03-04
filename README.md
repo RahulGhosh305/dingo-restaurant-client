@@ -1,4 +1,4 @@
-# Dingo A Restaurant Site 
+# Dingo A Restaurant Site (Client Code)
 ## (MERN Stack Project)
 
 This project based on A Restaurant Website with booking table through online & ordering foods. [Demo Project](https://dingo-restaurant-rg.web.app/).
