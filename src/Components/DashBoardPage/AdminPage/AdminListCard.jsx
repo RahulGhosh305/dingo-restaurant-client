@@ -1,7 +1,7 @@
 import React from 'react';
 
 const AdminListCard = (props) => {
-    const {Id, img, name, email, birth} = props.data
+    const {name, email, birth} = props.data
     const index = props.i
     return (
         <tr>

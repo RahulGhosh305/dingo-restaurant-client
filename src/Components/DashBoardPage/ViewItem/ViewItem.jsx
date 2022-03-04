@@ -19,7 +19,7 @@ const ViewItem = () => {
                 // console.log(data)
                 setData(data)
             })
-    }, [])
+    }, [id])
     const { _id, title, shortDescription, makingPic1, name, price } = data
     return (
         <div>
