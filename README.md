@@ -7,6 +7,7 @@ This project based on A Restaurant Website with booking table through online & o
 
 - This project is designed with beautiful 35+ big & small pages UI design and real content writing.
 - Used Sign-up with Google and Create account with email and password, Sign-In, Signout functionalities.
+- Set firebase JWT (Json web token) to secure API route
 - Also, have a verification email account process, have also password reset process.
 - Different customer and admin dashboards created.
 - Customers can make food orders, book reservation tables and comment about restaurant reviews.
