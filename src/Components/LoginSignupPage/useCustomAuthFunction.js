@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, sendEmailVerification, sendPasswordResetEmail, signOut, onAuthStateChanged } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, sendEmailVerification, sendPasswordResetEmail, signOut, onAuthStateChanged, getIdToken } from "firebase/auth";
 import { initializeApp } from "firebase/app";
 import firebaseConfig from './firebase.config';
 import { useLocation, useNavigate } from "react-router-dom";
@@ -137,6 +137,8 @@ const useCustomAuthFunction = () => {
     useEffect(()=>{
         const unsubscribed = onAuthStateChanged(auth, (user) => {
             if(user) {
+                getIdToken(user)
+                .then((idToken) => localStorage.setItem('idToken', idToken))
                 SetIsLoggedIn(user)
             }
             else{

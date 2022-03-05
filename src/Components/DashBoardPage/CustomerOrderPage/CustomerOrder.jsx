@@ -7,14 +7,28 @@ const CustomerOrder = () => {
     const [items, setItems] = useState([])
     const { isLoggedIn } = useAuth()
     const email = isLoggedIn.email
+
+    const loginNavigate = useNavigate()
+
     useEffect(() => {
-        fetch(`https://stormy-temple-85899.herokuapp.com/customerOrderMenu?email=${email}`)
-            .then(res => res.json())
-            .then(data => {
-                // console.log(data)
-                setItems(data)
-            })
-    }, [email])
+        fetch(`https://stormy-temple-85899.herokuapp.com/customerOrderMenu?email=${email}`, {
+            headers: {
+                'authorization': `Bearer ${localStorage.getItem('idToken')}` 
+            }
+        })
+        .then(res => {
+            if(res.status === 200) {
+                return res.json()
+            }
+            else if(res.status === 401) {
+                loginNavigate('/login')
+            }          
+        })
+        .then(data => {
+            // console.log(data)
+            setItems(data)
+        })
+    }, [email, loginNavigate])
     // console.log(items)
     const customerViewOrderNavigate = useNavigate()
     const handleViewCustomerOrder = (id) => {
