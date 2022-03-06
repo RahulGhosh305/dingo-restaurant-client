@@ -6,8 +6,8 @@ import Card from '../Card/Card';
 import useFetch from "../useFetch.js";
 
 const Dinner = () => {
-    const [dinnerFood] = useFetch('https://stormy-temple-85899.herokuapp.com/DinnerFood')
-    const [dinnerDrink] = useFetch('https://stormy-temple-85899.herokuapp.com/DinnerDrink')
+    const [dinnerFood] = useFetch('https://sheltered-crag-23788.herokuapp.com/DinnerFood')
+    const [dinnerDrink] = useFetch('https://sheltered-crag-23788.herokuapp.com/DinnerDrink')
     return (
         <>
             <div className="container">

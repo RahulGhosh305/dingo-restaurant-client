@@ -17,7 +17,7 @@ const UpdateMenu = () => {
     // console.log(id)
     //* GET SINGLE DATA
     useEffect(() => {
-        fetch(`https://stormy-temple-85899.herokuapp.com/updateMenu/${id}`)
+        fetch(`https://sheltered-crag-23788.herokuapp.com/updateMenu/${id}`)
             .then(res => res.json())
             .then(json => {
                 // console.log(json);
@@ -76,7 +76,7 @@ const UpdateMenu = () => {
         console.log(upData);
 
         //* PATCH / UPDATE SINGLE DATA
-        fetch(`https://stormy-temple-85899.herokuapp.com/toModifyServerData/${id}`,{
+        fetch(`https://sheltered-crag-23788.herokuapp.com/toModifyServerData/${id}`,{
             method: 'PATCH',
             headers: {'Content-Type' : 'application/json'},
             body: JSON.stringify(upData) 

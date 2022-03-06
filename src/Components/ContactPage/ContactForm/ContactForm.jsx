@@ -14,7 +14,7 @@ export default function App() {
       });
     const onSubmit = data => {
         // console.log(data)
-        fetch("https://stormy-temple-85899.herokuapp.com/contactUsMessage", {
+        fetch("https://sheltered-crag-23788.herokuapp.com/contactUsMessage", {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {

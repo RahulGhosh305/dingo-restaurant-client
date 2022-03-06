@@ -12,7 +12,7 @@ const AddAdmin = () => {
     });
     const onSubmit = data => {
         const addAdmin = data
-        fetch('https://stormy-temple-85899.herokuapp.com/admin', {
+        fetch('https://sheltered-crag-23788.herokuapp.com/admin', {
             method: 'POST',
             body: JSON.stringify(addAdmin),
             headers: {

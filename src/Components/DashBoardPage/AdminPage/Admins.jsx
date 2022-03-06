@@ -4,7 +4,7 @@ import AdminListCard from './AdminListCard';
 const Admins = () => {
     const [adminInfo, setAdminInfo] = useState([])
     useEffect(() => {
-        fetch('https://stormy-temple-85899.herokuapp.com/allAdmin')
+        fetch('https://sheltered-crag-23788.herokuapp.com/allAdmin')
         .then(res => res.json())
         .then(data => {
             setAdminInfo(data)

@@ -4,7 +4,7 @@ import CareerMessageCard from './CareerMessageCard/CareerMessageCard';
 const CareerMessage = () => {
     const [data, setData] = useState([])
     useEffect(() => {
-        fetch(`https://stormy-temple-85899.herokuapp.com/allCareerMessage`)
+        fetch(`https://sheltered-crag-23788.herokuapp.com/allCareerMessage`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data)

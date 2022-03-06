@@ -59,7 +59,7 @@ const NewBlogPost = () => {
         }
         // console.log(sendBlogData)
 
-        fetch("https://stormy-temple-85899.herokuapp.com/addBlog", {
+        fetch("https://sheltered-crag-23788.herokuapp.com/addBlog", {
             method: 'POST',
             body: JSON.stringify(sendBlogData),
             headers: {

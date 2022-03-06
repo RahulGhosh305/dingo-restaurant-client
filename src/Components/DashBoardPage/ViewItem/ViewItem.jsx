@@ -13,7 +13,7 @@ const ViewItem = () => {
     let id = ID.ID
     // console.log(id)
     useEffect(() => {
-        fetch(`https://stormy-temple-85899.herokuapp.com/singleMenu/${id}`)
+        fetch(`https://sheltered-crag-23788.herokuapp.com/singleMenu/${id}`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data)

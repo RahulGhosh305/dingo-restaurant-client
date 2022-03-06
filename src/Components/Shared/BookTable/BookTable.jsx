@@ -21,7 +21,7 @@ const BookTable = () => {
       });
     const onSubmit = data => {
         // console.log(data)
-        fetch('https://stormy-temple-85899.herokuapp.com/addReservation', {
+        fetch('https://sheltered-crag-23788.herokuapp.com/addReservation', {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {

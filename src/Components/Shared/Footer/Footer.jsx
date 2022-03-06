@@ -21,7 +21,7 @@ const Footer = () => {
     });
     const onSubmit = data => {
         console.log(data)
-        fetch("https://stormy-temple-85899.herokuapp.com/addNewsletter", {
+        fetch("https://sheltered-crag-23788.herokuapp.com/addNewsletter", {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {

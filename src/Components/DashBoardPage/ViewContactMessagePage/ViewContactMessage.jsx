@@ -11,7 +11,7 @@ const ViewContactMessage = () => {
         navigate('/dashboard/contactMessage')
     }
     useEffect(() => {
-        fetch(`https://stormy-temple-85899.herokuapp.com/singleContactUsMessage/${ID}`)
+        fetch(`https://sheltered-crag-23788.herokuapp.com/singleContactUsMessage/${ID}`)
             .then(res => res.json())
             .then(json => {
                 // console.log(json)

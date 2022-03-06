@@ -7,7 +7,7 @@ import menuImage from '../../../utility/menuImage.png';
 const Food = () => {
     const [menuData, setMenuData] = useState([])
     useEffect(() => {
-        fetch('https://stormy-temple-85899.herokuapp.com/HomeMenu')
+        fetch('https://sheltered-crag-23788.herokuapp.com/HomeMenu')
         .then(res => res.json())
         .then(data => setMenuData(data))
     },[])

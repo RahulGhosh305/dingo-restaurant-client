@@ -8,7 +8,7 @@ import SingleBlogCard from './SingleBlogCard';
 const BlogCard = () => {
     const [blogCardData, setBlogCardData] = useState([])
     useEffect(() => {
-        fetch("https://stormy-temple-85899.herokuapp.com/homePageBlog")
+        fetch("https://sheltered-crag-23788.herokuapp.com/homePageBlog")
         .then(res => res.json())
         .then(data => {
             // console.log(data)

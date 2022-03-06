@@ -6,7 +6,7 @@ import styles from './AllBlog.module.css';
 const AllBlog = () => {
     const [blogCardData, setBlogCardData] = useState([])
     useEffect(() => {
-        fetch("https://stormy-temple-85899.herokuapp.com/BlogPageBlog")
+        fetch("https://sheltered-crag-23788.herokuapp.com/BlogPageBlog")
         .then(res => res.json())
         .then(data => {
             // console.log(data)

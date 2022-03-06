@@ -11,7 +11,7 @@ const CustomerOrder = () => {
     const loginNavigate = useNavigate()
 
     useEffect(() => {
-        fetch(`https://stormy-temple-85899.herokuapp.com/customerOrderMenu?email=${email}`, {
+        fetch(`https://sheltered-crag-23788.herokuapp.com/customerOrderMenu?email=${email}`, {
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('idToken')}` 
             }

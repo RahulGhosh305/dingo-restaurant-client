@@ -8,7 +8,7 @@ const SingleFoodOrderView = () => {
     let { ID } = useParams();
 
     useEffect(() => {
-        fetch(`https://stormy-temple-85899.herokuapp.com/singleFoodOrderView/${ID}`)
+        fetch(`https://sheltered-crag-23788.herokuapp.com/singleFoodOrderView/${ID}`)
             .then(res => res.json())
             .then(data => {
                 setOrder(data[0])
