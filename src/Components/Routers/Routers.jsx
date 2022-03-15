@@ -35,6 +35,7 @@ import SingleFoodOrderView from '../DashBoardPage/OrderListPage/SingleFoodOrderV
 import CustomerOrder from '../DashBoardPage/CustomerOrderPage/CustomerOrder.jsx';
 import CustomerOrderView from '../DashBoardPage/CustomerOrderViewPage/CustomerOrderView.jsx';
 import PrivateRoute from '../LoginSignUpPage/PrivateRoute.jsx';
+import ResetPassword from '../DashBoardPage/ResetPassword/ResetPassword.jsx';
 
 const Routers = () => {
     return (
@@ -68,6 +69,7 @@ const Routers = () => {
                 <Route path="ContactMessage" element={<ContactMessage />} />
                 <Route path="newsLetter" element={<NewsLetter />} />
                 <Route path="customerOrder" element={<CustomerOrder />} />
+                <Route path="resetPassword" element={<ResetPassword />} />
             </Route>
             <Route path="/view/:ID" element={<ViewItem />} />
             <Route path="/updateMenu/:ID" element={<UpdateMenu />} />

@@ -12,7 +12,7 @@ import useAuth from '../useAuthHook';
 
 const Login = () => {
     //* function from useCustomAuthFunction
-    const {signInEmailAndPassword, signInWithGoogle, resetPassword, sentErrorMessage, setErrorMessage} = useAuth()
+    const {signInEmailAndPassword, signInWithGoogle, sentErrorMessage, setErrorMessage} = useAuth()
     const { register, resetField, handleSubmit, formState: { errors } } = useForm({
         mode: "onChange",
         defaultValues: {
@@ -58,7 +58,6 @@ const Login = () => {
                 </div>
 
                 <input className={styles.signInBtn} type="submit" value="Sign In" />
-                <button onClick={resetPassword} className={styles.signInBtn}>Reset Password</button>
 
                 <div className="mt-2 text-danger">{sentErrorMessage()}</div>
             </form>
