@@ -42,11 +42,11 @@ const Routers = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={ <PrivateRoute> <About /> </PrivateRoute> } />
             <Route path="/menus" element={ <PrivateRoute> <Menu /> </PrivateRoute> } />
-            <Route path="/menuSingle/:menuSingleID" element={ <MenuSingle/> } />
+            <Route path="/menuSingle/:menuSingleID" element={ <PrivateRoute> <MenuSingle/> </PrivateRoute> } />
             <Route path='/addCart' element={<AddCart/>} />
             <Route path='/checkout' element={<UserForm />} />
             <Route path="/blogs" element={ <PrivateRoute> <Blogs /> </PrivateRoute> } />
-            <Route path="/blogSingle/:singleID" element={<BlogSingle />} />
+            <Route path="/blogSingle/:singleID" element={ <PrivateRoute> <BlogSingle /> </PrivateRoute> } />
             <Route path="/reservation" element={ <PrivateRoute> <Reservation /> </PrivateRoute> } />
             <Route path="/contact" element={ <PrivateRoute> <Contact /> </PrivateRoute> } />
             <Route path="/career" element={ <PrivateRoute> <Career /> </PrivateRoute> } />

@@ -29,8 +29,10 @@ const useCustomAuthFunction = () => {
             .then((result) => {
                 const user = result.user
                 console.log(user)
+                console.log(user.emailVerified)
                 verifyEmail()
                 setErrorMessage("");
+                navigate('/login')
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -45,18 +47,20 @@ const useCustomAuthFunction = () => {
         signInWithEmailAndPassword(auth, email, password)
             .then((result) => {
                 const user = result.user
-                // console.log(user)
-                const { displayName, email, photoURL } = result.user;
+                console.log(user)
+                const { displayName, email, photoURL, emailVerified } = result.user;
                 console.log(displayName, email, photoURL);
                 const loggedInUser = {
-                    name: displayName,
+                    name: displayName || "World",
                     email: email,
                     photo: photoURL,
+                    emailVerified: emailVerified
                 }
                 if (user && user.emailVerified) {
                     SetIsLoggedIn(loggedInUser)
                     setErrorMessage("");
-                    navigate(from, { replace: true });
+                    // navigate(from, { replace: true });
+                    navigate('/')
                 }
                 else {
                     setErrorMessage("Check Email! Verify First")
@@ -77,11 +81,12 @@ const useCustomAuthFunction = () => {
             .then((result) => {
                 // const user = result.user;
                 // console.log(user)
-                const { displayName, email, photoURL } = result.user;
+                const { displayName, email, photoURL, emailVerified } = result.user;
                 const loggedInUser = {
                     name: displayName,
                     email: email,
                     photo: photoURL,
+                    emailVerified: emailVerified
                 }
                 SetIsLoggedIn(loggedInUser)
                 navigate(from, { replace: true });

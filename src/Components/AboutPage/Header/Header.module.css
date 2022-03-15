@@ -1,16 +1,11 @@
 .headerWrapper {
-    background: rgba(0, 0, 0, 0) url(../../../utility/aboutPageBg.jpg) scroll;
+    background-image: url(../../../utility/aboutPageBg.jpg);
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center;
     background-size: cover;
     background-attachment: fixed;
-    box-shadow: 0 2px 2px rgb(0 0 0 / 20%);
-    padding: 100px 0;
     height : 550px;
-    z-index : -1000;
     position: relative;
-    display: flex;
-    justify-content: center;
 }
 .headerTexts {
     text-align: center;
@@ -53,7 +48,6 @@
         box-shadow: 0 2px 2px rgb(0 0 0 / 20%);
         padding: 100px 0;
         position: relative;
-        z-index: 9;
         height : 550px;
     }
     .headerWrapper h2 {

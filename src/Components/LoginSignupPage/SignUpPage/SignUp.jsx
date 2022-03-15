@@ -31,7 +31,7 @@ const SignUp = () => {
 
     //* Sign Up Submit Form
     const onSubmit = data => {
-        console.log(data)
+        // console.log(data)
         //* Password validation (Basic)
         if (data.password.length && data.RetypePassword.length < 6) {
             clearInputField()
@@ -82,7 +82,7 @@ const SignUp = () => {
                     <input type="password" className={`form-control ms-2 mb-4 ${styles.customInput}`} {...register("RetypePassword", { required: true })} placeholder="Retype Password" />
                     {errors.RetypePassword && <span className="text-danger">* Retype-Password field is required</span>}
                 </div>
-                <input className="text-white bg-success rounded" type="submit" value="Sign Up" />
+                <input className={styles.signUpBtn} type="submit" value="Sign Up" />
 
                 <div className="mt-2 text-danger">{errorMessage}</div>
                 <div className="mt-2 text-danger">{sentErrorMessage()}</div>

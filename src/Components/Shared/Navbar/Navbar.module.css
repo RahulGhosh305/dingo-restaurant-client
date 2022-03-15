@@ -26,7 +26,7 @@
   background-color: #fff;
   text-align: center;
   font-weight: 500;
-  padding: 0px 16px;
+  padding: 0px 12px;
 }
 .isActive {
   color: #000 !important;
@@ -43,7 +43,7 @@
   text-align: center;
   font-size: 18px;
   font-weight: 500;
-  background-color: #ff6426;;
+  background-color: #ff6426;
   color: #fff;
   border-radius: 50px;
   -webkit-border-radius: 50px;

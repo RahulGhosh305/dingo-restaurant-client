@@ -7,6 +7,7 @@ import Footer from '../Shared/Footer/Footer';
 import CommentFrom from './CommentForm/CommentForm'
 import Comments from './Comments/Comments';
 import MediaCart from './MediaCart/MediaCart';
+import Navbar from '../Shared/Navbar/Navbar';
 
 const About = () => {
     useEffect(() => {
@@ -14,6 +15,7 @@ const About = () => {
     },[])
     return (
         <>
+            <Navbar />
             <Header />
             <Philosophy />
             <ChooseUS />

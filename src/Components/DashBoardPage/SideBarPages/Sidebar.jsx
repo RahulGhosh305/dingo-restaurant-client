@@ -191,7 +191,7 @@ const Sidebar = () => {
                                 }
                             </div>
                             <div className={styles.sideFoodCard}>
-                                <p className="text-muted mt-3">Dingo - Restaurant Admin Dashboard © 2021 All Rights Reserved.
+                                <p className="text-muted mt-3">Dingo - Restaurant Admin Dashboard © 2022 All Rights Reserved.
                                 </p>
                                 <p className="text-muted">Made with <i className="mx-2"> <FontAwesomeIcon icon={faHeart} /></i> by RG.
                                 </p>

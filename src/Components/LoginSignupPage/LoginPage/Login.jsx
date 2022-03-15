@@ -56,8 +56,10 @@ const Login = () => {
                     <input type="password" className={`form-control ms-2 mb-4 ${styles.customInput}`} {...register("password", { required: true })} placeholder="Password" />
                     {errors.password && <span className="text-danger">* Password field is required</span>}
                 </div>
-                <input className="text-white bg-success rounded me-1" type="submit" value="Sign In" />
-                <button onClick={resetPassword} className="text-white bg-success rounded">Reset Password</button>
+
+                <input className={styles.signInBtn} type="submit" value="Sign In" />
+                <button onClick={resetPassword} className={styles.signInBtn}>Reset Password</button>
+
                 <div className="mt-2 text-danger">{sentErrorMessage()}</div>
             </form>
 
