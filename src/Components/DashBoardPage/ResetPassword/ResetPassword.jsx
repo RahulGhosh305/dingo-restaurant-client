@@ -1,5 +1,4 @@
 import React from 'react';
-import { useForm } from "react-hook-form";
 import useAuth from '../../LoginSignUpPage/useAuthHook';
 import styles from './ResetPassword.module.css';
 const ResetPassword = () => {
