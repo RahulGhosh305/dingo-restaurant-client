@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -8,13 +8,13 @@ import SingleBlogCard from './SingleBlogCard';
 const BlogCard = () => {
     const [blogCardData, setBlogCardData] = useState([])
     useEffect(() => {
-        fetch("https://sheltered-crag-23788.herokuapp.com/homePageBlog")
-        .then(res => res.json())
-        .then(data => {
-            // console.log(data)
-            setBlogCardData(data)
-        })
-    },[])
+        fetch("https://dingo-restaurant.up.railway.app/homePageBlog")
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data)
+                setBlogCardData(data)
+            })
+    }, [])
     const settings = {
         dots: true,
         infinite: true,
@@ -54,7 +54,7 @@ const BlogCard = () => {
     return (
         <Slider {...settings}>
             {
-                blogCardData.map( singleData => <SingleBlogCard singleData={singleData} key={Math.random()} />)
+                blogCardData.map(singleData => <SingleBlogCard singleData={singleData} key={Math.random()} />)
             }
         </Slider>
     );

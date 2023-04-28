@@ -11,23 +11,23 @@ const CustomerOrder = () => {
     const loginNavigate = useNavigate()
 
     useEffect(() => {
-        fetch(`https://sheltered-crag-23788.herokuapp.com/customerOrderMenu?email=${email}`, {
+        fetch(`https://dingo-restaurant.up.railway.app/customerOrderMenu?email=${email}`, {
             headers: {
-                'authorization': `Bearer ${localStorage.getItem('idToken')}` 
+                'authorization': `Bearer ${localStorage.getItem('idToken')}`
             }
         })
-        .then(res => {
-            if(res.status === 200) {
-                return res.json()
-            }
-            else if(res.status === 401) {
-                loginNavigate('/login')
-            }          
-        })
-        .then(data => {
-            // console.log(data)
-            setItems(data)
-        })
+            .then(res => {
+                if (res.status === 200) {
+                    return res.json()
+                }
+                else if (res.status === 401) {
+                    loginNavigate('/login')
+                }
+            })
+            .then(data => {
+                // console.log(data)
+                setItems(data)
+            })
     }, [email, loginNavigate])
     // console.log(items)
     const customerViewOrderNavigate = useNavigate()

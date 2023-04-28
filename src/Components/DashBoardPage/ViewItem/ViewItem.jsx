@@ -13,7 +13,7 @@ const ViewItem = () => {
     let id = ID.ID
     // console.log(id)
     useEffect(() => {
-        fetch(`https://sheltered-crag-23788.herokuapp.com/singleMenu/${id}`)
+        fetch(`https://dingo-restaurant.up.railway.app/singleMenu/${id}`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data)
@@ -32,10 +32,10 @@ const ViewItem = () => {
                             <button onClick={() => handleNavigate()} className="btn btn-success mt-4">Back</button>
                             <div className="p-5">
                                 <div className="text-center">
-                                <h6>Code : #{_id}</h6>
-                                <h3>View Item : {title}</h3>
-                                <p>{shortDescription}</p>
-                                <h4>Price : {price}</h4>
+                                    <h6>Code : #{_id}</h6>
+                                    <h3>View Item : {title}</h3>
+                                    <p>{shortDescription}</p>
+                                    <h4>Price : {price}</h4>
                                 </div>
                                 <div>
                                     <figure className="text-center">

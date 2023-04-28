@@ -6,8 +6,8 @@ import Card from '../Card/Card';
 import useFetch from "../useFetch.js";
 
 const Breakfast = () => {
-    const [breakfastFood] = useFetch('https://sheltered-crag-23788.herokuapp.com/BreakFastFood')
-    const [breakfastDrink] = useFetch('https://sheltered-crag-23788.herokuapp.com/BreakFastDrink')
+    const [breakfastFood] = useFetch('https://dingo-restaurant.up.railway.app/BreakFastFood')
+    const [breakfastDrink] = useFetch('https://dingo-restaurant.up.railway.app/BreakFastDrink')
 
     return (
         <div>
@@ -28,13 +28,13 @@ const Breakfast = () => {
                             <div className="row">
                                 <div className="col-md-6">
                                     {
-                                        breakfastFood.map(singleFood => <Card food={singleFood} key={Math.random()}/>  ) 
+                                        breakfastFood.map(singleFood => <Card food={singleFood} key={Math.random()} />)
                                     }
                                 </div>
 
                                 <div className="col-md-6">
                                     {
-                                        breakfastDrink.map(singleDrink => <Card food={singleDrink} key={Math.random()}/>  ) 
+                                        breakfastDrink.map(singleDrink => <Card food={singleDrink} key={Math.random()} />)
                                     }
                                 </div>
                             </div>

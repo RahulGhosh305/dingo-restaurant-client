@@ -4,12 +4,12 @@ import AdminListCard from './AdminListCard';
 const Admins = () => {
     const [adminInfo, setAdminInfo] = useState([])
     useEffect(() => {
-        fetch('https://sheltered-crag-23788.herokuapp.com/allAdmin')
-        .then(res => res.json())
-        .then(data => {
-            setAdminInfo(data)
-        })
-    },[])
+        fetch('https://dingo-restaurant.up.railway.app/allAdmin')
+            .then(res => res.json())
+            .then(data => {
+                setAdminInfo(data)
+            })
+    }, [])
     return (
         <div>
             <div className="text-center">
@@ -28,7 +28,7 @@ const Admins = () => {
                     </thead>
                     <tbody>
                         {
-                            adminInfo.map((data, index) => <AdminListCard data={data} i={index + 1}key={Math.random()} />)
+                            adminInfo.map((data, index) => <AdminListCard data={data} i={index + 1} key={Math.random()} />)
                         }
                     </tbody>
                 </table>

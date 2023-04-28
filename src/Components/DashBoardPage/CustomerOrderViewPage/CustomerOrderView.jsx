@@ -8,7 +8,7 @@ const CustomerOrderView = () => {
     const { ID } = useParams()
     // console.log(ID)
     useEffect(() => {
-        fetch(`https://sheltered-crag-23788.herokuapp.com/singleFoodOrderView/${ID}`)
+        fetch(`https://dingo-restaurant.up.railway.app/singleFoodOrderView/${ID}`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data[0])
@@ -28,7 +28,7 @@ const CustomerOrderView = () => {
                     <div className="col-md-10 offset-md-1">
                         <div className="card shadow">
                             <div className="mt-2 ms-2">
-                                <button onClick={()=>backToMyOrderPage()} className="btn btn-sm btn-success">Back</button>
+                                <button onClick={() => backToMyOrderPage()} className="btn btn-sm btn-success">Back</button>
                             </div>
                             {
                                 cartItems.map((item, index) => <div key={Math.random()}>

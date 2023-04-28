@@ -21,7 +21,7 @@ const Footer = () => {
     });
     const onSubmit = data => {
         console.log(data)
-        fetch("https://sheltered-crag-23788.herokuapp.com/addNewsletter", {
+        fetch("https://dingo-restaurant.up.railway.app/addNewsletter", {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {

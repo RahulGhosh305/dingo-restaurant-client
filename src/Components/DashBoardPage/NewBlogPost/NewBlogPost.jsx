@@ -47,9 +47,9 @@ const NewBlogPost = () => {
         // console.log(data)
         let ingredient = data.Ingredients.map(ele => ele.ingredients)
         // console.log(ingredient)
-        let directions = data.Directions.map(ele=> ele.directions)
+        let directions = data.Directions.map(ele => ele.directions)
         // console.log(directions)
-        
+
         const sendBlogData = {
             ...data,
             Ingredients: ingredient,
@@ -59,7 +59,7 @@ const NewBlogPost = () => {
         }
         // console.log(sendBlogData)
 
-        fetch("https://sheltered-crag-23788.herokuapp.com/addBlog", {
+        fetch("https://dingo-restaurant.up.railway.app/addBlog", {
             method: 'POST',
             body: JSON.stringify(sendBlogData),
             headers: {
@@ -239,7 +239,7 @@ const NewBlogPost = () => {
                                     {errors.designation && <span className="text-danger">* Designation field is required</span>}
                                 </div>
                             </div>
-                            
+
                             <label className="d-flex justify-content-start mt-3" htmlFor="">*Date</label>
                             <input defaultValue={new Date().toDateString()} className="form-control mb-1 border-0 border-bottom" />
 

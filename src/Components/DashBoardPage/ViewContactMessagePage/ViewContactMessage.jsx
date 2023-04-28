@@ -11,7 +11,7 @@ const ViewContactMessage = () => {
         navigate('/dashboard/contactMessage')
     }
     useEffect(() => {
-        fetch(`https://sheltered-crag-23788.herokuapp.com/singleContactUsMessage/${ID}`)
+        fetch(`https://dingo-restaurant.up.railway.app/singleContactUsMessage/${ID}`)
             .then(res => res.json())
             .then(json => {
                 // console.log(json)

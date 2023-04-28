@@ -1,17 +1,17 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import AllFoodCard from './AllFoodCard';
 
 const AllFoodItems = () => {
     const [allFoodCategory, setAllFoodCategory] = useState([])
 
     useEffect(() => {
-        fetch("https://sheltered-crag-23788.herokuapp.com/allFoods")
-        .then(res => res.json())
-        .then(data => {
-            // console.log(data)
-            setAllFoodCategory(data)
-        })
-    },[])
+        fetch("https://dingo-restaurant.up.railway.app/allFoods")
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data)
+                setAllFoodCategory(data)
+            })
+    }, [])
 
     return (
         <div className="text-center">

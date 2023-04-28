@@ -14,7 +14,7 @@ const AllFoodCard = (props) => {
     // DELETE
     const deleteSingleMenu = (id) => {
         // console.log(id);
-        fetch(`https://sheltered-crag-23788.herokuapp.com/deleteSingleMenu/${id}`, {
+        fetch(`https://dingo-restaurant.up.railway.app/deleteSingleMenu/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())
@@ -42,7 +42,7 @@ const AllFoodCard = (props) => {
                 <button onClick={() => handleNavigate(_id)} className="btn btn-sm btn-success me-1 mb-1">
                     View
                 </button>
-                <button onClick={()=> handleUpdate(_id)} className="btn btn-sm btn-dark me-1 mb-1">
+                <button onClick={() => handleUpdate(_id)} className="btn btn-sm btn-dark me-1 mb-1">
                     Update
                 </button>
                 <button onClick={() => deleteSingleMenu(_id)} className="btn btn-sm btn-danger mb-1">

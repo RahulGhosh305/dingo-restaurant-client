@@ -16,7 +16,7 @@ const CareerForm = () => {
     });
     const onSubmit = data => {
         console.log(data)
-        fetch("https://sheltered-crag-23788.herokuapp.com/addCareerMessage", {
+        fetch("https://dingo-restaurant.up.railway.app/addCareerMessage", {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {

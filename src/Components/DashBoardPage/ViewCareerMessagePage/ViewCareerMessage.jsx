@@ -12,7 +12,7 @@ const ViewCareerMessage = () => {
         navigate('/dashboard/careerMessage')
     }
     useEffect(() => {
-        fetch(`https://sheltered-crag-23788.herokuapp.com/singleCareerMessage/${ID}`)
+        fetch(`https://dingo-restaurant.up.railway.app/singleCareerMessage/${ID}`)
             .then(res => res.json())
             .then(json => {
                 // console.log(json)

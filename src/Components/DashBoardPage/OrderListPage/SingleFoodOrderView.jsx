@@ -8,7 +8,7 @@ const SingleFoodOrderView = () => {
     let { ID } = useParams();
 
     useEffect(() => {
-        fetch(`https://sheltered-crag-23788.herokuapp.com/singleFoodOrderView/${ID}`)
+        fetch(`https://dingo-restaurant.up.railway.app/singleFoodOrderView/${ID}`)
             .then(res => res.json())
             .then(data => {
                 setOrder(data[0])
@@ -22,7 +22,7 @@ const SingleFoodOrderView = () => {
         backOrderNavigate('/dashboard/orderList')
     }
     const handleChangeStatus = () => {
-        
+
     }
 
     return (

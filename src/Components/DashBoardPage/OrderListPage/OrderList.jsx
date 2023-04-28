@@ -6,14 +6,14 @@ const OrderList = () => {
     const [foodOrders, setFoodOrders] = useState([])
 
     useEffect(() => {
-        fetch('https://sheltered-crag-23788.herokuapp.com/allFoodOrders')
+        fetch('https://dingo-restaurant.up.railway.app/allFoodOrders')
             .then(res => res.json())
             .then(data => {
                 // console.log(data);
                 setFoodOrders(data)
             })
     }, [])
-    
+
     return (
         <div>
             <div className="text-center">
@@ -36,7 +36,7 @@ const OrderList = () => {
 
                     <tbody className="">
                         {
-                            foodOrders.map((data, index) => <OrderListCard item={data} key={Math.random()} i={index}/>)
+                            foodOrders.map((data, index) => <OrderListCard item={data} key={Math.random()} i={index} />)
                         }
                     </tbody>
                 </table>

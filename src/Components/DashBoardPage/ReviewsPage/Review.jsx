@@ -10,20 +10,20 @@ import ReviewImgCard from './ReviewImgCard';
 const Review = () => {
     const [reviewData, setReviewData] = useState([])
     useEffect(() => {
-        fetch('https://sheltered-crag-23788.herokuapp.com/restaurantReview')
-        .then(res => res.json())
-        .then(data => {
-            // console.log(data)
-            setReviewData(data)
-        })
-    },[])
+        fetch('https://dingo-restaurant.up.railway.app/restaurantReview')
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data)
+                setReviewData(data)
+            })
+    }, [])
     const imgData = [
         { img: reviewRight1 },
         { img: reviewRight2 },
         { img: reviewRight3 },
     ]
-;
-    
+        ;
+
     return (
         <div className="">
             <div className="row">
@@ -34,7 +34,7 @@ const Review = () => {
                     </div>
                     <div className="overflow-auto vh-100 px-3 mb-3">
                         {
-                            reviewData.map(singleReview => <ReviewCard singleReview={singleReview} key={Math.random()}/>)
+                            reviewData.map(singleReview => <ReviewCard singleReview={singleReview} key={Math.random()} />)
                         }
                     </div>
                 </div>

@@ -12,7 +12,7 @@ const AddAdmin = () => {
     });
     const onSubmit = data => {
         const addAdmin = data
-        fetch('https://sheltered-crag-23788.herokuapp.com/admin', {
+        fetch('https://dingo-restaurant.up.railway.app/admin', {
             method: 'POST',
             body: JSON.stringify(addAdmin),
             headers: {

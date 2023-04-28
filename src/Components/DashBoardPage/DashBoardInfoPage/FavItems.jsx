@@ -9,52 +9,52 @@ import dashFavPic5 from '../../../utility/dashFavPic5.jpg';
 const FavItems = () => {
     const favData = [
         {
-            img : dashFavPic1,
-            like : "256",
-            title : " Spicy Cutlet",
-            rating : 254
+            img: dashFavPic1,
+            like: "256",
+            title: " Spicy Cutlet",
+            rating: 254
         },
         {
-            img : dashFavPic2,
-            like : "145",
-            title : "Mexican Juice",
-            rating : 211
+            img: dashFavPic2,
+            like: "145",
+            title: "Mexican Juice",
+            rating: 211
         },
         {
-            img : dashFavPic3,
-            like : "167",
-            title : " Spicy Pizza",
-            rating : 188
+            img: dashFavPic3,
+            like: "167",
+            title: " Spicy Pizza",
+            rating: 188
         },
         {
-            img : dashFavPic4,
-            like : "214",
-            title : "Vegetable Salad",
-            rating : 213
+            img: dashFavPic4,
+            like: "214",
+            title: "Vegetable Salad",
+            rating: 213
         },
         {
-            img : dashFavPic5,
-            like : "188",
-            title : "Chops Stick",
-            rating : 325
+            img: dashFavPic5,
+            like: "188",
+            title: "Chops Stick",
+            rating: 325
         },
         {
-            img : dashFavPic1,
-            like : "254",
-            title : "Meet  Cutlet",
-            rating : 155
+            img: dashFavPic1,
+            like: "254",
+            title: "Meet  Cutlet",
+            rating: 155
         },
     ]
     // const [data, setData] = useState([])
     // useEffect(() => {
-    //     fetch("https://sheltered-crag-23788.herokuapp.com/DinnerFood")
+    //     fetch("https://dingo-restaurant.up.railway.app/DinnerFood")
     //         .then(res => res.json())
     //         .then(data => {
     //             console.log(data)
     //             setData(data)
     //         })
     // }, [])
-    
+
     return (
         <div className="bg-white mt-4">
             <div className="">

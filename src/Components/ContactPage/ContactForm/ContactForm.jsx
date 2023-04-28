@@ -7,28 +7,28 @@ export default function App() {
     const { register, resetField, handleSubmit, formState: { errors } } = useForm({
         mode: "onChange",
         defaultValues: {
-          Name: "",
-          Phone : "",
-          Message : "",
+            Name: "",
+            Phone: "",
+            Message: "",
         }
-      });
+    });
     const onSubmit = data => {
         // console.log(data)
-        fetch("https://sheltered-crag-23788.herokuapp.com/contactUsMessage", {
+        fetch("https://dingo-restaurant.up.railway.app/contactUsMessage", {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {
-              'Content-type': 'application/json; charset=UTF-8',
+                'Content-type': 'application/json; charset=UTF-8',
             },
         })
-        .then(res => res.json())
-        .then(jsonData => {
-            // console.log(jsonData)
-            alert(jsonData)
-            resetField("Name")
-            resetField("Phone")
-            resetField("Message")
-        })
+            .then(res => res.json())
+            .then(jsonData => {
+                // console.log(jsonData)
+                alert(jsonData)
+                resetField("Name")
+                resetField("Phone")
+                resetField("Message")
+            })
     }
 
     return (
@@ -57,7 +57,7 @@ export default function App() {
 
             <br />
 
-            <input className="form-control btn btn-warning" type="Submit" defaultValue="Sent Message"/>
+            <input className="form-control btn btn-warning" type="Submit" defaultValue="Sent Message" />
         </form>
     );
 }

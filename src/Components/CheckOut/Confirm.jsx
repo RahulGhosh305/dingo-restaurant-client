@@ -4,40 +4,40 @@ import useCart from '../AddCart/useCartHook';
 import Navbar from '../Shared/Navbar/Navbar';
 
 const Confirm = ({ nextStep, prevStep, values }) => {
-    const {handleCartClearance} = useCart()
+    const { handleCartClearance } = useCart()
     const { fullName, email, phone, address, city, cardName, cardNumber, cvc, expireDate, cartItems, logInEmail, isLoggedInEmailName, Bill } = values
     const { handleSubmit } = useForm();
     const onSubmit = data => {
-        const  values = { 
-            status : "Pending", 
+        const values = {
+            status: "Pending",
             fullName,
-            email, 
-            phone, 
-            address, 
-            city, 
-            cardName, 
-            cardNumber, 
-            cvc, 
-            expireDate, 
-            cartItems, 
-            logInEmail, 
-            isLoggedInEmailName, 
-            Bill 
+            email,
+            phone,
+            address,
+            city,
+            cardName,
+            cardNumber,
+            cvc,
+            expireDate,
+            cartItems,
+            logInEmail,
+            isLoggedInEmailName,
+            Bill
         }
         // console.log(values);
         //* PROCESS TO SERVER FORM 
-        fetch('https://sheltered-crag-23788.herokuapp.com/makeFoodOrder', {
+        fetch('https://dingo-restaurant.up.railway.app/makeFoodOrder', {
             method: 'POST',
             body: JSON.stringify(values),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
             },
         })
-        .then(res => res.json())
-        .then(data => {
-            handleCartClearance()
-            // console.log(data);
-        })
+            .then(res => res.json())
+            .then(data => {
+                handleCartClearance()
+                // console.log(data);
+            })
         nextStep()
     }
 

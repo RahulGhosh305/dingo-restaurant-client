@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import styles from './BookTable.module.css';
 import headingDark from '../../../utility/heading-dark.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -7,8 +7,8 @@ import { useForm } from "react-hook-form";
 
 const BookTable = () => {
     useEffect(() => {
-        window.scrollTo(0,0)
-    },[])
+        window.scrollTo(0, 0)
+    }, [])
     const { register, resetField, handleSubmit, formState: { errors } } = useForm({
         mode: "onChange",
         defaultValues: {
@@ -18,26 +18,26 @@ const BookTable = () => {
             phone: "",
             table: "",
         }
-      });
+    });
     const onSubmit = data => {
         // console.log(data)
-        fetch('https://sheltered-crag-23788.herokuapp.com/addReservation', {
+        fetch('https://dingo-restaurant.up.railway.app/addReservation', {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {
-              'Content-type': 'application/json; charset=UTF-8',
+                'Content-type': 'application/json; charset=UTF-8',
             }
         })
-        .then(res => res.json())
-        .then(jsonData => {
-            // console.log(jsonData)
-            alert(jsonData)
-            resetField("date")
-            resetField("time")
-            resetField("people")
-            resetField("phone")
-            resetField("table")
-        })
+            .then(res => res.json())
+            .then(jsonData => {
+                // console.log(jsonData)
+                alert(jsonData)
+                resetField("date")
+                resetField("time")
+                resetField("people")
+                resetField("phone")
+                resetField("table")
+            })
     }
 
     return (
@@ -77,7 +77,7 @@ const BookTable = () => {
                                 <div className="row">
                                     <div className={`col-md-6 mb-2 ${styles.InputGroup}`}>
                                         <label htmlFor="ReservationDate" className="ms-2 mb-1">*Reservation Date :</label>
-                                        <input type='date' className="form-control" {...register("date", { required: true })}/>  
+                                        <input type='date' className="form-control" {...register("date", { required: true })} />
                                         {errors.date && <span className="text-danger">*This field is required</span>}
                                     </div>
                                     <div className={`col-md-6 mb-2 ${styles.InputGroup}`}>

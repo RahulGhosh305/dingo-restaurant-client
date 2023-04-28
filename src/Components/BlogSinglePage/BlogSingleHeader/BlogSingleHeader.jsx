@@ -12,8 +12,8 @@ const BlogSingleHeader = () => {
     let id = singleID.singleID
     // console.log(id)
     useEffect(() => {
-        window.scrollTo(0,0)
-        fetch(`https://sheltered-crag-23788.herokuapp.com/singleBlog/${id}`)
+        window.scrollTo(0, 0)
+        fetch(`https://dingo-restaurant.up.railway.app/singleBlog/${id}`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data)
@@ -23,7 +23,7 @@ const BlogSingleHeader = () => {
             })
     }, [id])
 
-    const { img, chefImg, title, date, rating, PrepTime, CookTime, TotalTime, Servings, longDesc, author, designation} = data
+    const { img, chefImg, title, date, rating, PrepTime, CookTime, TotalTime, Servings, longDesc, author, designation } = data
     // console.log(ingredients, directions);
     // console.log(img, chefImg, title, date, rating, PrepTime, CookTime, TotalTime, Servings, shortDesc, longDesc);
 
@@ -67,7 +67,7 @@ const BlogSingleHeader = () => {
 
                 <div className="d-flex mt-5">
                     <figure>
-                        <img src={chefImg} alt="" className="img-fluid me-3" style={{width : 140, height : 130}}/>
+                        <img src={chefImg} alt="" className="img-fluid me-3" style={{ width: 140, height: 130 }} />
                         <figcaption className="text-center">Author</figcaption>
                     </figure>
                     <div className="my-auto">

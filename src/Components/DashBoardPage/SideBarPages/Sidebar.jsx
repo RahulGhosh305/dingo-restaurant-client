@@ -47,7 +47,7 @@ const Sidebar = () => {
         },
     ]
     useEffect(() => {
-        fetch('https://sheltered-crag-23788.herokuapp.com/allAdmin')
+        fetch('https://dingo-restaurant.up.railway.app/allAdmin')
             .then(res => res.json())
             .then(data => {
                 setAdminEmails(data);

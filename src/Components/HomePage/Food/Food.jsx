@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import FoodCard from './FoodCard';
 import styles from './Food.module.css';
 import headingDark from '../../../utility/heading-dark.png'
@@ -7,10 +7,10 @@ import menuImage from '../../../utility/menuImage.png';
 const Food = () => {
     const [menuData, setMenuData] = useState([])
     useEffect(() => {
-        fetch('https://sheltered-crag-23788.herokuapp.com/HomeMenu')
-        .then(res => res.json())
-        .then(data => setMenuData(data))
-    },[])
+        fetch('https://dingo-restaurant.up.railway.app/HomeMenu')
+            .then(res => res.json())
+            .then(data => setMenuData(data))
+    }, [])
     // console.log(homePageMenuData);
     return (
         <section className={styles.foodWrapper}>
@@ -25,7 +25,7 @@ const Food = () => {
                             </div>
                             <div>
                                 {
-                                    menuData.map( singleMenuItem => <FoodCard singleMenuItem={singleMenuItem} key={Math.random()}/> )
+                                    menuData.map(singleMenuItem => <FoodCard singleMenuItem={singleMenuItem} key={Math.random()} />)
                                 }
                             </div>
                         </div>

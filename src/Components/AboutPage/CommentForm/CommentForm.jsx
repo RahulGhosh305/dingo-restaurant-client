@@ -16,7 +16,7 @@ const CommentForm = () => {
     });
     const onSubmit = data => {
         // console.log(data)
-        fetch("https://sheltered-crag-23788.herokuapp.com/addRestaurantReview", {
+        fetch("https://dingo-restaurant.up.railway.app/addRestaurantReview", {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {
@@ -56,21 +56,21 @@ const CommentForm = () => {
                                 </div>
 
                                 <div className="d-flex align-items-center mt-2">
-                                <FontAwesomeIcon className="mb-2" icon={faPlusSquare} />
-                                <input className="form-control ms-2 mb-2 border-0 border-bottom" type="text" {...register("profession", { required: true })} placeholder="Profession" />
-                                {errors.profession && <span span className="text-danger">* profession field is required</span>}
+                                    <FontAwesomeIcon className="mb-2" icon={faPlusSquare} />
+                                    <input className="form-control ms-2 mb-2 border-0 border-bottom" type="text" {...register("profession", { required: true })} placeholder="Profession" />
+                                    {errors.profession && <span span className="text-danger">* profession field is required</span>}
                                 </div>
 
                                 <div className="d-flex align-items-center mt-2">
-                                <FontAwesomeIcon className="mb-4" icon={faComment} />
-                                <textarea className="form-control mb-2 border-0 border-bottom" type="text" {...register("message", { required: true })} placeholder="Message" />
-                                {errors.message && <span className="text-danger">* Message field is required</span>}
+                                    <FontAwesomeIcon className="mb-4" icon={faComment} />
+                                    <textarea className="form-control mb-2 border-0 border-bottom" type="text" {...register("message", { required: true })} placeholder="Message" />
+                                    {errors.message && <span className="text-danger">* Message field is required</span>}
                                 </div>
 
                                 <div className="d-flex align-items-center mt-2">
-                                <FontAwesomeIcon className="mb-3" icon={faCalendar} />
-                                <input value={new Date().toDateString()} className="form-control mb-2 border-0 border-bottom" {...register("date", { required: true })} />
-                                {errors.date && <span className="text-danger">* Date field is required</span>}
+                                    <FontAwesomeIcon className="mb-3" icon={faCalendar} />
+                                    <input value={new Date().toDateString()} className="form-control mb-2 border-0 border-bottom" {...register("date", { required: true })} />
+                                    {errors.date && <span className="text-danger">* Date field is required</span>}
                                 </div>
 
                                 <input className="mt-3 mb-5 btn-warning form-control" type="submit" />
