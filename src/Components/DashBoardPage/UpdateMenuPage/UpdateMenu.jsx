@@ -17,7 +17,7 @@ const UpdateMenu = () => {
     // console.log(id)
     //* GET SINGLE DATA
     useEffect(() => {
-        fetch(`https://dingo-restaurant.up.railway.app/updateMenu/${id}`)
+        fetch(`https://dingo-restaurant-server.vercel.app/updateMenu/${id}`)
             .then(res => res.json())
             .then(json => {
                 // console.log(json);
@@ -76,7 +76,7 @@ const UpdateMenu = () => {
         console.log(upData);
 
         //* PATCH / UPDATE SINGLE DATA
-        fetch(`https://dingo-restaurant.up.railway.app/toModifyServerData/${id}`, {
+        fetch(`https://dingo-restaurant-server.vercel.app/toModifyServerData/${id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(upData)

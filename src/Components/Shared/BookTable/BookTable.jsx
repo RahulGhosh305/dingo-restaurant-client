@@ -21,7 +21,7 @@ const BookTable = () => {
     });
     const onSubmit = data => {
         // console.log(data)
-        fetch('https://dingo-restaurant.up.railway.app/addReservation', {
+        fetch('https://dingo-restaurant-server.vercel.app/addReservation', {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {

@@ -47,7 +47,7 @@ const Sidebar = () => {
         },
     ]
     useEffect(() => {
-        fetch('https://dingo-restaurant.up.railway.app/allAdmin')
+        fetch('https://dingo-restaurant-server.vercel.app/allAdmin')
             .then(res => res.json())
             .then(data => {
                 setAdminEmails(data);

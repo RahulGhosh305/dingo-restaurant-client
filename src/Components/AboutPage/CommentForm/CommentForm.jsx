@@ -16,7 +16,7 @@ const CommentForm = () => {
     });
     const onSubmit = data => {
         // console.log(data)
-        fetch("https://dingo-restaurant.up.railway.app/addRestaurantReview", {
+        fetch("https://dingo-restaurant-server.vercel.app/addRestaurantReview", {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {

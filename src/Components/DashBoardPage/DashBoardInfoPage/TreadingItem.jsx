@@ -4,7 +4,7 @@ import TrendingCard from './TrendingCard';
 const TreadingItem = () => {
     const [data, setData] = useState([])
     useEffect(() => {
-        fetch("https://dingo-restaurant.up.railway.app/HomeMenu")
+        fetch("https://dingo-restaurant-server.vercel.app/HomeMenu")
             .then(res => res.json())
             .then(data => {
                 // console.log(data)

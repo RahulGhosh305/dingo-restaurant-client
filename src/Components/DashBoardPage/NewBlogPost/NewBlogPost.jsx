@@ -59,7 +59,7 @@ const NewBlogPost = () => {
         }
         // console.log(sendBlogData)
 
-        fetch("https://dingo-restaurant.up.railway.app/addBlog", {
+        fetch("https://dingo-restaurant-server.vercel.app/addBlog", {
             method: 'POST',
             body: JSON.stringify(sendBlogData),
             headers: {

@@ -4,7 +4,7 @@ import ContactMessageCard from './ContactMessageCard/ContactMessageCard';
 const ContactMessage = () => {
     const [data, setData] = useState([])
     useEffect(() => {
-        fetch("https://dingo-restaurant.up.railway.app/allContactUsMessage")
+        fetch("https://dingo-restaurant-server.vercel.app/allContactUsMessage")
             .then(res => res.json())
             .then(data => {
                 // console.log(data)

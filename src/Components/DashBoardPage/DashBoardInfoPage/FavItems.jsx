@@ -47,7 +47,7 @@ const FavItems = () => {
     ]
     // const [data, setData] = useState([])
     // useEffect(() => {
-    //     fetch("https://dingo-restaurant.up.railway.app/DinnerFood")
+    //     fetch("https://dingo-restaurant-server.vercel.app/DinnerFood")
     //         .then(res => res.json())
     //         .then(data => {
     //             console.log(data)

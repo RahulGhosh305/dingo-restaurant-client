@@ -6,8 +6,8 @@ import Card from '../Card/Card';
 import useFetch from "../useFetch.js";
 
 const Dinner = () => {
-    const [dinnerFood] = useFetch('https://dingo-restaurant.up.railway.app/DinnerFood')
-    const [dinnerDrink] = useFetch('https://dingo-restaurant.up.railway.app/DinnerDrink')
+    const [dinnerFood] = useFetch('https://dingo-restaurant-server.vercel.app/DinnerFood')
+    const [dinnerDrink] = useFetch('https://dingo-restaurant-server.vercel.app/DinnerDrink')
     return (
         <>
             <div className="container">

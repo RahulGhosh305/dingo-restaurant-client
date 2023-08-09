@@ -14,7 +14,7 @@ const AllFoodCard = (props) => {
     // DELETE
     const deleteSingleMenu = (id) => {
         // console.log(id);
-        fetch(`https://dingo-restaurant.up.railway.app/deleteSingleMenu/${id}`, {
+        fetch(`https://dingo-restaurant-server.vercel.app/deleteSingleMenu/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())

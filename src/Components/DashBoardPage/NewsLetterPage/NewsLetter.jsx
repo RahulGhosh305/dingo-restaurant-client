@@ -4,7 +4,7 @@ import NewsLetterCard from './NewsLetterCard';
 const NewsLetter = () => {
     const [data, setData] = useState([])
     useEffect(() => {
-        fetch("https://dingo-restaurant.up.railway.app/allNewsLetter")
+        fetch("https://dingo-restaurant-server.vercel.app/allNewsLetter")
             .then(res => res.json())
             .then(json => {
                 // console.log(json)

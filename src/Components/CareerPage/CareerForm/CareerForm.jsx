@@ -16,7 +16,7 @@ const CareerForm = () => {
     });
     const onSubmit = data => {
         console.log(data)
-        fetch("https://dingo-restaurant.up.railway.app/addCareerMessage", {
+        fetch("https://dingo-restaurant-server.vercel.app/addCareerMessage", {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {

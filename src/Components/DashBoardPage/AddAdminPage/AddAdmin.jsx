@@ -12,7 +12,7 @@ const AddAdmin = () => {
     });
     const onSubmit = data => {
         const addAdmin = data
-        fetch('https://dingo-restaurant.up.railway.app/admin', {
+        fetch('https://dingo-restaurant-server.vercel.app/admin', {
             method: 'POST',
             body: JSON.stringify(addAdmin),
             headers: {

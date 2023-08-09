@@ -4,7 +4,7 @@ import CommentCard from './CommentCard';
 const Comments = () => {
     const [commentData, setCommentData] = useState([])
     useEffect(() => {
-        fetch("https://dingo-restaurant.up.railway.app/restaurantReview")
+        fetch("https://dingo-restaurant-server.vercel.app/restaurantReview")
             .then(res => res.json())
             .then(data => {
                 // console.log(data)

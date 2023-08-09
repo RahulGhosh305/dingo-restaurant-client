@@ -4,7 +4,7 @@ import CareerMessageCard from './CareerMessageCard/CareerMessageCard';
 const CareerMessage = () => {
     const [data, setData] = useState([])
     useEffect(() => {
-        fetch(`https://dingo-restaurant.up.railway.app/allCareerMessage`)
+        fetch(`https://dingo-restaurant-server.vercel.app/allCareerMessage`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data)

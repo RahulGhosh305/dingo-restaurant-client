@@ -4,7 +4,7 @@ import AdminListCard from './AdminListCard';
 const Admins = () => {
     const [adminInfo, setAdminInfo] = useState([])
     useEffect(() => {
-        fetch('https://dingo-restaurant.up.railway.app/allAdmin')
+        fetch('https://dingo-restaurant-server.vercel.app/allAdmin')
             .then(res => res.json())
             .then(data => {
                 setAdminInfo(data)

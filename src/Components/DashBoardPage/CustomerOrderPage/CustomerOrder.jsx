@@ -11,7 +11,7 @@ const CustomerOrder = () => {
     const loginNavigate = useNavigate()
 
     useEffect(() => {
-        fetch(`https://dingo-restaurant.up.railway.app/customerOrderMenu?email=${email}`, {
+        fetch(`https://dingo-restaurant-server.vercel.app/customerOrderMenu?email=${email}`, {
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('idToken')}`
             }

@@ -14,7 +14,7 @@ export default function App() {
     });
     const onSubmit = data => {
         // console.log(data)
-        fetch("https://dingo-restaurant.up.railway.app/contactUsMessage", {
+        fetch("https://dingo-restaurant-server.vercel.app/contactUsMessage", {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {

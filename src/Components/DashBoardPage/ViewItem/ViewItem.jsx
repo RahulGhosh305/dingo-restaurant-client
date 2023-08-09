@@ -13,7 +13,7 @@ const ViewItem = () => {
     let id = ID.ID
     // console.log(id)
     useEffect(() => {
-        fetch(`https://dingo-restaurant.up.railway.app/singleMenu/${id}`)
+        fetch(`https://dingo-restaurant-server.vercel.app/singleMenu/${id}`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data)

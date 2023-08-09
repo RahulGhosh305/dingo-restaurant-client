@@ -5,7 +5,7 @@ const AllFoodItems = () => {
     const [allFoodCategory, setAllFoodCategory] = useState([])
 
     useEffect(() => {
-        fetch("https://dingo-restaurant.up.railway.app/allFoods")
+        fetch("https://dingo-restaurant-server.vercel.app/allFoods")
             .then(res => res.json())
             .then(data => {
                 // console.log(data)

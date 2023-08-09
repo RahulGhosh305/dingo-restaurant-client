@@ -26,7 +26,7 @@ const Confirm = ({ nextStep, prevStep, values }) => {
         }
         // console.log(values);
         //* PROCESS TO SERVER FORM 
-        fetch('https://dingo-restaurant.up.railway.app/makeFoodOrder', {
+        fetch('https://dingo-restaurant-server.vercel.app/makeFoodOrder', {
             method: 'POST',
             body: JSON.stringify(values),
             headers: {

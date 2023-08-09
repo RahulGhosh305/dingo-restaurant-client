@@ -13,7 +13,7 @@ const BlogSingleHeader = () => {
     // console.log(id)
     useEffect(() => {
         window.scrollTo(0, 0)
-        fetch(`https://dingo-restaurant.up.railway.app/singleBlog/${id}`)
+        fetch(`https://dingo-restaurant-server.vercel.app/singleBlog/${id}`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data)
