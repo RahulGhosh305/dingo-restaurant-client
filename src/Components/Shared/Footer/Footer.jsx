@@ -21,7 +21,7 @@ const Footer = () => {
     });
     const onSubmit = data => {
         console.log(data)
-        fetch("https://dingo-restaurant-server.vercel.app/addNewsletter", {
+        fetch("https://dingo-restaurant-server.onrender.com/addNewsletter", {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {

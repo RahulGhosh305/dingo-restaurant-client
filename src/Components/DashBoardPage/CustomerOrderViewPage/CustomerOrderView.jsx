@@ -8,7 +8,7 @@ const CustomerOrderView = () => {
     const { ID } = useParams()
     // console.log(ID)
     useEffect(() => {
-        fetch(`https://dingo-restaurant-server.vercel.app/singleFoodOrderView/${ID}`)
+        fetch(`https://dingo-restaurant-server.onrender.com/singleFoodOrderView/${ID}`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data[0])

@@ -12,7 +12,7 @@ const ViewCareerMessage = () => {
         navigate('/dashboard/careerMessage')
     }
     useEffect(() => {
-        fetch(`https://dingo-restaurant-server.vercel.app/singleCareerMessage/${ID}`)
+        fetch(`https://dingo-restaurant-server.onrender.com/singleCareerMessage/${ID}`)
             .then(res => res.json())
             .then(json => {
                 // console.log(json)

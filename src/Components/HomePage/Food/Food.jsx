@@ -7,7 +7,7 @@ import menuImage from '../../../utility/menuImage.png';
 const Food = () => {
     const [menuData, setMenuData] = useState([])
     useEffect(() => {
-        fetch('https://dingo-restaurant-server.vercel.app/HomeMenu')
+        fetch('https://dingo-restaurant-server.onrender.com/HomeMenu')
             .then(res => res.json())
             .then(data => setMenuData(data))
     }, [])

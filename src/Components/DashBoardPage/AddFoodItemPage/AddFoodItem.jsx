@@ -63,7 +63,7 @@ const AddFoodItem = () => {
         }
         console.log(sendFormMenuData)
 
-        fetch("https://dingo-restaurant-server.vercel.app/addMenu", {
+        fetch("https://dingo-restaurant-server.onrender.com/addMenu", {
             method: 'POST',
             body: JSON.stringify(sendFormMenuData),
             headers: {

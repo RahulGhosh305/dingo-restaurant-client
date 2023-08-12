@@ -8,7 +8,7 @@ import SingleBlogCard from './SingleBlogCard';
 const BlogCard = () => {
     const [blogCardData, setBlogCardData] = useState([])
     useEffect(() => {
-        fetch("https://dingo-restaurant-server.vercel.app/homePageBlog")
+        fetch("https://dingo-restaurant-server.onrender.com/homePageBlog")
             .then(res => res.json())
             .then(data => {
                 // console.log(data)

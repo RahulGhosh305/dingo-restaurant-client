@@ -19,7 +19,7 @@ const MenuSingleHeader = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0)
-        fetch(`https://dingo-restaurant-server.vercel.app/singleMenu/${id}`)
+        fetch(`https://dingo-restaurant-server.onrender.com/singleMenu/${id}`)
             .then(res => res.json())
             .then(data => {
                 setData(data)

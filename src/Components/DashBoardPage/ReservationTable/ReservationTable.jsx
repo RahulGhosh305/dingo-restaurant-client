@@ -5,7 +5,7 @@ import ReservationCard from './ReservationCard';
 const ReservationTable = () => {
     const [reservationData, setReservationData] = useState([])
     useEffect(() => {
-        fetch('https://dingo-restaurant-server.vercel.app/allReservation')
+        fetch('https://dingo-restaurant-server.onrender.com/allReservation')
             .then(res => res.json())
             .then(jsonData => {
                 // console.log(jsonData);

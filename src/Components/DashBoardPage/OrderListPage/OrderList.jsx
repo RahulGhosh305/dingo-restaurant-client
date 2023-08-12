@@ -6,7 +6,7 @@ const OrderList = () => {
     const [foodOrders, setFoodOrders] = useState([])
 
     useEffect(() => {
-        fetch('https://dingo-restaurant-server.vercel.app/allFoodOrders')
+        fetch('https://dingo-restaurant-server.onrender.com/allFoodOrders')
             .then(res => res.json())
             .then(data => {
                 // console.log(data);

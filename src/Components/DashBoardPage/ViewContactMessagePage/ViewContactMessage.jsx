@@ -11,7 +11,7 @@ const ViewContactMessage = () => {
         navigate('/dashboard/contactMessage')
     }
     useEffect(() => {
-        fetch(`https://dingo-restaurant-server.vercel.app/singleContactUsMessage/${ID}`)
+        fetch(`https://dingo-restaurant-server.onrender.com/singleContactUsMessage/${ID}`)
             .then(res => res.json())
             .then(json => {
                 // console.log(json)
