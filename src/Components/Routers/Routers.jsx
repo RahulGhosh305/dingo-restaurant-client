@@ -10,8 +10,8 @@ import Reservation from '../ReservationPage/Reservation.jsx';
 import Contact from '../ContactPage/Contact.jsx';
 import Career from '../CareerPage/Career.jsx';
 import NotFound from '../404Page/NotFound.jsx';
-import UserLogin from '../LoginSignUpPage/UserLogin.jsx';
-import UserSignUp from '../LoginSignUpPage/UserSignUp.jsx';
+import UserLogin from '../LoginSignupPage/UserLogin.jsx';
+import UserSignUp from '../LoginSignupPage/UserSignUp.jsx';
 import AddCart from '../AddCart/AddCart.jsx';
 import UserForm from '../CheckOut/UserForm.jsx';
 import DashBoard from '../DashBoardPage/DashBoard.jsx';
@@ -34,7 +34,8 @@ import UpdateMenu from '../DashBoardPage/UpdateMenuPage/UpdateMenu.jsx';
 import SingleFoodOrderView from '../DashBoardPage/OrderListPage/SingleFoodOrderView.jsx';
 import CustomerOrder from '../DashBoardPage/CustomerOrderPage/CustomerOrder.jsx';
 import CustomerOrderView from '../DashBoardPage/CustomerOrderViewPage/CustomerOrderView.jsx';
-import PrivateRoute from '../LoginSignUpPage/PrivateRoute.jsx';
+// import PrivateRoute from '../LoginSignUpPage/PrivateRoute.jsx';
+import PrivateRoute from '../LoginSignupPage/PrivateRoute.jsx';
 import ResetPassword from '../DashBoardPage/ResetPassword/ResetPassword.jsx';
 
 const Routers = () => {

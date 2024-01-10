@@ -3,7 +3,7 @@ import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import styles from './Navbar.module.css';
 import Logo from '../../../utility/logo.png'
 import avatar from "../../../utility/commentAvatar.jpg"
-import useAuth from '../../LoginSignUpPage/useAuthHook'
+import useAuth from '../../LoginSignupPage/useAuthHook'
 import useCart from '../../AddCart/useCartHook';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'

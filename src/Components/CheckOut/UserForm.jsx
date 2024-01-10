@@ -4,7 +4,7 @@ import FormPaymentDetails from './FormPaymentDetails';
 import Confirm from './Confirm';
 import Success from './Success';
 import useCart from '../AddCart/useCartHook'
-import useAuth from '../LoginSignUpPage/useAuthHook';
+import useAuth from '../LoginSignupPage/useAuthHook';
 
 const UserForm = () => {
   const {isLoggedIn} = useAuth();

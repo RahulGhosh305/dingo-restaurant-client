@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import useAuth from '../../LoginSignUpPage/useAuthHook';
 import styles from './CustomerOrder.module.css'
+import useAuth from '../../LoginSignupPage/useAuthHook';
 
 const CustomerOrder = () => {
     const [items, setItems] = useState([])

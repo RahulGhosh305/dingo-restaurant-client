@@ -7,7 +7,7 @@ import styles from './Sidebar.module.css';
 import { faComments, faHeart, faPaperPlane } from '@fortawesome/free-regular-svg-icons';
 import DashBoardSideCart from './DashBoardSideCart';
 import headingDark from '../../../utility/heading-dark.png'
-import useAuth from '../../LoginSignUpPage/useAuthHook';
+import useAuth from '../../LoginSignupPage/useAuthHook';
 
 
 

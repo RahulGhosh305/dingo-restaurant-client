@@ -1,6 +1,6 @@
 import React from 'react';
-import useAuth from '../../LoginSignUpPage/useAuthHook';
 import styles from './ResetPassword.module.css';
+import useAuth from '../../LoginSignupPage/useAuthHook';
 const ResetPassword = () => {
     const { resetPassword } = useAuth()
     return (
